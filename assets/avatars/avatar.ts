@@ -129,7 +129,9 @@ export function buildAvatar(id: string, f: Factories, faceTex: FaceLoader, opts:
     }
   }
 
-  const faceMat = new THREE.MeshStandardMaterial({ map: faceTex(opts.face) ?? undefined, transparent: true, alphaTest: 0.02, roughness: 0.75, polygonOffset: true, polygonOffsetFactor: -2, depthWrite: false, color: faceTex(opts.face) ? "#FFFFFF" : "#111111", opacity: faceTex(opts.face) ? 1 : 0 });
+  const ft = faceTex(opts.face);
+  const faceMat = new THREE.MeshStandardMaterial({ transparent: true, alphaTest: 0.02, roughness: 0.75, polygonOffset: true, polygonOffsetFactor: -2, depthWrite: false, color: "#FFFFFF", opacity: ft ? 1 : 0 });
+  if (ft) faceMat.map = ft;
   const fs = A.head[1] * styleJson.faces.planeFracOfHeadFront;
   const face = new THREE.Mesh(new THREE.PlaneGeometry(fs, fs), faceMat);
   face.name = "face";

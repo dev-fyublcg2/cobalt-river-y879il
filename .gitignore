@@ -4,3 +4,6 @@ out/cache/
 out/bundle/
 out/tmp/
 *.log
+out/cache/
+out/public/
+out/stills.log

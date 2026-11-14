@@ -1,0 +1,6 @@
+{
+  "status": "missing",
+  "reason": "BLOCKED: no approved TTS credential or recorded narration in this environment. Nothing was synthesised or faked.",
+  "expected": "One WAV per script line at /audio/vo/<line>.wav plus word timings [{text,start,end}] in seconds relative to the film, e.g. from ElevenLabs /with-timestamps alignment or forced alignment of a recording. Voice spec: style-bible §11.",
+  "lines": []
+}

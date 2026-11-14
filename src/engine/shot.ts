@@ -168,7 +168,8 @@ export function solveCamera(built: BuiltShot, shotChars: { id: string }[], frami
     if (i < 0) throw new Error(`camera subject ${id} not in shot`);
     return built.rigs[i];
   };
-  const [who, part] = subject.split(".");
+  const [who, rawPart] = subject.split(".");
+  const part = rawPart === "wrists" ? "wrist" : rawPart;
   let clamped = false;
   let subjectPoint = new THREE.Vector3();
   const minY = built.set.interior ? 0.6 : 0.45;
