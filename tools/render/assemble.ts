@@ -1,7 +1,7 @@
 // G5/G6 assembly: still + push-in per shot (ffmpeg), concat, cut to black, cut SFX, music bed + ducking, captions.
 // Writes out/final*.mp4 ONLY when vo-manifest status is "ok"; otherwise out/preview-novo*.mp4 (never silently ships without VO).
 import fs from "node:fs";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { p } from "../env";
 import { captionEvents, toAss, type Word } from "../lib/captions";
 
@@ -54,14 +54,30 @@ graph += `[m]${cuts.map((_, i) => `[s${i}]`).join("")}amix=inputs=${cuts.length 
 // VO stem would be mixed here at voPeakDbfs and the master loudness-normalised to -14 LUFS / -1 dBTP; without VO we do not
 // normalise (it would push the bed/SFX up to dialogue loudness) and the QC report records the measured levels honestly.
 const audio = p("out/cache/mix.wav");
-ff([...inputs, "-filter_complex", graph, "-map", "[a]", "-ar", "48000", audio]);
+if (hasVo) {
+  // UNTESTED until narration exists: VO lines at -8 dBFS peak over bed+SFX, then 2-pass loudnorm to -14 LUFS / -1 dBTP
+  const base = cuts.length + 1;
+  const voIn = vo.lines.flatMap((l: any) => ["-i", p(l.file)]);
+  let g2 = graph.replace("[a]", "[bed]") + ";";
+  vo.lines.forEach((l: any, i: number) => { g2 += `[${base + i}]aresample=48000,pan=stereo|c0=c0|c1=c0,adelay=${Math.round(l.start * 1000)}:all=1[v${i}];`; });
+  g2 += `${vo.lines.map((_: any, i: number) => `[v${i}]`).join("")}amix=inputs=${vo.lines.length}:normalize=0[vo];[vo]alimiter=limit=${Math.pow(10, style.sound.voPeakDbfs / 20).toFixed(4)}[vol];[bed][vol]amix=inputs=2:normalize=0:duration=first[pre]`;
+  const pre = p("out/cache/premaster.wav");
+  ff([...inputs, ...voIn, "-filter_complex", g2, "-map", "[pre]", "-ar", "48000", pre]);
+  // pass 1 measures (stats on stderr); pass 2 applies linear gain with the measured values
+  const st = JSON.parse((spawnSync("ffmpeg", ["-hide_banner", "-i", pre, "-af", `loudnorm=I=${style.sound.masterLufs}:TP=${style.sound.truePeakDbtp}:LRA=11:print_format=json`, "-f", "null", "-"], { encoding: "utf8" }).stderr.match(/\{[\s\S]*\}/) ?? ["{}"])[0]);
+  ff(["-i", pre, "-af", `loudnorm=I=${style.sound.masterLufs}:TP=${style.sound.truePeakDbtp}:LRA=11:measured_I=${st.input_i}:measured_TP=${st.input_tp}:measured_LRA=${st.input_lra}:measured_thresh=${st.input_thresh}:offset=${st.target_offset}:linear=true`, "-ar", "48000", audio]);
+} else {
+  ff([...inputs, "-filter_complex", graph, "-map", "[a]", "-ar", "48000", audio]);
+}
 
-ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
+ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", ...(hasVo ? ["-c:v", "copy"] : ["-vf", `drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='PREVIEW - NO VO - NOT FOR UPLOAD':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"]), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-metadata", `title=${hasVo ? "The Day Counter" : "PREVIEW (no VO) - The Day Counter"}`, "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
 
 // 3. captions (ASS via libass, Anton from /assets/fonts): <=3 words/line, active word #FFD400 with 1.06 pop over 80 ms
 const C = style.captions;
 const words = (hasVo ? vo.lines.flatMap((l: any) => l.words) : script.lines.flatMap((l: any) => l.tokens)) as Word[];
 const ass = toAss(captionEvents(words, C.maxWordsPerLine, sl.blackStart), C, W, H);
 fs.writeFileSync(p("out/captions.ass"), ass);
-ff(["-i", p(`out/${stem}.mp4`), "-vf", `ass=${p("out/captions.ass")}:fontsdir=${p("assets/fonts")}`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", p(`out/${stem}-captioned.mp4`)]);
+// previews carry a burned-in label so they can never be mistaken for the upload master
+const label = hasVo ? "" : `,drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='PREVIEW - NO VO - NOT FOR UPLOAD':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`;
+ff(["-i", p(`out/${stem}.mp4`), "-vf", `ass=${p("out/captions.ass")}:fontsdir=${p("assets/fonts")}${label}`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", p(`out/${stem}-captioned.mp4`)]);
 console.log(`wrote out/${stem}.mp4 and out/${stem}-captioned.mp4 (VO: ${vo.status})`);
