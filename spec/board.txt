@@ -10,7 +10,7 @@ L01:3  | street            | MCU t2 -20         | t2@c:checkWrist:surprised t3@b
 L01:7  | street            | INS t3.wrist 0     | t3@c:showWrist:neutral | tick
 # BEAT 2 RULE
 L02:0  | street            | INS milo.wrist 12  | milo@c:showWrist:deadpan | tick | note=Close-up of a wrist number
-L02:7  | street            | MCU t1 0           | t1@c:showWrist:smug t2@l:point:surprised t4@r:point:happy | pop
+L02:7  | street            | MCU t1 0           | t1@c:checkWrist:smug t2@l:point:surprised t4@r:point:happy | pop | note=S005 fix: checkWrist keeps the arm below the face
 L03:0  | street            | MS pair 0          | t1@pl:holdHands:happy t4@pr:holdHands:surprised | pop
 L03:6  | street            | INS pair.hands 0   | t1@pl:holdHands:happy t4@pr:holdHands:surprised | pop
 L03:8  | street            | CU t1 -55          | t1@pl:holdHands:determined t4@pr:holdHands:happy | pop
@@ -52,7 +52,7 @@ L16:5  | clerkOffice       | CU milo -12        | milo@c:stand:worried | pop
 # BEAT 6 ATTEMPT
 L17:0  | kitchen           | WS milo 0          | milo@seatBL:sit:determined june@seatBR:sit:happy mom@seatL:sit:sad dad@seatR:sit:sad | whoosh | note=Dinner
 L17:3  | kitchen           | MS pair 0          | milo@pl:holdHands:determined june@pr:holdHands:confused | pop
-L17:6  | kitchen           | CU milo -55        | milo@pl:holdHands:determined june@pr:holdHands:confused | pop
+L17:6  | kitchen           | ECU milo -55       | milo@pl:holdHands:determined june@pr:holdHands:confused | pop
 L18:0  | kitchen           | CU june 55         | milo@pl:holdHands:determined june@pr:holdHands:confused | pop
 L18:4  | kitchen           | MS june 0          | june@seatBR:sit:smug milo@seatBL:sit:deadpan | pop | note=Potato is on Milo's plate
 L19:0  | kitchen           | CU milo 10         | milo@seatBL:sit:sad | pop
@@ -74,9 +74,9 @@ L25:0  | dock/dawn         | CU june 15         | june@c:stand:happy:1 | pop
 L25:3  | dock/dawn         | MS focus.ducks 20  |  | pop
 L26:0  | dock/dawn         | MS pair 0          | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
 L26:5  | dock/dawn         | INS pair.hands 0   | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | thud
-L27:0  | dock/dawn         | CU milo -55        | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
-L27:7  | dock/dawn         | ECU milo -40       | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
-L28:0  | dock/dawn         | CU june 50         | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | bell
+L27:0  | dock/dawn         | ECU milo -55       | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
+L27:7  | dock/dawn         | CU milo -20        | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
+L28:0  | dock/dawn         | CU june 30         | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | bell
 L29:0  | dock/dawn         | MCU milo -50       | milo@pl:holdHands:scared june@pr:holdHands:happy:1 | pop
 L29:3  | dock/dawn         | INS milo.wrist 0   | milo@c:showWrist:scared:4,015 | tick
 L29:4  | dock/dawn         | INS milo.wrist 14  | milo@c:showWrist:scared:3,000 | tick

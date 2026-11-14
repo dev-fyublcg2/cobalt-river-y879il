@@ -82,13 +82,17 @@ export function applyPose(rig: Rig, poseName: string, t: number, dur: number, mm
     rig.body.position.set(0, seat - (HIP_Y - A.leg[0] / 2) * s, -0.2 * s);
   } else {
     rig.body.rotation.set(0, 0, 0);
-    // lowest foot corner after leg swing: hip height minus the vertical extent of the longest-hanging leg
-    const legDrop = (l: Limb) => {
-      const a = Math.abs(l.x) * DEG;
-      return A.leg[1] * Math.cos(a) + (A.leg[2] / 2) * Math.sin(a);
-    };
-    const drop = Math.max(legDrop(pose.legL), legDrop(pose.legR));
-    rig.body.position.set(0, (A.leg[1] - drop) * -1 * s, 0);
+    // ground contact solved numerically from the posed leg corners (handles swing and spread), base pose only
+    rig.body.position.set(0, 0, 0);
+    rig.body.updateMatrixWorld(true);
+    let minY = Infinity;
+    const inv = new THREE.Matrix4().copy(rig.body.matrixWorld).invert();
+    for (const leg of [rig.legL, rig.legR])
+      for (const x of [-0.5, 0.5]) for (const z of [-0.5, 0.5]) {
+        const v = leg.localToWorld(new THREE.Vector3(x, -A.leg[1], z)).applyMatrix4(inv);
+        minY = Math.min(minY, v.y);
+      }
+    rig.body.position.set(0, -minY * s, 0);
   }
 }
 

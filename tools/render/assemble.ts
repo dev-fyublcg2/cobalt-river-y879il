@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import { p } from "../env";
+import { captionEvents, toAss, type Word } from "../lib/captions";
 
 const style = JSON.parse(fs.readFileSync(p("spec/style.json"), "utf8"));
 const sl = JSON.parse(fs.readFileSync(p("spec/shotlist.json"), "utf8"));
@@ -59,22 +60,8 @@ ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:
 
 // 3. captions (ASS via libass, Anton from /assets/fonts): <=3 words/line, active word #FFD400 with 1.06 pop over 80 ms
 const C = style.captions;
-const ts = (t: number) => { const cs = Math.round(t * 100); return `${Math.floor(cs / 360000)}:${String(Math.floor(cs / 6000) % 60).padStart(2, "0")}:${String(Math.floor(cs / 100) % 60).padStart(2, "0")}.${String(cs % 100).padStart(2, "0")}`; };
-const words = (hasVo ? vo.lines.flatMap((l: any) => l.words) : script.lines.flatMap((l: any) => l.tokens)) as { text: string; start: number; end: number }[];
-const pages: (typeof words)[] = [];
-let cur: typeof words = [];
-for (const w of words) { cur.push(w); if (cur.length === C.maxWordsPerLine || /[.?!,"]$/.test(w.text)) { pages.push(cur); cur = []; } }
-if (cur.length) pages.push(cur);
-let ass = `[Script Info]\nScriptType: v4.00+\nPlayResX: ${W}\nPlayResY: ${H}\nWrapStyle: 2\n\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\nStyle: Cap,${C.font},${C.fontPx},&H00FFFFFF,&H00FFFFFF,&H00111111,&H73000000,0,0,0,0,100,100,2,0,1,${C.strokePx},6,2,40,40,${Math.round(C.bottomFrac * H)},1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n`;
-const clean = (s: string) => s.replace(/["“”]/g, "").toUpperCase();
-pages.forEach((pg, pi) => {
-  const pageEnd = pi + 1 < pages.length ? Math.min(pages[pi + 1][0].start, pg[pg.length - 1].end + 0.25) : pg[pg.length - 1].end;
-  pg.forEach((w, wi) => {
-    const end = wi + 1 < pg.length ? pg[wi + 1].start : pageEnd;
-    const txt = pg.map((x, k) => (k === wi ? `{\\c&H00D4FF&\\fscx100\\fscy100\\t(0,${C.popMs},\\fscx106\\fscy106)}${clean(x.text)}{\\r}` : clean(x.text))).join(" ");
-    ass += `Dialogue: 0,${ts(w.start)},${ts(Math.min(end, sl.blackStart))},Cap,,0,0,0,,${txt}\n`;
-  });
-});
+const words = (hasVo ? vo.lines.flatMap((l: any) => l.words) : script.lines.flatMap((l: any) => l.tokens)) as Word[];
+const ass = toAss(captionEvents(words, C.maxWordsPerLine, sl.blackStart), C, W, H);
 fs.writeFileSync(p("out/captions.ass"), ass);
 ff(["-i", p(`out/${stem}.mp4`), "-vf", `ass=${p("out/captions.ass")}:fontsdir=${p("assets/fonts")}`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", p(`out/${stem}-captioned.mp4`)]);
 console.log(`wrote out/${stem}.mp4 and out/${stem}-captioned.mp4 (VO: ${vo.status})`);

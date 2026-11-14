@@ -23,13 +23,7 @@
    "bedroom",
    "dock"
   ],
-  "captionZoneHits": [
-   "S043 text wrist:milo at y=0.78",
-   "S043 text wrist:june at y=0.93",
-   "S064 text wrist:milo at y=0.78",
-   "S064 text wrist:june at y=0.93",
-   "S066 text sign:boat at y=0.90"
-  ]
+  "captionZoneHits": []
  },
  "shots": [
   {
@@ -410,7 +404,7 @@
     {
      "id": "t1",
      "mark": "c",
-     "pose": "showWrist",
+     "pose": "checkWrist",
      "face": "smug",
      "wrist": "12,045",
      "pos": [
@@ -453,9 +447,9 @@
     "subject": "t1",
     "azimuth": 0,
     "position": [
-     0,
-     2.5041,
-     6.7063
+     0.1571,
+     2.3321,
+     6.8004
     ],
     "quaternion": [
      0.074108,
@@ -470,9 +464,9 @@
     "zoomTo": 1.22,
     "focusDistance": 6.399,
     "subjectPoint": [
-     0,
-     4.5563,
-     0.645
+     0.1571,
+     4.3843,
+     0.7391
     ],
     "clamped": false
    },
@@ -485,7 +479,8 @@
     "sign:bakery",
     "wrist:t2"
    ],
-   "sfx": "pop"
+   "sfx": "pop",
+   "note": "S005 fix: checkWrist keeps the arm below the face"
   },
   {
    "id": "S006",
@@ -1656,7 +1651,7 @@
     "azimuth": 0,
     "position": [
      0,
-     2.17,
+     2.1958,
      6.0196
     ],
     "quaternion": [
@@ -1673,7 +1668,7 @@
     "focusDistance": 5.834,
     "subjectPoint": [
      0,
-     4.0408,
+     4.0666,
      0.4941
     ],
     "clamped": false
@@ -2072,7 +2067,7 @@
     "azimuth": 10,
     "position": [
      0.5052,
-     2.0794,
+     2.0986,
      7.6815
     ],
     "quaternion": [
@@ -2089,7 +2084,7 @@
     "focusDistance": 3.072,
     "subjectPoint": [
      0,
-     3.0644,
+     3.0837,
      4.8163
     ],
     "clamped": false
@@ -3547,13 +3542,13 @@
    ],
    "ledger": null,
    "camera": {
-    "framing": "CU",
+    "framing": "ECU",
     "subject": "milo",
     "azimuth": -55,
     "position": [
-     1.5615,
-     2.756,
-     7.2289
+     0.788,
+     3.2126,
+     6.1243
     ],
     "quaternion": [
      0.070679,
@@ -3566,7 +3561,7 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 3.646,
+    "focusDistance": 2.222,
     "subjectPoint": [
      -0.4193,
      3.9253,
@@ -3580,9 +3575,7 @@
     "headTurn": 0
    },
    "text": [
-    "sign:milk",
-    "wrist:june",
-    "wrist:milo"
+    "sign:milk"
    ],
    "sfx": "pop"
   },
@@ -3872,7 +3865,7 @@
     "azimuth": -10,
     "position": [
      -0.8083,
-     1.4883,
+     1.5075,
      9.4007
     ],
     "quaternion": [
@@ -3889,7 +3882,7 @@
     "focusDistance": 4.915,
     "subjectPoint": [
      0,
-     3.0644,
+     3.0837,
      4.8163
     ],
     "clamped": false
@@ -5159,13 +5152,13 @@
    ],
    "ledger": null,
    "camera": {
-    "framing": "CU",
+    "framing": "ECU",
     "subject": "milo",
     "azimuth": -55,
     "position": [
-     1.5615,
-     2.756,
-     2.8289
+     0.788,
+     3.2126,
+     1.7243
     ],
     "quaternion": [
      0.070679,
@@ -5178,7 +5171,7 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 3.646,
+    "focusDistance": 2.222,
     "subjectPoint": [
      -0.4193,
      3.9253,
@@ -5192,9 +5185,7 @@
     "headTurn": 0
    },
    "text": [
-    "sign:pier",
-    "wrist:june",
-    "wrist:milo"
+    "sign:pier"
    ],
    "sfx": "pop"
   },
@@ -5247,26 +5238,26 @@
    ],
    "ledger": null,
    "camera": {
-    "framing": "ECU",
+    "framing": "CU",
     "subject": "milo",
-    "azimuth": -40,
+    "azimuth": -20,
     "position": [
-     1.1932,
-     3.2126,
-     1.353
+     2.8258,
+     2.756,
+     1.1811
     ],
     "quaternion": [
-     0.067165,
-     0.421456,
-     -0.03132,
-     0.903816
+     0.060706,
+     0.571999,
+     -0.042507,
+     0.8169
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 2.222,
+    "focusDistance": 3.646,
     "subjectPoint": [
      -0.4193,
      3.9253,
@@ -5333,17 +5324,17 @@
    "camera": {
     "framing": "CU",
     "subject": "june",
-    "azimuth": 50,
+    "azimuth": 30,
     "position": [
-     -1.3556,
+     -2.0051,
      1.9821,
-     2.2288
+     1.4547
     ],
     "quaternion": [
-     -0.069639,
-     0.34108,
-     -0.025347,
-     -0.937109
+     -0.06418,
+     0.498625,
+     -0.037054,
+     -0.863644
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
@@ -5363,11 +5354,7 @@
     "armSettle": true,
     "headTurn": -1
    },
-   "text": [
-    "sign:boat",
-    "sign:nodiving",
-    "wrist:june"
-   ],
+   "text": [],
    "sfx": "bell"
   },
   {
@@ -5923,7 +5910,7 @@
     "azimuth": 10,
     "position": [
      0.5052,
-     2.0794,
+     2.0986,
      3.2815
     ],
     "quaternion": [
@@ -5940,7 +5927,7 @@
     "focusDistance": 3.072,
     "subjectPoint": [
      0,
-     3.0644,
+     3.0837,
      0.4163
     ],
     "clamped": false

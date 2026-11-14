@@ -39,11 +39,19 @@ const Stage: React.FC<{ shot: ShotT; faces: Record<string, THREE.Texture>; zoom:
   const built = useMemo(() => buildShotScene(shot, browserFactories, (e) => faces[e] ?? null, "browser"), [shot.id]);
   const m = styleJson.lighting.moods[shot.mood];
   useMemo(() => {
-    const c = document.createElement("canvas"); c.width = 4; c.height = 256;
-    const g = c.getContext("2d")!; const gr = g.createLinearGradient(0, 0, 0, 256);
-    gr.addColorStop(0, m.bg[0]); gr.addColorStop(1, m.bg[1]); g.fillStyle = gr; g.fillRect(0, 0, 4, 256);
-    const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
-    built.scene.background = new THREE.Color(m.bg[0]); void tex;
+    // gradient sky dome (vertex colours, unlit): bg[0] at zenith -> bg[1] at the horizon
+    const g = new THREE.SphereGeometry(450, 32, 16);
+    const top = new THREE.Color(m.bg[0]), hor = new THREE.Color(m.bg[1]);
+    const pos = g.attributes.position; const col = new Float32Array(pos.count * 3);
+    for (let i = 0; i < pos.count; i++) {
+      const k = Math.min(1, Math.max(0, pos.getY(i) / 450 / 0.45));
+      const c = hor.clone().lerp(top, Math.pow(k, 0.7)); col.set([c.r, c.g, c.b], i * 3);
+    }
+    g.setAttribute("color", new THREE.BufferAttribute(col, 3));
+    const dome = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide, fog: false }));
+    dome.name = "skyDome";
+    built.scene.add(dome);
+    built.scene.background = new THREE.Color(m.bg[1]);
   }, [shot.id]);
   built.update(t);
   gl.shadowMap.enabled = true; gl.shadowMap.type = THREE.PCFShadowMap; gl.toneMapping = THREE.NoToneMapping;
