@@ -11,7 +11,7 @@
   "shots": 94,
   "cuts": 94,
   "maxShotS": 1.85,
-  "faceSubjectStrict": 42,
+  "faceSubjectStrict": 43,
   "faceSubjectInclMS": 58,
   "sets": [
    "street",
@@ -2644,57 +2644,44 @@
    "chars": [
     {
      "id": "mom",
-     "mark": "l",
+     "mark": "c",
      "pose": "showWrist",
      "face": "sad",
      "wrist": "9",
      "pos": [
-      -2.1,
       0,
-      4.6
-     ],
-     "yaw": 18
-    },
-    {
-     "id": "dad",
-     "mark": "r",
-     "pose": "showWrist",
-     "face": "sad",
-     "wrist": "6",
-     "pos": [
-      2.1,
       0,
-      4.6
+      4.4
      ],
-     "yaw": -18
+     "yaw": 0
     }
    ],
    "ledger": null,
    "camera": {
     "framing": "INS",
-    "subject": "pair.wrists",
+    "subject": "mom.wrist",
     "azimuth": 0,
     "position": [
-     1.6674,
-     18.8846,
-     10.1199
+     1.7532,
+     8.7897,
+     7.3093
     ],
     "quaternion": [
-     -0.635164,
+     -0.630125,
      0,
      0,
-     0.772377
+     0.776494
     ],
-    "pitchDeg": -78.864,
+    "pitchDeg": -78.119,
     "rollDeg": 0,
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 15.32,
+    "focusDistance": 4.874,
     "subjectPoint": [
-     1.6674,
+     1.7532,
      4.1044,
-     6.0892
+     5.9658
     ],
     "clamped": false
    },
@@ -2704,11 +2691,10 @@
     "headTurn": 1
    },
    "text": [
-    "wrist:dad",
     "wrist:mom"
    ],
    "sfx": "tick",
-   "note": "Parents almost empty: 9 and 6"
+   "note": "Parents almost empty: Mom's 9 (review fix: pair insert camera ended above the ceiling)"
   },
   {
    "id": "S033",
@@ -3598,49 +3584,34 @@
    "mood": "golden",
    "chars": [
     {
-     "id": "milo",
-     "mark": "pl",
-     "pose": "holdHands",
-     "face": "determined",
-     "wrist": "4,015",
-     "pos": [
-      -1.024,
-      0,
-      4.4
-     ],
-     "yaw": 90,
-     "holdAngle": -13.339
-    },
-    {
      "id": "june",
-     "mark": "pr",
-     "pose": "holdHands",
+     "mark": "c",
+     "pose": "stand",
      "face": "confused",
      "wrist": "4",
      "pos": [
-      1.024,
+      0,
       0,
       4.4
      ],
-     "yaw": 270,
-     "holdAngle": -51.684
+     "yaw": 0
     }
    ],
    "ledger": null,
    "camera": {
     "framing": "CU",
     "subject": "june",
-    "azimuth": 55,
+    "azimuth": 10,
     "position": [
-     -1.1542,
-     1.9821,
-     6.7833
+     0.5052,
+     2.0332,
+     7.7306
     ],
     "quaternion": [
-     -0.070679,
-     0.299879,
-     -0.022285,
-     -0.951094
+     0.073826,
+     0.086916,
+     -0.006459,
+     0.993455
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
@@ -3649,9 +3620,9 @@
     "zoomTo": 1.22,
     "focusDistance": 3.072,
     "subjectPoint": [
-     0.5146,
-     2.9672,
-     4.4
+     0,
+     3.0182,
+     4.8654
     ],
     "clamped": false
    },
@@ -3661,10 +3632,10 @@
     "headTurn": 1
    },
    "text": [
-    "sign:cereal",
-    "wrist:june"
+    "sign:calendar"
    ],
-   "sfx": "pop"
+   "sfx": "pop",
+   "note": "Review fix: camera was inside Milo's head"
   },
   {
    "id": "S045",
@@ -3686,59 +3657,44 @@
    "chars": [
     {
      "id": "june",
-     "mark": "seatBR",
-     "pose": "sit",
+     "mark": "c",
+     "pose": "point",
      "face": "smug",
      "wrist": "4",
      "pos": [
-      1.6,
       0,
-      -1.4
-     ],
-     "yaw": 0,
-     "seatTop": 2
-    },
-    {
-     "id": "milo",
-     "mark": "seatBL",
-     "pose": "sit",
-     "face": "deadpan",
-     "wrist": "4,015",
-     "pos": [
-      -1.6,
       0,
-      -1.4
+      4.4
      ],
-     "yaw": 0,
-     "seatTop": 2
+     "yaw": 0
     }
    ],
    "ledger": null,
    "camera": {
-    "framing": "MS",
+    "framing": "MCU",
     "subject": "june",
-    "azimuth": 0,
+    "azimuth": -20,
     "position": [
-     1.6,
-     1.3172,
-     7.0332
+     -1.6408,
+     1.4421,
+     9.2372
     ],
     "quaternion": [
-     0.074108,
-     0,
-     0,
-     0.99725
+     0.072983,
+     -0.173171,
+     0.012869,
+     0.9821
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 8.547,
+    "focusDistance": 4.915,
     "subjectPoint": [
-     1.6,
-     4.0582,
-     -1.0626
+     -0.0486,
+     3.0182,
+     4.8629
     ],
     "clamped": false
    },
@@ -3750,11 +3706,10 @@
    "text": [
     "sign:calendar",
     "sign:cereal",
-    "wrist:june",
-    "wrist:milo"
+    "wrist:june"
    ],
    "sfx": "pop",
-   "note": "Potato is on Milo's plate"
+   "note": "Review fix: seated MS saw the table underside"
   },
   {
    "id": "S046",
@@ -5209,48 +5164,33 @@
    "chars": [
     {
      "id": "milo",
-     "mark": "pl",
-     "pose": "holdHands",
+     "mark": "c",
+     "pose": "stand",
      "face": "determined",
      "wrist": "4,015",
      "pos": [
-      -1.024,
+      0,
       0,
       0
      ],
-     "yaw": 90,
-     "holdAngle": -13.339
-    },
-    {
-     "id": "june",
-     "mark": "pr",
-     "pose": "holdHands",
-     "face": "happy",
-     "wrist": "1",
-     "pos": [
-      1.024,
-      0,
-      0
-     ],
-     "yaw": 270,
-     "holdAngle": -51.684
+     "yaw": 0
     }
    ],
    "ledger": null,
    "camera": {
     "framing": "CU",
     "subject": "milo",
-    "azimuth": -20,
+    "azimuth": 0,
     "position": [
-     2.8258,
-     2.756,
-     1.1811
+     0,
+     2.8167,
+     4.0059
     ],
     "quaternion": [
-     0.060706,
-     0.571999,
-     -0.042507,
-     0.8169
+     0.074108,
+     0,
+     0,
+     0.99725
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
@@ -5259,9 +5199,9 @@
     "zoomTo": 1.22,
     "focusDistance": 3.646,
     "subjectPoint": [
-     -0.4193,
-     3.9253,
-     0
+     0,
+     3.9859,
+     0.5524
     ],
     "clamped": false
    },
@@ -5271,7 +5211,8 @@
     "headTurn": 1
    },
    "text": [],
-   "sfx": "pop"
+   "sfx": "pop",
+   "note": "Review fix: held arm blocked the face"
   },
   {
    "id": "S066",
@@ -5292,49 +5233,34 @@
    "mood": "dawn",
    "chars": [
     {
-     "id": "milo",
-     "mark": "pl",
-     "pose": "holdHands",
-     "face": "determined",
-     "wrist": "4,015",
-     "pos": [
-      -1.024,
-      0,
-      0
-     ],
-     "yaw": 90,
-     "holdAngle": -13.339
-    },
-    {
      "id": "june",
-     "mark": "pr",
-     "pose": "holdHands",
+     "mark": "c",
+     "pose": "stand",
      "face": "happy",
      "wrist": "1",
      "pos": [
-      1.024,
+      0,
       0,
       0
      ],
-     "yaw": 270,
-     "holdAngle": -51.684
+     "yaw": 0
     }
    ],
    "ledger": null,
    "camera": {
     "framing": "CU",
     "subject": "june",
-    "azimuth": 30,
+    "azimuth": 10,
     "position": [
-     -2.0051,
-     1.9821,
-     1.4547
+     0.5052,
+     2.0332,
+     3.3306
     ],
     "quaternion": [
-     -0.06418,
-     0.498625,
-     -0.037054,
-     -0.863644
+     0.073826,
+     0.086916,
+     -0.006459,
+     0.993455
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
@@ -5343,9 +5269,9 @@
     "zoomTo": 1.22,
     "focusDistance": 3.072,
     "subjectPoint": [
-     0.5146,
-     2.9672,
-     0
+     0,
+     3.0182,
+     0.4654
     ],
     "clamped": false
    },
@@ -5354,8 +5280,11 @@
     "armSettle": true,
     "headTurn": -1
    },
-   "text": [],
-   "sfx": "bell"
+   "text": [
+    "sign:pier"
+   ],
+   "sfx": "bell",
+   "note": "Review fix: held arm blocked the face"
   },
   {
    "id": "S067",
@@ -6077,17 +6006,17 @@
    "camera": {
     "framing": "WS",
     "subject": "milo",
-    "azimuth": 0,
+    "azimuth": 180,
     "position": [
      0,
      0.45,
-     -20.6452
+     19.5403
     ],
     "quaternion": [
-     0,
-     0.99725,
      -0.074108,
-     0
+     0,
+     0,
+     -0.99725
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
@@ -6108,6 +6037,8 @@
     "headTurn": 0
    },
    "text": [
+    "sign:bakery",
+    "sign:billboard",
     "wrist:june",
     "wrist:milo"
    ],
@@ -6151,17 +6082,17 @@
    "camera": {
     "framing": "WS",
     "subject": "milo",
-    "azimuth": 20,
+    "azimuth": -60,
     "position": [
-     16.8502,
+     0.2466,
      0.6,
-     -0.0699
+     19.7176
     ],
     "quaternion": [
-     0.052403,
-     0.705162,
-     -0.052403,
-     0.705162
+     0.073826,
+     0.086916,
+     -0.006459,
+     0.993455
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
@@ -6183,6 +6114,7 @@
    },
    "text": [
     "sign:clock",
+    "sign:poster",
     "wrist:milo"
    ],
    "sfx": "whoosh",
