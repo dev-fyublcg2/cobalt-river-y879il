@@ -1,0 +1,57 @@
+[
+ {
+  "text": "I",
+  "start": 0.0,
+  "end": 0.42
+ },
+ {
+  "text": "walk",
+  "start": 0.42,
+  "end": 0.47
+ },
+ {
+  "text": "her",
+  "start": 0.42,
+  "end": 0.62
+ },
+ {
+  "text": "home.",
+  "start": 0.62,
+  "end": 1.08
+ },
+ {
+  "text": "Then",
+  "start": 1.14,
+  "end": 1.38
+ },
+ {
+  "text": "I",
+  "start": 1.38,
+  "end": 1.54
+ },
+ {
+  "text": "go",
+  "start": 1.54,
+  "end": 1.68
+ },
+ {
+  "text": "to",
+  "start": 1.68,
+  "end": 1.82
+ },
+ {
+  "text": "my",
+  "start": 1.82,
+  "end": 2.0
+ },
+ {
+  "text": "room",
+  "start": 2.0,
+  "end": 2.16
+ },
+ {
+  "text": "alone.",
+  "start": 2.16,
+  "end": 2.42
+ }
+]

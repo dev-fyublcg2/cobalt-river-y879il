@@ -1,0 +1,47 @@
+[
+ {
+  "text": "I",
+  "start": 0.0,
+  "end": 0.18
+ },
+ {
+  "text": "show",
+  "start": 0.18,
+  "end": 0.32
+ },
+ {
+  "text": "everyone.",
+  "start": 0.32,
+  "end": 0.84
+ },
+ {
+  "text": "I",
+  "start": 1.26,
+  "end": 1.36
+ },
+ {
+  "text": "show",
+  "start": 1.36,
+  "end": 1.46
+ },
+ {
+  "text": "the",
+  "start": 1.46,
+  "end": 1.64
+ },
+ {
+  "text": "lunch",
+  "start": 1.64,
+  "end": 1.86
+ },
+ {
+  "text": "lady.",
+  "start": 1.86,
+  "end": 2.26
+ },
+ {
+  "text": "Twice.",
+  "start": 2.26,
+  "end": 2.6
+ }
+]

@@ -1,0 +1,47 @@
+[
+ {
+  "text": "I",
+  "start": 0.0,
+  "end": 0.18
+ },
+ {
+  "text": "hold",
+  "start": 0.18,
+  "end": 0.38
+ },
+ {
+  "text": "both",
+  "start": 0.38,
+  "end": 0.64
+ },
+ {
+  "text": "her",
+  "start": 0.64,
+  "end": 0.84
+ },
+ {
+  "text": "hands.",
+  "start": 0.84,
+  "end": 1.18
+ },
+ {
+  "text": "I",
+  "start": 1.38,
+  "end": 1.5
+ },
+ {
+  "text": "don't",
+  "start": 1.5,
+  "end": 1.62
+ },
+ {
+  "text": "let",
+  "start": 1.62,
+  "end": 1.78
+ },
+ {
+  "text": "go.",
+  "start": 1.78,
+  "end": 2.0
+ }
+]

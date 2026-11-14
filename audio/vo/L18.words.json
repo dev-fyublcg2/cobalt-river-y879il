@@ -1,0 +1,42 @@
+[
+ {
+  "text": "She",
+  "start": 0,
+  "end": 0.153
+ },
+ {
+  "text": "says,",
+  "start": 0.153,
+  "end": 0.382
+ },
+ {
+  "text": "\"Take",
+  "start": 0.58,
+  "end": 0.618
+ },
+ {
+  "text": "what?\"",
+  "start": 0.58,
+  "end": 0.809
+ },
+ {
+  "text": "and",
+  "start": 0.992,
+  "end": 1.145
+ },
+ {
+  "text": "steals",
+  "start": 1.145,
+  "end": 1.373
+ },
+ {
+  "text": "my",
+  "start": 1.373,
+  "end": 1.526
+ },
+ {
+  "text": "potato.",
+  "start": 1.526,
+  "end": 1.785
+ }
+]

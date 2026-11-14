@@ -1,0 +1,52 @@
+[
+ {
+  "text": "Mom",
+  "start": 0,
+  "end": 0.275
+ },
+ {
+  "text": "cries",
+  "start": 0.275,
+  "end": 0.519
+ },
+ {
+  "text": "into",
+  "start": 0.519,
+  "end": 0.702
+ },
+ {
+  "text": "the",
+  "start": 0.702,
+  "end": 0.855
+ },
+ {
+  "text": "gravy.",
+  "start": 0.855,
+  "end": 1.114
+ },
+ {
+  "text": "Dad",
+  "start": 1.404,
+  "end": 1.526
+ },
+ {
+  "text": "stares",
+  "start": 1.526,
+  "end": 1.694
+ },
+ {
+  "text": "at",
+  "start": 1.694,
+  "end": 1.831
+ },
+ {
+  "text": "his",
+  "start": 1.831,
+  "end": 1.969
+ },
+ {
+  "text": "plate.",
+  "start": 1.969,
+  "end": 2.152
+ }
+]

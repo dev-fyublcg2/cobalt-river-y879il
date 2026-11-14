@@ -1,0 +1,62 @@
+[
+ {
+  "text": "Uncle",
+  "start": 0,
+  "end": 0.198
+ },
+ {
+  "text": "gave",
+  "start": 0.198,
+  "end": 0.382
+ },
+ {
+  "text": "his",
+  "start": 0.382,
+  "end": 0.534
+ },
+ {
+  "text": "boss",
+  "start": 0.534,
+  "end": 0.656
+ },
+ {
+  "text": "a",
+  "start": 0.656,
+  "end": 0.763
+ },
+ {
+  "text": "month",
+  "start": 0.763,
+  "end": 0.931
+ },
+ {
+  "text": "for",
+  "start": 0.931,
+  "end": 1.099
+ },
+ {
+  "text": "promotion.",
+  "start": 1.099,
+  "end": 1.373
+ },
+ {
+  "text": "Now",
+  "start": 1.709,
+  "end": 1.801
+ },
+ {
+  "text": "he's",
+  "start": 1.801,
+  "end": 1.999
+ },
+ {
+  "text": "boss.",
+  "start": 1.999,
+  "end": 2.304
+ },
+ {
+  "text": "Seventy-one.",
+  "start": 2.304,
+  "end": 3.005
+ }
+]

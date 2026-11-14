@@ -11,5 +11,9 @@ export const RemotionRoot: React.FC = () => (
     {shotlist.shots.map((s) => (
       <Composition key={s.id} id={`shot-${s.id}`} component={Shot as any} width={shotlist.width} height={shotlist.height} fps={shotlist.fps} durationInFrames={s.frames} defaultProps={{ shotId: s.id, still: true }} />
     ))}
+    {/* animated preview path: per-frame 3D (held-pose micro-moves + camera push-in) at half res, 30 fps */}
+    {shotlist.shots.map((s) => (
+      <Composition key={`a${s.id}`} id={`anim-${s.id}`} component={Shot as any} width={540} height={960} fps={30} durationInFrames={Math.ceil(s.frames / 2)} defaultProps={{ shotId: s.id, still: false }} />
+    ))}
   </>
 );

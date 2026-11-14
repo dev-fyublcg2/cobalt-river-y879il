@@ -53,12 +53,14 @@ test("hold-hands pairs: hands touch (gap 0..0.08), never overlap", () => {
     const tips = h.map((c: any) => {
       const r = buildAvatar(c.id, nodeFactories, () => null, { face: c.face });
       r.root.position.set(...(c.pos as [number, number, number])); r.root.rotation.y = (c.yaw * Math.PI) / 180;
-      applyPose(r, "holdHands", 0, 1, { breath: false, armSettle: false, headTurn: 0 }, { holdAngle: c.holdAngle });
+      applyPose(r, "holdHands", 0, 1, { breath: false, armSettle: false, headTurn: 0 }, { holdAngle: c.holdAngle, holdSide: c.holdSide });
       r.root.updateMatrixWorld(true);
-      return handBox(r.armL).union(handBox(r.armR));
+      return handBox(c.holdSide === "L" ? r.armL : r.armR);
     });
     const a = tips[0], b = tips[1];
     const gap = Math.max(a.min.x - b.max.x, b.min.x - a.max.x, a.min.z - b.max.z, b.min.z - a.max.z);
+    const lateral = Math.abs((a.min.z + a.max.z) / 2 - (b.min.z + b.max.z) / 2);
+    assert.ok(lateral <= 0.03, `${s.id}: linked hands misaligned by ${lateral.toFixed(3)}`);
     assert.ok(gap >= -1e-3 && gap <= 0.08, `${s.id}: hand gap ${gap.toFixed(3)}`);
     n++;
   }

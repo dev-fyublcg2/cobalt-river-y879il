@@ -45,13 +45,19 @@ function setLimb(pivot: THREE.Group, l: Limb, side: 1 | -1) {
  * Apply a held pose at local shot time t (s) of a shot lasting dur (s).
  * Ground contact is solved from the base pose (not the micro-moves), so feet never slide or float.
  */
-export function applyPose(rig: Rig, poseName: string, t: number, dur: number, mm: MicroMoves, extra: { holdAngle?: number; seatTop?: number } = {}) {
+export function applyPose(rig: Rig, poseName: string, t: number, dur: number, mm: MicroMoves, extra: { holdAngle?: number; seatTop?: number; holdSide?: "L" | "R" } = {}) {
   const pose = POSES[poseName];
   if (!pose) throw new Error(`unknown pose ${poseName}`);
   const settle = mm.armSettle ? A.armSettleDeg * (1 - ease(Math.min(1, t / A.armSettleS))) : 0;
   const hold = poseName === "holdHands" && extra.holdAngle !== undefined ? extra.holdAngle : undefined;
-  const armL = { x: (hold ?? pose.armL.x) - settle * 0.5, spread: pose.armL.spread + settle };
-  const armR = { x: (hold ?? pose.armR.x) - settle * 0.5, spread: pose.armR.spread + settle };
+  // breath-synced sway on free arms only (linked hands stay locked so they never drift apart)
+  const sway = mm.breath ? (A.armSwayDeg ?? 0) * Math.sin((2 * Math.PI * t) / A.breathPeriodS + 0.6) : 0;
+  const side = extra.holdSide ?? (hold !== undefined ? "B" : undefined);
+  const holdL = hold !== undefined && (side === "L" || side === "B");
+  const holdR = hold !== undefined && (side === "R" || side === "B");
+  const relaxed = POSES.stand;
+  const armL = holdL ? { x: hold!, spread: 0 } : { x: (hold !== undefined ? relaxed.armL.x : pose.armL.x) - settle * 0.5 + sway, spread: (hold !== undefined ? relaxed.armL.spread : pose.armL.spread) + settle };
+  const armR = holdR ? { x: hold!, spread: 0 } : { x: (hold !== undefined ? relaxed.armR.x : pose.armR.x) - settle * 0.5 - sway, spread: (hold !== undefined ? relaxed.armR.spread : pose.armR.spread) + settle };
   // armL sits on +x (character's left when facing +z): outward is +z rotation; armR on -x: outward is -z
   setLimb(rig.armL, armL, 1);
   setLimb(rig.armR, armR, -1);

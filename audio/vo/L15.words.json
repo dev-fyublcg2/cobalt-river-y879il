@@ -1,0 +1,42 @@
+[
+ {
+  "text": "\"You",
+  "start": 0,
+  "end": 0.122
+ },
+ {
+  "text": "can",
+  "start": 0.122,
+  "end": 0.275
+ },
+ {
+  "text": "give.",
+  "start": 0.275,
+  "end": 0.519
+ },
+ {
+  "text": "You",
+  "start": 0.702,
+  "end": 0.778
+ },
+ {
+  "text": "can",
+  "start": 0.778,
+  "end": 0.9
+ },
+ {
+  "text": "never",
+  "start": 0.9,
+  "end": 1.038
+ },
+ {
+  "text": "take",
+  "start": 1.038,
+  "end": 1.206
+ },
+ {
+  "text": "back.\"",
+  "start": 1.206,
+  "end": 1.389
+ }
+]

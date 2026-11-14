@@ -13,7 +13,7 @@ L02:0  | street            | INS milo.wrist 12  | milo@c:showWrist:deadpan | tic
 L02:7  | street            | MCU t1 0           | t1@c:checkWrist:smug t2@l:point:surprised t4@r:point:happy | pop | note=S005 fix: checkWrist keeps the arm below the face
 L03:0  | street            | MS pair 0          | t1@pl:holdHands:happy t4@pr:holdHands:surprised | pop
 L03:6  | street            | INS pair.hands 0   | t1@pl:holdHands:happy t4@pr:holdHands:surprised | pop
-L03:8  | street            | CU t1 -55          | t1@pl:holdHands:determined t4@pr:holdHands:happy | pop
+L03:8  | street            | ECU t1 -55         | t1@pl:holdHands:determined t4@pr:holdHands:happy | pop
 # BEAT 3 GAGS
 L04:0  | townSquare        | WS t3 0            | t3@c:checkWrist:deadpan t1@l:showWrist:smug t2@b1:checkWrist:happy t4@b2:point:laugh | whoosh
 L04:4  | townSquare        | MCU t4 10          | t4@c:shrug:smug | pop
@@ -35,6 +35,7 @@ L10:5  | kitchen           | CU june 10         | june@c:armsUp:laugh | pop
 L11:0  | kitchen           | MCU june -15       | june@c:showWrist:neutral | pop
 L11:3  | kitchen           | INS june.wrist 0   | june@c:showWrist:neutral:4 | thud | note=Close-up of '4'
 L11:4  | kitchen           | CU milo 15         | milo@c:stand:worried | pop
+L11:7  | kitchen           | INS june.wrist 15  | june@c:showWrist:sad:4 | thud | note=Added after VO retime: 'Four days.' (S027 was 2.75 s)
 # BEAT 5 ESCALATION
 L12:0  | clinic            | MS pair 0          | doctor@pl:stand:worried june@pr:showWrist:neutral:4 | whoosh
 L12:6  | clinic            | MCU doctor 10      | doctor@c:shrug:deadpan | pop

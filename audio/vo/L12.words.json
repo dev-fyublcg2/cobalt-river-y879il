@@ -1,0 +1,47 @@
+[
+ {
+  "text": "The",
+  "start": 0,
+  "end": 0.29
+ },
+ {
+  "text": "doctor",
+  "start": 0.29,
+  "end": 0.328
+ },
+ {
+  "text": "looks",
+  "start": 0.29,
+  "end": 0.534
+ },
+ {
+  "text": "at",
+  "start": 0.534,
+  "end": 0.687
+ },
+ {
+  "text": "her",
+  "start": 0.687,
+  "end": 0.732
+ },
+ {
+  "text": "wrist",
+  "start": 0.732,
+  "end": 0.855
+ },
+ {
+  "text": "and",
+  "start": 0.855,
+  "end": 1.022
+ },
+ {
+  "text": "just",
+  "start": 1.022,
+  "end": 1.206
+ },
+ {
+  "text": "shrugs.",
+  "start": 1.206,
+  "end": 1.48
+ }
+]

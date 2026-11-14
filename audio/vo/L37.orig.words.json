@@ -1,0 +1,42 @@
+[
+ {
+  "text": "Why",
+  "start": 0.0,
+  "end": 0.2
+ },
+ {
+  "text": "my",
+  "start": 0.2,
+  "end": 0.38
+ },
+ {
+  "text": "cousin",
+  "start": 0.38,
+  "end": 0.54
+ },
+ {
+  "text": "got",
+  "start": 0.54,
+  "end": 0.86
+ },
+ {
+  "text": "one",
+  "start": 0.86,
+  "end": 1.1
+ },
+ {
+  "text": "more",
+  "start": 1.1,
+  "end": 1.34
+ },
+ {
+  "text": "terrible",
+  "start": 1.34,
+  "end": 1.58
+ },
+ {
+  "text": "date.",
+  "start": 1.58,
+  "end": 1.88
+ }
+]

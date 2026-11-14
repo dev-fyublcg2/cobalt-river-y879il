@@ -1,0 +1,57 @@
+[
+ {
+  "text": "She's",
+  "start": 0,
+  "end": 0.336
+ },
+ {
+  "text": "four.",
+  "start": 0.336,
+  "end": 0.626
+ },
+ {
+  "text": "She",
+  "start": 0.748,
+  "end": 0.794
+ },
+ {
+  "text": "doesn't",
+  "start": 0.794,
+  "end": 1.038
+ },
+ {
+  "text": "get",
+  "start": 1.038,
+  "end": 1.16
+ },
+ {
+  "text": "it.",
+  "start": 1.16,
+  "end": 1.404
+ },
+ {
+  "text": "She",
+  "start": 1.45,
+  "end": 1.587
+ },
+ {
+  "text": "thinks",
+  "start": 1.587,
+  "end": 1.755
+ },
+ {
+  "text": "it's",
+  "start": 1.755,
+  "end": 1.923
+ },
+ {
+  "text": "a",
+  "start": 1.923,
+  "end": 1.999
+ },
+ {
+  "text": "game.",
+  "start": 1.999,
+  "end": 2.136
+ }
+]

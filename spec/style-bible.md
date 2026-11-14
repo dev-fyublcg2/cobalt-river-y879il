@@ -91,7 +91,8 @@ Rule: this file beats any builder's taste. Changing a value = edit both files + 
 | Arm gap | 0.15 units between arm inner face and torso |
 | Hand clearance | hand volume >= 0.15 units outside the torso volume, every sampled frame |
 | Clothes | second box +0.02 units per side, 3-colour pattern |
-| Micro-moves | breath bob 0.012 units / 2.4 s period; arm settle 4 deg over 0.35 s; head turn 5 deg over the shot |
+| Micro-moves | breath bob 0.035 units / 2.4 s period; arm settle 7 deg over 0.35 s; arm sway 2.5 deg breath-synced; head turn 9 deg over the shot |
+| Hand-holding | 1 linked hand per character (the camera-side arm), other arm relaxed; linked hands aligned to 0.03 units |
 | Locomotion | 0 units of root translation inside a shot (no foot sliding by construction) |
 
 ## 8. Sets
@@ -126,7 +127,7 @@ Rule: this file beats any builder's taste. Changing a value = edit both files + 
 | Item | Value |
 |---|---|
 | Casting | boy, 11, deadpan, fast, cartoon-bright, dry close mic, 0 reverb, 0 radio EQ |
-| Speed | 1.2 (allowed 1.15-1.25) |
+| Speed | 1.25 (allowed 1.15-1.25) |
 | Pitch | +4 semitones (allowed +3 to +5), formant-preserving, duration-preserving |
 | Reference timbres | 1 young boy cartoon lead (bright, nasal-forward); 2 kids'-TV narrator (dry, clipped); 3 deadpan sitcom kid (flat affect, fast) |
 | Selection | A/B 2 renders of line L01, pick 1, log in `/spec/decisions.md` |

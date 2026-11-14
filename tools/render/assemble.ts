@@ -11,7 +11,13 @@ const script = JSON.parse(fs.readFileSync(p("spec/script.json"), "utf8"));
 const vo = JSON.parse(fs.readFileSync(p("spec/vo-manifest.json"), "utf8"));
 const index = JSON.parse(fs.readFileSync(p("out/cache/stills/index.json"), "utf8"));
 const hasVo = vo.status === "ok";
-const stem = hasVo ? "final" : "preview-novo";
+// final* names require real VO AND human approval of the voice + render (vo.approvedForMaster, set by a person after listening)
+const approved = hasVo && vo.approvedForMaster === true;
+const animIndexPath = p("out/cache/anim/index.json");
+const animIndex = fs.existsSync(animIndexPath) ? JSON.parse(fs.readFileSync(animIndexPath, "utf8")) : null;
+const animated = !!animIndex && sl.shots.every((s: any) => animIndex[s.id] && fs.existsSync(p(animIndex[s.id])));
+const stem = approved ? "final" : hasVo ? (animated ? "preview-animated" : "preview-vo") : "preview-novo";
+const LABEL = approved ? "" : hasVo ? "PREVIEW - SYNTH VO - NOT FINAL" : "PREVIEW - NO VO - NOT FOR UPLOAD";
 const ff = (args: string[]) => execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" });
 const FPS = sl.fps, W = sl.width, H = sl.height;
 fs.mkdirSync(p("out/cache/clips"), { recursive: true });
@@ -21,6 +27,14 @@ const [x1, y1, x2, y2] = style.camera.pushEase;
 const list: string[] = [];
 for (const s of sl.shots) {
   const still = p(index[s.id]);
+  if (animated) {
+    // per-frame 3D animation (push-in is the 3D lens zoom): 540x960@30 -> 1080x1920@60, exact frame count
+    const src = p(animIndex[s.id]);
+    const out = p("out/cache/clips", `anim-${s.id}-${animIndex[s.id].split("/").pop().replace(".mp4", "")}-${s.frames}.mp4`);
+    if (!fs.existsSync(out)) ff(["-i", src, "-vf", `fps=${FPS},scale=${W}:${H}:flags=lanczos,vignette=angle=0.55:mode=forward,format=yuv420p,trim=end_frame=${s.frames},tpad=stop_mode=clone:stop=${s.frames}`, "-frames:v", String(s.frames), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", String(FPS), out]);
+    list.push(`file '${out}'`);
+    continue;
+  }
   const out = p("out/cache/clips", `${s.id}-${index[s.id].split("/").pop().replace(".png", "")}-${s.frames}.mp4`);
   if (!fs.existsSync(out)) {
     const z0 = 1, z1 = s.camera.zoomTo / s.camera.zoomFrom;
@@ -59,8 +73,12 @@ if (hasVo) {
   const base = cuts.length + 1;
   const voIn = vo.lines.flatMap((l: any) => ["-i", p(l.file)]);
   let g2 = graph.replace("[a]", "[bed]") + ";";
-  vo.lines.forEach((l: any, i: number) => { g2 += `[${base + i}]aresample=48000,pan=stereo|c0=c0|c1=c0,adelay=${Math.round(l.start * 1000)}:all=1[v${i}];`; });
-  g2 += `${vo.lines.map((_: any, i: number) => `[v${i}]`).join("")}amix=inputs=${vo.lines.length}:normalize=0[vo];[vo]alimiter=limit=${Math.pow(10, style.sound.voPeakDbfs / 20).toFixed(4)}[vol];[bed][vol]amix=inputs=2:normalize=0:duration=first[pre]`;
+  vo.lines.forEach((l: any, i: number) => {
+    const det = spawnSync("ffmpeg", ["-hide_banner", "-i", p(l.file), "-af", "volumedetect", "-f", "null", "-"], { encoding: "utf8" }).stderr;
+    const peak = +(det.match(/max_volume:\s*(-?[\d.]+) dB/)?.[1] ?? 0);
+    g2 += `[${base + i}]aresample=48000,volume=${(style.sound.voPeakDbfs - peak).toFixed(2)}dB,pan=stereo|c0=c0|c1=c0,adelay=${Math.round(l.start * 1000)}:all=1[v${i}];`;
+  });
+  g2 += `${vo.lines.map((_: any, i: number) => `[v${i}]`).join("")}amix=inputs=${vo.lines.length}:normalize=0[vol];[bed][vol]amix=inputs=2:normalize=0:duration=first[pre]`;
   const pre = p("out/cache/premaster.wav");
   ff([...inputs, ...voIn, "-filter_complex", g2, "-map", "[pre]", "-ar", "48000", pre]);
   // pass 1 measures (stats on stderr); pass 2 applies linear gain with the measured values
@@ -70,7 +88,7 @@ if (hasVo) {
   ff([...inputs, "-filter_complex", graph, "-map", "[a]", "-ar", "48000", audio]);
 }
 
-ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", ...(hasVo ? ["-c:v", "copy"] : ["-vf", `drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='PREVIEW - NO VO - NOT FOR UPLOAD':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"]), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-metadata", `title=${hasVo ? "The Day Counter" : "PREVIEW (no VO) - The Day Counter"}`, "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
+ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", ...(approved ? ["-c:v", "copy"] : ["-vf", `drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='${LABEL}':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"]), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-metadata", `title=${approved ? "The Day Counter" : `${LABEL} - The Day Counter`}`, "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
 
 // 3. captions (ASS via libass, Anton from /assets/fonts): <=3 words/line, active word #FFD400 with 1.06 pop over 80 ms
 const C = style.captions;
@@ -78,6 +96,6 @@ const words = (hasVo ? vo.lines.flatMap((l: any) => l.words) : script.lines.flat
 const ass = toAss(captionEvents(words, C.maxWordsPerLine, sl.blackStart), C, W, H);
 fs.writeFileSync(p("out/captions.ass"), ass);
 // previews carry a burned-in label so they can never be mistaken for the upload master
-const label = hasVo ? "" : `,drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='PREVIEW - NO VO - NOT FOR UPLOAD':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`;
+const label = approved ? "" : `,drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='${LABEL}':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`;
 ff(["-i", p(`out/${stem}.mp4`), "-vf", `ass=${p("out/captions.ass")}:fontsdir=${p("assets/fonts")}${label}`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", p(`out/${stem}-captioned.mp4`)]);
 console.log(`wrote out/${stem}.mp4 and out/${stem}-captioned.mp4 (VO: ${vo.status})`);

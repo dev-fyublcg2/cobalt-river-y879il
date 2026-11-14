@@ -31,7 +31,7 @@
     "parts": ["head", "torso", "armL", "armR", "legL", "legR"],
     "head": [1.25, 1.2, 1.2], "torso": [2.0, 2.0, 1.0], "arm": [1.0, 2.0, 1.0], "leg": [1.0, 2.0, 1.0],
     "armGapFromTorso": 0.15, "handClearance": 0.15, "clothOffset": 0.02, "clothPatternColors": 3,
-    "breathBobAmp": 0.012, "breathPeriodS": 2.4, "armSettleDeg": 4, "armSettleS": 0.35, "headTurnDeg": 5
+    "breathBobAmp": 0.035, "breathPeriodS": 2.4, "armSettleDeg": 7, "armSettleS": 0.35, "armSwayDeg": 2.5, "headTurnDeg": 9
   },
   "captions": {
     "font": "Anton", "fontFile": "assets/fonts/Anton-Regular.ttf", "fontPx": 118, "lineHeight": 1.08,
@@ -50,7 +50,7 @@
   },
   "voice": {
     "character": "boy, 11, deadpan, fast, cartoon-bright, dry close mic, no reverb, no radio EQ",
-    "speedMin": 1.15, "speedMax": 1.25, "speed": 1.2, "pitchSemitonesMin": 3, "pitchSemitonesMax": 5, "pitchSemitones": 4,
+    "speedMin": 1.15, "speedMax": 1.25, "speed": 1.25, "pitchSemitonesMin": 3, "pitchSemitonesMax": 5, "pitchSemitones": 4,
     "referenceTimbres": ["young boy cartoon lead (bright, nasal-forward)", "kids'-TV narrator (dry, clipped)", "deadpan sitcom kid (flat affect, fast)"]
   },
   "render": { "seed": 1114, "jpegQuality": 92, "glBackend": "swangle", "concurrency": 1 }

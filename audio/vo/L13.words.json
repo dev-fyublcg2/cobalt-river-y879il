@@ -1,0 +1,52 @@
+[
+ {
+  "text": "Mom",
+  "start": 0,
+  "end": 0.153
+ },
+ {
+  "text": "and",
+  "start": 0.153,
+  "end": 0.32
+ },
+ {
+  "text": "Dad",
+  "start": 0.32,
+  "end": 0.534
+ },
+ {
+  "text": "want",
+  "start": 0.534,
+  "end": 0.702
+ },
+ {
+  "text": "to",
+  "start": 0.702,
+  "end": 0.809
+ },
+ {
+  "text": "give,",
+  "start": 0.809,
+  "end": 0.992
+ },
+ {
+  "text": "but",
+  "start": 1.221,
+  "end": 1.312
+ },
+ {
+  "text": "they're",
+  "start": 1.312,
+  "end": 1.541
+ },
+ {
+  "text": "almost",
+  "start": 1.541,
+  "end": 1.755
+ },
+ {
+  "text": "empty.",
+  "start": 1.755,
+  "end": 1.984
+ }
+]

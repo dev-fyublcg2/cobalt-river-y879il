@@ -42,7 +42,7 @@ rows.filter((r) => !r.startsWith("END")).forEach((row, index) => {
   const setB = getSet(set, nodeFactories);
   const rigs = raw.map((c) => buildAvatar(c.id, nodeFactories, () => null, { face: c.face, wrist: c.wrist }));
   const placed = placeChars(setB, raw, rigs);
-  const chars = raw.map((c, i) => ({ id: c.id, mark: c.mark, pose: c.pose, face: c.face, wrist: c.wrist ?? rigs[i].spec.wrist, pos: placed[i].pos.map((v) => +v.toFixed(4)) as any, yaw: c.yawO ?? placed[i].yaw, holdAngle: placed[i].holdAngle !== undefined ? +placed[i].holdAngle!.toFixed(3) : undefined, seatTop: placed[i].seatTop }));
+  const chars = raw.map((c, i) => ({ id: c.id, mark: c.mark, pose: c.pose, face: c.face, wrist: c.wrist ?? rigs[i].spec.wrist, pos: placed[i].pos.map((v) => +v.toFixed(4)) as any, yaw: c.yawO ?? placed[i].yaw, holdAngle: placed[i].holdAngle !== undefined ? +placed[i].holdAngle!.toFixed(3) : undefined, seatTop: placed[i].seatTop, holdSide: placed[i].holdSide }));
   const micro = { breath: true, armSettle: true, headTurn: index % 3 === 0 ? 0 : index % 3 === 1 ? 1 : -1 };
   const ledger = opts.ledger ?? null;
   const built = buildShotScene({ set, mood: mood as any, chars, ledger, micro, dur: 1 }, nodeFactories, () => null);

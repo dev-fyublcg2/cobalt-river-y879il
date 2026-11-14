@@ -1,0 +1,62 @@
+[
+ {
+  "text": "She",
+  "start": 0.0,
+  "end": 0.24
+ },
+ {
+  "text": "looks",
+  "start": 0.24,
+  "end": 0.42
+ },
+ {
+  "text": "at",
+  "start": 0.42,
+  "end": 0.56
+ },
+ {
+  "text": "my",
+  "start": 0.56,
+  "end": 0.72
+ },
+ {
+  "text": "number.",
+  "start": 0.72,
+  "end": 1.0
+ },
+ {
+  "text": "Then",
+  "start": 1.26,
+  "end": 1.36
+ },
+ {
+  "text": "at",
+  "start": 1.36,
+  "end": 1.52
+ },
+ {
+  "text": "me.",
+  "start": 1.52,
+  "end": 1.9
+ },
+ {
+  "text": "For",
+  "start": 2.06,
+  "end": 2.14
+ },
+ {
+  "text": "a",
+  "start": 2.14,
+  "end": 2.24
+ },
+ {
+  "text": "long",
+  "start": 2.24,
+  "end": 2.48
+ },
+ {
+  "text": "time.",
+  "start": 2.48,
+  "end": 2.8
+ }
+]

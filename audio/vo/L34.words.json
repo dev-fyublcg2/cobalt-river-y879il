@@ -1,0 +1,37 @@
+[
+ {
+  "text": "\"Days",
+  "start": 0,
+  "end": 0.259
+ },
+ {
+  "text": "given",
+  "start": 0.259,
+  "end": 0.443
+ },
+ {
+  "text": "away",
+  "start": 0.443,
+  "end": 0.641
+ },
+ {
+  "text": "are",
+  "start": 0.641,
+  "end": 0.809
+ },
+ {
+  "text": "days",
+  "start": 0.809,
+  "end": 1.068
+ },
+ {
+  "text": "spent",
+  "start": 1.068,
+  "end": 1.267
+ },
+ {
+  "text": "together.\"",
+  "start": 1.267,
+  "end": 1.526
+ }
+]

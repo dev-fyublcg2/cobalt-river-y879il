@@ -1,0 +1,52 @@
+[
+ {
+  "text": "I",
+  "start": 0,
+  "end": 0.198
+ },
+ {
+  "text": "say",
+  "start": 0.198,
+  "end": 0.305
+ },
+ {
+  "text": "it",
+  "start": 0.305,
+  "end": 0.488
+ },
+ {
+  "text": "slow,",
+  "start": 0.488,
+  "end": 0.839
+ },
+ {
+  "text": "like",
+  "start": 0.977,
+  "end": 1.038
+ },
+ {
+  "text": "a",
+  "start": 1.038,
+  "end": 1.175
+ },
+ {
+  "text": "teacher.",
+  "start": 1.175,
+  "end": 1.328
+ },
+ {
+  "text": "\"June.",
+  "start": 1.557,
+  "end": 1.801
+ },
+ {
+  "text": "Take",
+  "start": 2.03,
+  "end": 2.075
+ },
+ {
+  "text": "them.\"",
+  "start": 2.075,
+  "end": 2.258
+ }
+]

@@ -13,7 +13,7 @@ const S = styleJson;
 export type Framing = "ECU" | "CU" | "MCU" | "MS" | "WS" | "EWS" | "INS";
 export type ShotChar = {
   id: string; mark: string; pose: string; face: string; wrist?: string;
-  pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number;
+  pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number; holdSide?: "L" | "R";
 };
 export type ShotCamera = {
   framing: Framing; subject: string; azimuth: number;
@@ -48,11 +48,11 @@ export function getSet(id: string, f: Factories, cacheKey = "node"): SetBuild {
 }
 
 /** Resolve a mark to a world placement; pairs holding hands are solved so the hands just touch (0.03 gap). */
-export function placeChars(set: SetBuild, chars: { id: string; mark: string; pose: string }[], rigs: Rig[]): { pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number }[] {
+export function placeChars(set: SetBuild, chars: { id: string; mark: string; pose: string }[], rigs: Rig[]): { pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number; holdSide?: "L" | "R" }[] {
   const out = chars.map((c) => {
     const m: Mark | undefined = set.marks[c.mark];
     if (!m) throw new Error(`set has no mark ${c.mark}`);
-    return { pos: [...m.pos] as Vec3, yaw: m.yaw, seatTop: m.seatTop } as { pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number };
+    return { pos: [...m.pos] as Vec3, yaw: m.yaw, seatTop: m.seatTop } as { pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number; holdSide?: "L" | "R" };
   });
   const holders = chars.map((c, i) => (c.pose === "holdHands" ? i : -1)).filter((i) => i >= 0);
   if (holders.length === 2) {
@@ -69,8 +69,14 @@ export function placeChars(set: SetBuild, chars: { id: string; mark: string; pos
     const mid = pa.clone().add(pb).multiplyScalar(0.5);
     const dir = pb.clone().sub(pa).setY(0).normalize();
     const yawA = Math.atan2(dir.x, dir.z) / DEG;
-    out[a] = { ...out[a], pos: mid.clone().addScaledVector(dir, -sep / 2).toArray() as Vec3, yaw: yawA, holdAngle: angA };
-    out[b] = { ...out[b], pos: mid.clone().addScaledVector(dir, sep / 2).toArray() as Vec3, yaw: yawA + 180, holdAngle: angB };
+    // one linked hand each: the arm on the camera side (+z). Character left arm sits at world (cos y, 0, -sin y).
+    const sideOf = (yawDeg: number): "L" | "R" => (-Math.sin(yawDeg * DEG) > 0 ? "L" : "R");
+    const lat = (r: Rig) => handReach(r, -40).lateral;
+    const perp = new THREE.Vector3(-dir.z, 0, dir.x); // horizontal, perpendicular to the pair axis
+    const pA = mid.clone().addScaledVector(dir, -sep / 2);
+    const pB = mid.clone().addScaledVector(dir, sep / 2).addScaledVector(perp, Math.sign(perp.z || 1) * (lat(ra) - lat(rb)));
+    out[a] = { ...out[a], pos: pA.toArray() as Vec3, yaw: yawA, holdAngle: angA, holdSide: sideOf(yawA) };
+    out[b] = { ...out[b], pos: pB.toArray() as Vec3, yaw: yawA + 180, holdAngle: angB, holdSide: sideOf(yawA + 180) };
   }
   return out;
 }
@@ -131,7 +137,7 @@ export function buildShotScene(shot: Pick<Shot, "set" | "mood" | "chars" | "ledg
   const update = (t: number) => {
     rigs.forEach((r, i) => {
       const c = shot.chars[i];
-      applyPose(r, c.pose, t, shot.dur, { ...shot.micro, headTurn: i % 2 === 0 ? shot.micro.headTurn : -shot.micro.headTurn }, { holdAngle: c.holdAngle, seatTop: c.seatTop });
+      applyPose(r, c.pose, t, shot.dur, { ...shot.micro, headTurn: i % 2 === 0 ? shot.micro.headTurn : -shot.micro.headTurn }, { holdAngle: c.holdAngle, seatTop: c.seatTop, holdSide: c.holdSide });
     });
     scene.updateMatrixWorld(true);
   };
