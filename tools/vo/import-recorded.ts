@@ -26,6 +26,6 @@ const lines = script.lines.map((l: any, i: number) => {
 if (problems.length) { console.error("VO import FAILED (manifest unchanged):\n- " + problems.join("\n- ")); process.exit(1); }
 const words = lines.flatMap((l: any) => l.words);
 const wps = words.length / t;
-fs.writeFileSync(p("spec/vo-manifest.json"), JSON.stringify({ status: "ok", source: process.argv[2] ?? "recorded", totalWords: words.length, speechEnd: +t.toFixed(3), wps: +wps.toFixed(3), lines }, null, 1) + "\n");
+fs.writeFileSync(p("spec/vo-manifest.json"), JSON.stringify({ status: "ok", source: process.argv[2] ?? "recorded", quality: process.argv[3] ?? "unreviewed", totalWords: words.length, speechEnd: +t.toFixed(3), wps: +wps.toFixed(3), lines }, null, 1) + "\n");
 console.log(`vo-manifest ok: ${words.length} words, ${t.toFixed(2)} s, ${wps.toFixed(2)} wps${wps < style.pacing.wpsMin || wps > style.pacing.wpsMax ? "  WARNING: outside 4.0-5.0 wps" : ""}`);
 console.log("next: retime script/shotlist from the manifest, then pnpm stills && pnpm assemble");

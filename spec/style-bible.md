@@ -91,7 +91,9 @@ Rule: this file beats any builder's taste. Changing a value = edit both files + 
 | Arm gap | 0.15 units between arm inner face and torso |
 | Hand clearance | hand volume >= 0.15 units outside the torso volume, every sampled frame |
 | Clothes | second box +0.02 units per side, 3-colour pattern |
-| Micro-moves | breath bob 0.012 units / 2.4 s period; arm settle 4 deg over 0.35 s; head turn 5 deg over the shot |
+| Micro-moves | breath bob 0.035 units / 2.4 s period; arm settle 8 deg over 0.35 s; head turn 10 deg over the shot; torso sway 1.6 deg / 3.1 s; held-stride arm swing 5 deg / 1.6 s |
+| Animation sampling | 3D rendered at 8 fps per shot (own samples incl. endpoint), blended to 60 fps inside each shot only (cuts stay hard) |
+| Hand-holding | camera-side hand only on each partner; the far arm hangs at rest |
 | Locomotion | 0 units of root translation inside a shot (no foot sliding by construction) |
 
 ## 8. Sets

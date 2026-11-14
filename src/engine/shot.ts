@@ -13,7 +13,7 @@ const S = styleJson;
 export type Framing = "ECU" | "CU" | "MCU" | "MS" | "WS" | "EWS" | "INS";
 export type ShotChar = {
   id: string; mark: string; pose: string; face: string; wrist?: string;
-  pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number;
+  pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number; holdArm?: "L" | "R";
 };
 export type ShotCamera = {
   framing: Framing; subject: string; azimuth: number;
@@ -48,7 +48,7 @@ export function getSet(id: string, f: Factories, cacheKey = "node"): SetBuild {
 }
 
 /** Resolve a mark to a world placement; pairs holding hands are solved so the hands just touch (0.03 gap). */
-export function placeChars(set: SetBuild, chars: { id: string; mark: string; pose: string }[], rigs: Rig[]): { pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number }[] {
+export function placeChars(set: SetBuild, chars: { id: string; mark: string; pose: string }[], rigs: Rig[]): { pos: Vec3; yaw: number; holdAngle?: number; seatTop?: number; holdArm?: "L" | "R" }[] {
   const out = chars.map((c) => {
     const m: Mark | undefined = set.marks[c.mark];
     if (!m) throw new Error(`set has no mark ${c.mark}`);
@@ -69,8 +69,10 @@ export function placeChars(set: SetBuild, chars: { id: string; mark: string; pos
     const mid = pa.clone().add(pb).multiplyScalar(0.5);
     const dir = pb.clone().sub(pa).setY(0).normalize();
     const yawA = Math.atan2(dir.x, dir.z) / DEG;
-    out[a] = { ...out[a], pos: mid.clone().addScaledVector(dir, -sep / 2).toArray() as Vec3, yaw: yawA, holdAngle: angA };
-    out[b] = { ...out[b], pos: mid.clone().addScaledVector(dir, sep / 2).toArray() as Vec3, yaw: yawA + 180, holdAngle: angB };
+    // camera-side hand: armL sits on local +x; world +x of a character facing yaw is (cos yaw, 0, -sin yaw)
+    const side = (yawDeg: number): "L" | "R" => (-Math.sin(yawDeg * DEG) >= 0 ? "L" : "R");
+    out[a] = { ...out[a], pos: mid.clone().addScaledVector(dir, -sep / 2).toArray() as Vec3, yaw: yawA, holdAngle: angA, holdArm: side(yawA) } as any;
+    out[b] = { ...out[b], pos: mid.clone().addScaledVector(dir, sep / 2).toArray() as Vec3, yaw: yawA + 180, holdAngle: angB, holdArm: side(yawA + 180) } as any;
   }
   return out;
 }
@@ -131,7 +133,7 @@ export function buildShotScene(shot: Pick<Shot, "set" | "mood" | "chars" | "ledg
   const update = (t: number) => {
     rigs.forEach((r, i) => {
       const c = shot.chars[i];
-      applyPose(r, c.pose, t, shot.dur, { ...shot.micro, headTurn: i % 2 === 0 ? shot.micro.headTurn : -shot.micro.headTurn }, { holdAngle: c.holdAngle, seatTop: c.seatTop });
+      applyPose(r, c.pose, t, shot.dur, { ...shot.micro, headTurn: i % 2 === 0 ? shot.micro.headTurn : -shot.micro.headTurn }, { holdAngle: c.holdAngle, seatTop: c.seatTop, holdArm: c.holdArm, phase: i * 1.7 + (c.pos[0] ?? 0) * 0.3 });
     });
     scene.updateMatrixWorld(true);
   };

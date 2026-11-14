@@ -1,0 +1,359 @@
+{
+ "engine": "piper-tts 1.8.0",
+ "model": "en_US-libritts_r-medium.onnx",
+ "speaker": 550,
+ "length_scale": 0.833,
+ "lines": [
+  {
+   "line": "L01",
+   "tokens": 12,
+   "phonemeWords": 12,
+   "expected": 12,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.334
+  },
+  {
+   "line": "L02",
+   "tokens": 11,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.065
+  },
+  {
+   "line": "L03",
+   "tokens": 11,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.972
+  },
+  {
+   "line": "L04",
+   "tokens": 7,
+   "phonemeWords": 7,
+   "expected": 7,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.358
+  },
+  {
+   "line": "L05",
+   "tokens": 12,
+   "phonemeWords": 12,
+   "expected": 12,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 3.132
+  },
+  {
+   "line": "L06",
+   "tokens": 12,
+   "phonemeWords": 12,
+   "expected": 12,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.974
+  },
+  {
+   "line": "L07",
+   "tokens": 12,
+   "phonemeWords": 12,
+   "expected": 12,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.541
+  },
+  {
+   "line": "L08",
+   "tokens": 10,
+   "phonemeWords": 12,
+   "expected": 12,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.935
+  },
+  {
+   "line": "L09",
+   "tokens": 9,
+   "phonemeWords": 9,
+   "expected": 9,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.192
+  },
+  {
+   "line": "L10",
+   "tokens": 8,
+   "phonemeWords": 8,
+   "expected": 8,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.729
+  },
+  {
+   "line": "L11",
+   "tokens": 9,
+   "phonemeWords": 9,
+   "expected": 9,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.401
+  },
+  {
+   "line": "L12",
+   "tokens": 9,
+   "phonemeWords": 9,
+   "expected": 9,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.625
+  },
+  {
+   "line": "L13",
+   "tokens": 10,
+   "phonemeWords": 10,
+   "expected": 10,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.788
+  },
+  {
+   "line": "L14",
+   "tokens": 13,
+   "phonemeWords": 13,
+   "expected": 13,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.147
+  },
+  {
+   "line": "L15",
+   "tokens": 8,
+   "phonemeWords": 8,
+   "expected": 8,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.624
+  },
+  {
+   "line": "L16",
+   "tokens": 12,
+   "phonemeWords": 11,
+   "expected": 12,
+   "aligned": true,
+   "exactSpanMatch": false,
+   "dur": 2.076
+  },
+  {
+   "line": "L17",
+   "tokens": 11,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.112
+  },
+  {
+   "line": "L18",
+   "tokens": 8,
+   "phonemeWords": 8,
+   "expected": 8,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.903
+  },
+  {
+   "line": "L19",
+   "tokens": 11,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.227
+  },
+  {
+   "line": "L20",
+   "tokens": 10,
+   "phonemeWords": 10,
+   "expected": 10,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.193
+  },
+  {
+   "line": "L21",
+   "tokens": 9,
+   "phonemeWords": 8,
+   "expected": 9,
+   "aligned": true,
+   "exactSpanMatch": false,
+   "dur": 1.579
+  },
+  {
+   "line": "L22",
+   "tokens": 6,
+   "phonemeWords": 6,
+   "expected": 6,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.344
+  },
+  {
+   "line": "L23",
+   "tokens": 11,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.679
+  },
+  {
+   "line": "L24",
+   "tokens": 12,
+   "phonemeWords": 12,
+   "expected": 12,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.067
+  },
+  {
+   "line": "L25",
+   "tokens": 8,
+   "phonemeWords": 8,
+   "expected": 8,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.984
+  },
+  {
+   "line": "L26",
+   "tokens": 9,
+   "phonemeWords": 9,
+   "expected": 9,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.682
+  },
+  {
+   "line": "L27",
+   "tokens": 10,
+   "phonemeWords": 10,
+   "expected": 10,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.134
+  },
+  {
+   "line": "L28",
+   "tokens": 4,
+   "phonemeWords": 4,
+   "expected": 4,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 0.859
+  },
+  {
+   "line": "L29",
+   "tokens": 8,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 3.849
+  },
+  {
+   "line": "L30",
+   "tokens": 10,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.854
+  },
+  {
+   "line": "L31",
+   "tokens": 11,
+   "phonemeWords": 11,
+   "expected": 11,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.891
+  },
+  {
+   "line": "L32",
+   "tokens": 11,
+   "phonemeWords": 13,
+   "expected": 13,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.912
+  },
+  {
+   "line": "L33",
+   "tokens": 10,
+   "phonemeWords": 10,
+   "expected": 10,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.389
+  },
+  {
+   "line": "L34",
+   "tokens": 7,
+   "phonemeWords": 7,
+   "expected": 7,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.428
+  },
+  {
+   "line": "L35",
+   "tokens": 10,
+   "phonemeWords": 10,
+   "expected": 10,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.81
+  },
+  {
+   "line": "L36",
+   "tokens": 7,
+   "phonemeWords": 7,
+   "expected": 7,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.416
+  },
+  {
+   "line": "L37",
+   "tokens": 8,
+   "phonemeWords": 8,
+   "expected": 8,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.486
+  },
+  {
+   "line": "L38",
+   "tokens": 8,
+   "phonemeWords": 8,
+   "expected": 8,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 1.776
+  },
+  {
+   "line": "L39",
+   "tokens": 13,
+   "phonemeWords": 13,
+   "expected": 13,
+   "aligned": true,
+   "exactSpanMatch": true,
+   "dur": 2.181
+  }
+ ]
+}

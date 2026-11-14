@@ -12,10 +12,13 @@ import { nodeFactories } from "../assets/sets/common";
 const style = JSON.parse(fs.readFileSync("spec/style.json", "utf8"));
 const A = style.avatar;
 
-function handBox(arm: THREE.Group) {
-  // bottom 30% of the arm = the hand volume
+function handBox(arm: THREE.Group, frame?: THREE.Object3D) {
+  // bottom 30% of the arm = the hand volume; optionally expressed in another object's local frame
   const pts: THREE.Vector3[] = [];
-  for (const x of [-0.5, 0.5]) for (const z of [-0.5, 0.5]) for (const y of [-A.arm[1], -A.arm[1] * 0.7]) pts.push(arm.localToWorld(new THREE.Vector3(x, y, z)));
+  for (const x of [-0.5, 0.5]) for (const z of [-0.5, 0.5]) for (const y of [-A.arm[1], -A.arm[1] * 0.7]) {
+    const v = arm.localToWorld(new THREE.Vector3(x, y, z));
+    pts.push(frame ? frame.worldToLocal(v) : v);
+  }
   return new THREE.Box3().setFromPoints(pts);
 }
 function torsoBox(r: ReturnType<typeof buildAvatar>) {

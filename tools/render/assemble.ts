@@ -11,7 +11,10 @@ const script = JSON.parse(fs.readFileSync(p("spec/script.json"), "utf8"));
 const vo = JSON.parse(fs.readFileSync(p("spec/vo-manifest.json"), "utf8"));
 const index = JSON.parse(fs.readFileSync(p("out/cache/stills/index.json"), "utf8"));
 const hasVo = vo.status === "ok";
-const stem = hasVo ? "final" : "preview-novo";
+// "final" names are reserved for narration whose quality has been approved by a human; fallback TTS stays a preview
+const approved = hasVo && vo.quality === "approved";
+const stem = approved ? "final" : hasVo ? "preview-tts" : "preview-novo";
+const LABEL = hasVo ? "PREVIEW - OFFLINE TTS VO - NOT FOR UPLOAD" : "PREVIEW - NO VO - NOT FOR UPLOAD";
 const ff = (args: string[]) => execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" });
 const FPS = sl.fps, W = sl.width, H = sl.height;
 fs.mkdirSync(p("out/cache/clips"), { recursive: true });
@@ -70,7 +73,7 @@ if (hasVo) {
   ff([...inputs, "-filter_complex", graph, "-map", "[a]", "-ar", "48000", audio]);
 }
 
-ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", ...(hasVo ? ["-c:v", "copy"] : ["-vf", `drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='PREVIEW - NO VO - NOT FOR UPLOAD':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"]), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-metadata", `title=${hasVo ? "The Day Counter" : "PREVIEW (no VO) - The Day Counter"}`, "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
+ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", ...(approved ? ["-c:v", "copy"] : ["-vf", `drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='${LABEL}':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"]), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-metadata", `title=${approved ? "The Day Counter" : `PREVIEW (${hasVo ? "offline TTS" : "no VO"}) - The Day Counter`}`, "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
 
 // 3. captions (ASS via libass, Anton from /assets/fonts): <=3 words/line, active word #FFD400 with 1.06 pop over 80 ms
 const C = style.captions;
@@ -78,6 +81,6 @@ const words = (hasVo ? vo.lines.flatMap((l: any) => l.words) : script.lines.flat
 const ass = toAss(captionEvents(words, C.maxWordsPerLine, sl.blackStart), C, W, H);
 fs.writeFileSync(p("out/captions.ass"), ass);
 // previews carry a burned-in label so they can never be mistaken for the upload master
-const label = hasVo ? "" : `,drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='PREVIEW - NO VO - NOT FOR UPLOAD':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`;
+const label = approved ? "" : `,drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='${LABEL}':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`;
 ff(["-i", p(`out/${stem}.mp4`), "-vf", `ass=${p("out/captions.ass")}:fontsdir=${p("assets/fonts")}${label}`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", p(`out/${stem}-captioned.mp4`)]);
 console.log(`wrote out/${stem}.mp4 and out/${stem}-captioned.mp4 (VO: ${vo.status})`);

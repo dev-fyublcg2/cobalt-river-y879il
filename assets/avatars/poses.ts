@@ -20,7 +20,7 @@ export const POSES: Record<string, Pose> = {
   stand:      { armL: L(0, 3), armR: L(0, 3), legL: L(0), legR: L(0), head: { pitch: 0, yaw: 0 } },
   checkWrist: { armL: L(-55, 0), armR: L(2, 3), legL: L(0), legR: L(0), head: { pitch: -18, yaw: 12 } },
   showWrist:  { armL: L(-72, 0), armR: L(0, 4), legL: L(0), legR: L(0), head: { pitch: -4, yaw: 0 } },
-  holdHands:  { armL: L(-40, 0), armR: L(-40, 0), legL: L(0), legR: L(0), head: { pitch: -6, yaw: 0 } },
+  holdHands:  { armL: L(-40, 2), armR: L(-40, 2), legL: L(0), legR: L(0), head: { pitch: -6, yaw: 0 } },
   point:      { armL: L(0, 4), armR: L(-86, 0), legL: L(0), legR: L(0), head: { pitch: 0, yaw: -6 } },
   armsUp:     { armL: L(-10, 148), armR: L(-10, 148), legL: L(0, 4), legR: L(0, 4), head: { pitch: 6, yaw: 0 } },
   shrug:      { armL: L(-28, 26), armR: L(-28, 26), legL: L(0), legR: L(0), head: { pitch: 0, yaw: 0, roll: 7 } },
@@ -34,7 +34,7 @@ export const POSES: Record<string, Pose> = {
   lieAwake:   { armL: L(0, 6), armR: L(0, 6), legL: L(0), legR: L(0), head: { pitch: 0, yaw: 0 }, lie: true },
 };
 
-export type MicroMoves = { breath: boolean; armSettle: boolean; headTurn: number /* -1, 0, 1 */ };
+export type MicroMoves = { breath: boolean; armSettle: boolean; headTurn: number /* -1, 0, 1; 0 = gentle look-around */ };
 const ease = cubicBezier(0.42, 0, 0.58, 1);
 
 function setLimb(pivot: THREE.Group, l: Limb, side: 1 | -1) {
@@ -45,22 +45,29 @@ function setLimb(pivot: THREE.Group, l: Limb, side: 1 | -1) {
  * Apply a held pose at local shot time t (s) of a shot lasting dur (s).
  * Ground contact is solved from the base pose (not the micro-moves), so feet never slide or float.
  */
-export function applyPose(rig: Rig, poseName: string, t: number, dur: number, mm: MicroMoves, extra: { holdAngle?: number; seatTop?: number } = {}) {
+export function applyPose(rig: Rig, poseName: string, t: number, dur: number, mm: MicroMoves, extra: { holdAngle?: number; seatTop?: number; holdArm?: "L" | "R"; phase?: number } = {}) {
   const pose = POSES[poseName];
   if (!pose) throw new Error(`unknown pose ${poseName}`);
   const settle = mm.armSettle ? A.armSettleDeg * (1 - ease(Math.min(1, t / A.armSettleS))) : 0;
   const hold = poseName === "holdHands" && extra.holdAngle !== undefined ? extra.holdAngle : undefined;
-  const armL = { x: (hold ?? pose.armL.x) - settle * 0.5, spread: pose.armL.spread + settle };
-  const armR = { x: (hold ?? pose.armR.x) - settle * 0.5, spread: pose.armR.spread + settle };
+  const ph = extra.phase ?? 0;
+  const stride = poseName === "walk" || poseName === "run";
+  const swing = stride ? A.armSwingDeg * Math.sin((2 * Math.PI * t) / A.armSwingPeriodS + ph) : 0;
+  // hold hands with the camera-side hand only; the far arm rests (keeps the clasp readable, no arm tangle)
+  const holdL = hold !== undefined && extra.holdArm !== "R";
+  const holdR = hold !== undefined && extra.holdArm !== "L";
+  const armL = hold !== undefined && !holdL ? { x: 0, spread: 3 + settle } : { x: (holdL ? hold! : pose.armL.x) - settle * 0.5 + swing, spread: pose.armL.spread + settle };
+  const armR = hold !== undefined && !holdR ? { x: 0, spread: 3 + settle } : { x: (holdR ? hold! : pose.armR.x) - settle * 0.5 - swing, spread: pose.armR.spread + settle };
   // armL sits on +x (character's left when facing +z): outward is +z rotation; armR on -x: outward is -z
   setLimb(rig.armL, armL, 1);
   setLimb(rig.armR, armR, -1);
   setLimb(rig.legL, pose.legL, 1);
   setLimb(rig.legR, pose.legR, -1);
 
-  const turn = mm.headTurn * A.headTurnDeg * ease(Math.min(1, t / Math.max(dur, 0.001)));
+  const turn = mm.headTurn !== 0 ? mm.headTurn * A.headTurnDeg * ease(Math.min(1, t / Math.max(dur, 0.001))) : 0.5 * A.headTurnDeg * Math.sin((2 * Math.PI * t) / 2.2 + ph);
   rig.headPivot.rotation.set(-pose.head.pitch * DEG, (pose.head.yaw + turn) * DEG, (pose.head.roll ?? 0) * DEG, "YXZ");
-  rig.torsoPivot.rotation.set(-(pose.torso?.pitch ?? 0) * DEG, 0, 0);
+  const sway = mm.breath && !pose.lie ? A.swayDeg * Math.sin((2 * Math.PI * t) / A.swayPeriodS + ph) : 0;
+  rig.torsoPivot.rotation.set(-(pose.torso?.pitch ?? 0) * DEG, 0, sway * DEG);
   const bob = mm.breath ? A.breathBobAmp * Math.sin((2 * Math.PI * t) / A.breathPeriodS) : 0;
   rig.torsoPivot.position.y = HIP_Y + bob;
   if (rig.ledger) {
