@@ -4,7 +4,16 @@
   "version": "0.1.0",
   "type": "module",
   "packageManager": "pnpm@10.0.0",
-  "scripts": {},
+  "scripts": {
+    "g0": "tsx tools/g0-test-shot.ts",
+    "g2": "tsx tools/spec/build-script.ts",
+    "g3": "tsx tools/spec/build-shotlist.ts",
+    "faces": "tsx tools/faces/build-faces.ts",
+    "audio": "tsx tools/audio/build-audio.ts",
+    "stills": "tsx tools/render/render-stills.ts",
+    "assemble": "tsx tools/render/assemble.ts",
+    "make": "pnpm g2 && pnpm g3 && pnpm faces && pnpm audio && pnpm stills && pnpm assemble"
+  },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",
     "@remotion/bundler": "4.0.543",
@@ -24,5 +33,10 @@
     "@types/three": "^0.187.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
