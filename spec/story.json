@@ -1,0 +1,75 @@
+{
+  "$comment": "Authored story source (S2 outline + S3 lines). tools/spec/build-script.ts counts words, plans timing and writes /spec/script.json. Edit this file for video #2.",
+  "title": "THE DAY COUNTER",
+  "rule": "Your wrist shows your remaining days, visible to everyone. Days are given by holding hands and saying 'take them'. A gift cannot be reversed.",
+  "twist": "The ledger's first page: given days are spent together. The giver lives them alongside the receiver, so both wrists show the same number. Re-colours every gag: each giver ended up spending the days with the person they paid.",
+  "callback": "Beat 1 'everybody is born with a number' -> beat 9 'everybody gets a number. I just made sure we had the same one.'",
+  "beats": [
+    { "beat": 1, "name": "HOOK", "targetStart": 0.0, "targetEnd": 3.0, "visual": "Slow push over Maple St, townsfolk checking their wrists.",
+      "lines": [
+        { "id": "L01", "text": "In this town, everybody is born with a number on their wrist.", "emotion": "deadpan" }
+      ] },
+    { "beat": 2, "name": "RULE", "targetStart": 3.0, "targetEnd": 8.0, "visual": "Insert on a wrist number, then two hands holding.",
+      "lines": [
+        { "id": "L02", "text": "It's how many days you have left. Everyone can see it.", "emotion": "deadpan" },
+        { "id": "L03", "text": "And you can give them away. Hold hands, say \"take them\".", "emotion": "neutral" }
+      ] },
+    { "beat": 3, "name": "GAGS", "targetStart": 8.0, "targetEnd": 18.0, "visual": "Three one-shot gags: office, street, schoolyard parking lot.",
+      "lines": [
+        { "id": "L04", "text": "People mostly use it for dumb stuff.", "emotion": "deadpan" },
+        { "id": "L05", "text": "Uncle gave his boss a month for promotion. Now he's boss. Seventy-one.", "emotion": "smug", "gag": 1 },
+        { "id": "L06", "text": "Cousin gave her ex one day to watch him check his wrist.", "emotion": "smug", "gag": 2 },
+        { "id": "L07", "text": "Coach gave a stranger a year for parking. Now he runs everywhere.", "emotion": "deadpan", "gag": 3 }
+      ] },
+    { "beat": 4, "name": "STAKE", "targetStart": 18.0, "targetEnd": 27.0, "visual": "Milo bragging in the schoolyard; cut to June; insert on her '4'.",
+      "lines": [
+        { "id": "L08", "text": "Me? I've got 4,015. Biggest number in my whole class.", "emotion": "smug" },
+        { "id": "L09", "text": "I show everyone. I show the lunch lady. Twice.", "emotion": "happy" },
+        { "id": "L10", "text": "Then there's my little sister, June. She's four.", "emotion": "neutral" },
+        { "id": "L11", "text": "Her wrist says 4. Not four years. Four days.", "emotion": "deadpan" }
+      ] },
+    { "beat": 5, "name": "ESCALATION", "targetStart": 27.0, "targetEnd": 38.0, "visual": "Clinic shrug; parents' near-empty wrists; clerk office.",
+      "lines": [
+        { "id": "L12", "text": "The doctor looks at her wrist and just shrugs.", "emotion": "worried" },
+        { "id": "L13", "text": "Mom and Dad want to give, but they're almost empty.", "emotion": "sad" },
+        { "id": "L14", "text": "So I go to the town clerk. She reads the rule out loud.", "emotion": "determined" },
+        { "id": "L15", "text": "\"You can give. You can never take back.\"", "emotion": "deadpan" },
+        { "id": "L16", "text": "She looks at my number. Then at me. For a long time.", "emotion": "worried" }
+      ] },
+    { "beat": 6, "name": "ATTEMPT", "targetStart": 38.0, "targetEnd": 52.0, "visual": "Dinner table attempt; bedroom mirror practice at night; morning '2'.",
+      "lines": [
+        { "id": "L17", "text": "At dinner, I grab June's hands and say it. Take them.", "emotion": "determined" },
+        { "id": "L18", "text": "She says, \"Take what?\" and steals my potato.", "emotion": "confused" },
+        { "id": "L19", "text": "She's four. She doesn't get it. She thinks it's a game.", "emotion": "sad" },
+        { "id": "L20", "text": "Mom cries into the gravy. Dad stares at his plate.", "emotion": "crying" },
+        { "id": "L21", "text": "That night I practise the words in the mirror.", "emotion": "determined" },
+        { "id": "L22", "text": "Take them. Take them. Take them.", "emotion": "determined" },
+        { "id": "L23", "text": "Next morning, her wrist says 2. It didn't work. Nothing did.", "emotion": "scared" }
+      ] },
+    { "beat": 7, "name": "CLIMAX", "targetStart": 52.0, "targetEnd": 68.0, "visual": "Cold dawn dock. Hand hold. His number drains to 0, hers climbs past 4,000. Walk home alone.",
+      "lines": [
+        { "id": "L24", "text": "On her last day, I take her to the dock at sunrise.", "emotion": "determined" },
+        { "id": "L25", "text": "Her favourite place. The ducks are already awake.", "emotion": "neutral" },
+        { "id": "L26", "text": "I hold both her hands. I don't let go.", "emotion": "determined" },
+        { "id": "L27", "text": "I say it slow, like a teacher. \"June. Take them.\"", "emotion": "determined" },
+        { "id": "L28", "text": "And she says, \"Okay.\"", "emotion": "happy" },
+        { "id": "L29", "text": "My wrist goes 4,015. 3,000. 900. 12. 0.", "emotion": "scared" },
+        { "id": "L30", "text": "Hers climbs past 4,000. She laughs. She has no idea.", "emotion": "laugh" },
+        { "id": "L31", "text": "I walk her home. Then I go to my room alone.", "emotion": "sad" }
+      ] },
+    { "beat": 8, "name": "TWIST", "targetStart": 68.0, "targetEnd": 80.0, "visual": "Bedroom wake-up; wrist reads 4,016; clerk office ledger; gag callbacks.",
+      "lines": [
+        { "id": "L32", "text": "Then I wake up. My wrist says 4,016. Same as June's.", "emotion": "surprised" },
+        { "id": "L33", "text": "The clerk opens the big ledger. Page one. Tiny print.", "emotion": "confused" },
+        { "id": "L34", "text": "\"Days given away are days spent together.\"", "emotion": "deadpan" },
+        { "id": "L35", "text": "\"You don't lose the day. You only lose it alone.\"", "emotion": "deadpan" },
+        { "id": "L36", "text": "That's why Uncle never leaves the office.", "emotion": "smug", "callbackOf": 1 },
+        { "id": "L37", "text": "Why my cousin got one more terrible date.", "emotion": "smug", "callbackOf": 2 },
+        { "id": "L38", "text": "Why Coach jogs with a stranger every morning.", "emotion": "smug", "callbackOf": 3 }
+      ] },
+    { "beat": 9, "name": "CALLBACK", "targetStart": 80.0, "targetEnd": 88.0, "visual": "Wide dock, both on the pier, same number on both wrists. Hard cut to black on the last word.",
+      "lines": [
+        { "id": "L39", "text": "Everybody gets a number. I just made sure we had the same one.", "emotion": "happy" }
+      ] }
+  ]
+}

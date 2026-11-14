@@ -1,0 +1,57 @@
+{
+  "$comment": "Machine-readable mirror of /spec/style-bible.md. Code reads ONLY this file for style numbers. tests/style-bible.test.ts asserts the two agree.",
+  "format": { "width": 1080, "height": 1920, "fps": 60, "targetDurationS": 88.0, "durationToleranceS": 4.0, "codec": "h264", "profile": "high", "pixFmt": "yuv420p", "crf": 18, "faststart": true, "audioCodec": "aac", "audioRateHz": 48000, "audioBitrateK": 256 },
+  "pacing": { "shotsTarget": 95, "shotsTolerance": 10, "cutsMin": 85, "cutsMax": 125, "maxShotS": 2.2, "exemptFinalShots": 3, "wpsMin": 4.0, "wpsMax": 5.0, "plannedWps": 4.6, "voWordsMin": 350, "voWordsMax": 400, "maxWordsPerLine": 14, "linePauseS": 0.12, "beatPauseS": 0.22, "endRoomToneS": 0.4 },
+  "camera": {
+    "focalMm": 40, "sensorLongMm": 36, "vfovDeg": 48.46, "fStopLook": 2.8,
+    "pitchDeg": 8.5, "rollDeg": 0, "maxShakeDeg": 0.3, "shakeDeg": 0,
+    "horizonYFrac": 0.667, "faceYFracMax": 0.333, "faceYFracTarget": 0.30,
+    "pushFrom": 1.04, "pushTo": 1.22, "pushEase": [0.42, 0, 0.58, 1],
+    "framingsHeadPx": { "ECU": 1050, "CU": 640, "MCU": 400, "MS": 230, "WS": 110, "EWS": 48 },
+    "dof": { "focusOn": "subject-face", "aperture": 0.0035, "maxBlur": 0.006 },
+    "captionSafeBottomFrac": 0.22
+  },
+  "lighting": {
+    "moods": {
+      "golden": { "key": "#FFD9A0", "sky": "#6FA8FF", "rim": "#6FA8FF", "ground": "#5FA83F", "bg": ["#7EC8F0", "#CFEAF7"] },
+      "dawn":   { "key": "#A9C7FF", "sky": "#24304F", "rim": "#CFE0FF", "ground": "#24304F", "bg": ["#24304F", "#A9C7FF"] }
+    },
+    "keyAzimuthDeg": 35, "keyElevationDeg": 40, "keyIntensity": 2.6,
+    "rimAzimuthDeg": 160, "rimElevationDeg": 30, "rimIntensity": 1.6,
+    "ambientIntensity": 0.35, "bloomStrength": 0.15, "bloomRadius": 0.4, "bloomThreshold": 0.85,
+    "vignette": { "innerFrac": 0.55, "outerFrac": 1.05, "opacity": 0.28 },
+    "shadowMapPx": 1024, "toneMapping": "none", "exposure": 1.0
+  },
+  "palette": { "sky": "#7EC8F0", "grass": "#5FA83F", "asphalt": "#4A4E52", "skin": "#F2C48D", "accent": "#FFD400", "ink": "#111111", "white": "#FFFFFF", "wood": "#9A6B3F", "water": "#3E7FB0", "wall": "#E8DCC6", "brick": "#B5523B", "paper": "#F4ECD8" },
+  "faces": {
+    "expressions": ["neutral", "blink", "happy", "laugh", "worried", "scared", "sad", "crying", "determined", "surprised", "smug", "confused", "angry", "deadpan"],
+    "sizePx": 512, "outlinePx": 18, "shadeTones": 2, "readableAtPx": 64, "planeFracOfHeadFront": 0.92
+  },
+  "avatar": {
+    "parts": ["head", "torso", "armL", "armR", "legL", "legR"],
+    "head": [1.25, 1.2, 1.2], "torso": [2.0, 2.0, 1.0], "arm": [1.0, 2.0, 1.0], "leg": [1.0, 2.0, 1.0],
+    "armGapFromTorso": 0.15, "handClearance": 0.15, "clothOffset": 0.02, "clothPatternColors": 3,
+    "breathBobAmp": 0.012, "breathPeriodS": 2.4, "armSettleDeg": 4, "armSettleS": 0.35, "headTurnDeg": 5
+  },
+  "captions": {
+    "font": "Anton", "fontFile": "assets/fonts/Anton-Regular.ttf", "fontPx": 118, "lineHeight": 1.08,
+    "maxWordsPerLine": 3, "maxLines": 2, "bottomFrac": 0.07, "align": "center",
+    "fill": "#FFFFFF", "strokePx": 7, "stroke": "#111111", "shadow": "0px 6px 14px rgba(0,0,0,0.55)",
+    "active": "#FFD400", "popScale": 1.06, "popMs": 80, "syncToleranceMs": 40, "criticalSyncMs": 100,
+    "overlayHeightPx": 640, "textTransform": "uppercase"
+  },
+  "worldText": { "font": "Luckiest Guy", "fontFile": "assets/fonts/LuckiestGuy-Regular.ttf", "perSetMin": 3 },
+  "sound": {
+    "musicDbfsRms": -22, "musicDuckDb": -8, "duckAttackMs": 80, "duckReleaseMs": 220, "duckMergeGapMs": 300,
+    "sfxPeakDbfs": -14, "voPeakDbfs": -8,
+    "masterLufs": -14.0, "masterLufsTolerance": 0.5, "truePeakDbtp": -1.0,
+    "sfxVocabulary": ["whoosh", "tick", "pop", "thud", "paper", "bell", "roomtone"], "maxDistinctSfx": 8,
+    "seed": 20261114
+  },
+  "voice": {
+    "character": "boy, 11, deadpan, fast, cartoon-bright, dry close mic, no reverb, no radio EQ",
+    "speedMin": 1.15, "speedMax": 1.25, "speed": 1.2, "pitchSemitonesMin": 3, "pitchSemitonesMax": 5, "pitchSemitones": 4,
+    "referenceTimbres": ["young boy cartoon lead (bright, nasal-forward)", "kids'-TV narrator (dry, clipped)", "deadpan sitcom kid (flat affect, fast)"]
+  },
+  "render": { "seed": 1114, "jpegQuality": 92, "glBackend": "swangle", "concurrency": 1 }
+}
