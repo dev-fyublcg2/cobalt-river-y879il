@@ -1,0 +1,45 @@
+{
+ "file": "out/preview-novo-captioned.mp4",
+ "measuredAt": "tools/qc/measure.ts",
+ "voStatus": "missing",
+ "video": {
+  "width": 1080,
+  "height": 1920,
+  "fps": 60,
+  "avgFps": "60/1",
+  "codec": "h264",
+  "profile": "High",
+  "pixFmt": "yuv420p",
+  "frames": 5263,
+  "faststart": true
+ },
+ "durationS": 87.717,
+ "audio": {
+  "codec": "aac",
+  "rate": 48000,
+  "channels": 2,
+  "integratedLufs": -25.2,
+  "truePeakDbtp": -10.7
+ },
+ "cuts": {
+  "planned": 94,
+  "detectedByScdet": 87,
+  "scdetEvents": 87
+ },
+ "cutSound": {
+  "checked": 95,
+  "silentBelowMinus45dBFS": 0,
+  "quietest": "-29.1"
+ },
+ "checks": {
+  "resolution": true,
+  "fps60": true,
+  "h264": true,
+  "yuv420p": true,
+  "faststart": true,
+  "duration84to92": true,
+  "lufsMinus14": false,
+  "truePeak": true,
+  "everyCutHasSound": true
+ }
+}
