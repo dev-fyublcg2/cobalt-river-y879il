@@ -2,7 +2,7 @@
 
 Status: copy is written; the upload master does NOT exist yet (VO blocked). Do not publish the `preview-novo*` files.
 
-**Title** (51 chars): `He Gave His Sister Every Day He Had Left. Then He Woke Up`
+**Title** (57 chars, max 60): `He Gave His Sister Every Day He Had Left. Then He Woke Up`
 > Checked against the brief: curiosity (woke up?) + stakes (every day), no lie (he does give them all and does wake up).
 
 **Thumbnail spec**
