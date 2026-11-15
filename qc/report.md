@@ -31,11 +31,11 @@ The narration is real synthesised speech: offline Piper, LibriTTS-R speaker 550,
 ## Visual review (12 sampled frames only)
 - Captions read, the active word is yellow, the banner is visible, and faces stay above the caption band.
 - Motion between samples was checked on S007 (linked hands) by frame differencing: the arms and heads move, and the hands stay joined.
-- **Defect seen:** S070 (L29 MCU, "MY WRIST GOES"): June's held arm crosses in front of Milo's face. The ledger inserts' text is partly cut at the frame edge.
+- **Defect seen:** S068 (L29 MCU, "MY WRIST GOES"): June's held arm crosses in front of Milo's face. The ledger inserts' text is partly cut at the frame edge.
 
 ## Open defects (worst first)
 1. Voice ≠ bible §11 casting (fallback TTS), unheard. Needed: an approved child-voice TTS connection (env credential, never in chat) or recorded narration as `audio/vo/<L>.wav` + `<L>.words.json`, then a person's listen and `approvedForMaster: true`.
 2. True peak −0.8 dBTP and the `yuvj420p` flag (fixes above).
-3. S070 arm over face; reframe (e.g. ECU −55 like S008) or a solo CU.
+3. S068 arm over face; reframe (e.g. ECU −55 like S008) or a solo CU.
 4. Motion is 8 fps samples cross-faded to 60 fps, not 60 distinct poses/s. Bloom and DOF are not implemented.
 5. Face-subject share is 45% strict / 62% with MS (decision 5). Set still < 250 ms is unmeasured.
