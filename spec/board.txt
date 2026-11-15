@@ -37,7 +37,7 @@ L11:3  | kitchen           | INS june.wrist 0   | june@c:showWrist:neutral:4 | t
 L11:4  | kitchen           | CU milo 15         | milo@c:stand:worried | pop
 L11:7  | kitchen           | INS june.wrist 15  | june@c:showWrist:sad:4 | thud | note=Added after VO retime: 'Four days.' (S027 was 2.75 s)
 # BEAT 5 ESCALATION
-L12:0  | clinic            | MS pair 0          | doctor@pl:stand:worried june@pr:showWrist:neutral:4 | whoosh
+L12:0  | clinic            | MS doctor 30       | doctor@pl:stand:worried june@pr:showWrist:neutral:4 | whoosh | note=Review fix: pair MS cropped the doctor's head
 L12:6  | clinic            | MCU doctor 10      | doctor@c:shrug:deadpan | pop
 L13:0  | kitchen           | MS pair 0          | mom@l:slump:sad dad@r:slump:sad | whoosh
 L13:3  | kitchen           | CU mom 15          | mom@c:stand:sad | pop
@@ -78,7 +78,7 @@ L26:5  | dock/dawn         | INS pair.hands 0   | milo@pl:holdHands:determined j
 L27:0  | dock/dawn         | ECU milo -55       | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
 L27:7  | dock/dawn         | CU milo 0          | milo@c:stand:determined | pop | note=Review fix: held arm blocked the face
 L28:0  | dock/dawn         | CU june 10         | june@c:stand:happy:1 | bell | note=Review fix: held arm blocked the face
-L29:0  | dock/dawn         | MCU milo -50       | milo@pl:holdHands:scared june@pr:holdHands:happy:1 | pop
+L29:0  | dock/dawn         | MCU milo 15       | milo@c:stand:scared | pop | note=Review fix: June's held arm crossed Milo's face
 L29:3  | dock/dawn         | INS milo.wrist 0   | milo@c:showWrist:scared:4,015 | tick
 L29:4  | dock/dawn         | INS milo.wrist 14  | milo@c:showWrist:scared:3,000 | tick
 L29:5  | dock/dawn         | INS milo.wrist -14 | milo@c:showWrist:scared:900 | tick

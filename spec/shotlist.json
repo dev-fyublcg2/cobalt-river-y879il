@@ -538,7 +538,7 @@
     "azimuth": 0,
     "position": [
      0.0166,
-     0.8506,
+     0.9641,
      10.5381
     ],
     "quaternion": [
@@ -555,7 +555,7 @@
     "focusDistance": 11.129,
     "subjectPoint": [
      0.0166,
-     4.4197,
+     4.5332,
      -0.0033
     ],
     "clamped": false
@@ -990,7 +990,7 @@
     "azimuth": 0,
     "position": [
      0,
-     0.9639,
+     0.9641,
      10.4953
     ],
     "quaternion": [
@@ -1007,7 +1007,7 @@
     "focusDistance": 11.129,
     "subjectPoint": [
      0,
-     4.533,
+     4.5332,
      -0.0461
     ],
     "clamped": false
@@ -1154,7 +1154,7 @@
     "azimuth": 0,
     "position": [
      -0.0062,
-     0.8904,
+     0.9358,
      10.2006
     ],
     "quaternion": [
@@ -1171,7 +1171,7 @@
     "focusDistance": 10.795,
     "subjectPoint": [
      -0.0062,
-     4.3524,
+     4.3978,
      -0.0246
     ],
     "clamped": false
@@ -1330,7 +1330,7 @@
     "azimuth": 0,
     "position": [
      0.0066,
-     0.9379,
+     0.9834,
      10.7222
     ],
     "quaternion": [
@@ -1347,7 +1347,7 @@
     "focusDistance": 11.352,
     "subjectPoint": [
      0.0066,
-     4.5784,
+     4.6239,
      -0.03
     ],
     "clamped": false
@@ -1843,7 +1843,7 @@
     "azimuth": 0,
     "position": [
      -0.009,
-     0.7035,
+     1.0302,
      10.4973
     ],
     "quaternion": [
@@ -1860,7 +1860,7 @@
     "focusDistance": 11.129,
     "subjectPoint": [
      -0.009,
-     4.2726,
+     4.5993,
      -0.0441
     ],
     "clamped": false
@@ -2441,31 +2441,31 @@
    "ledger": null,
    "camera": {
     "framing": "MS",
-    "subject": "pair",
-    "azimuth": 0,
+    "subject": "doctor",
+    "azimuth": 30,
     "position": [
-     0.0553,
-     0.6,
-     10.5052
+     8.1352,
+     1.0307,
+     -5.3042
     ],
     "quaternion": [
-     0.074108,
-     0,
-     0,
-     0.99725
+     0.037054,
+     0.863644,
+     -0.06418,
+     0.498625
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 11.014,
+    "focusDistance": 11.129,
     "subjectPoint": [
-     0.0553,
-     3.792,
-     -0.0363
+     -0.994,
+     4.5998,
+     -0.0335
     ],
-    "clamped": true
+    "clamped": false
    },
    "micro": {
     "breath": true,
@@ -2473,11 +2473,11 @@
     "headTurn": 1
    },
    "text": [
-    "sign:clinic",
     "wrist:doctor",
     "wrist:june"
    ],
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "note": "Review fix: pair MS cropped the doctor's head"
   },
   {
    "id": "S030",
@@ -2602,7 +2602,7 @@
     "azimuth": 0,
     "position": [
      -0.0002,
-     0.7975,
+     0.7976,
      15.9981
     ],
     "quaternion": [
@@ -2619,7 +2619,7 @@
     "focusDistance": 11.129,
     "subjectPoint": [
      -0.0002,
-     4.3666,
+     4.3667,
      5.4567
     ],
     "clamped": false
@@ -2976,8 +2976,8 @@
     "azimuth": 0,
     "position": [
      0,
-     9.5908,
-     3.4189
+     10.0703,
+     3.6632
     ],
     "quaternion": [
      -0.489346,
@@ -2993,8 +2993,8 @@
     "focusDistance": 7.964,
     "subjectPoint": [
      0,
-     3.109,
-     -1.2085
+     3.5885,
+     -0.9642
     ],
     "clamped": false
    },
@@ -3526,7 +3526,7 @@
     "azimuth": 0,
     "position": [
      0.0483,
-     0.6,
+     0.6717,
      14.1885
     ],
     "quaternion": [
@@ -3540,13 +3540,13 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 10.022,
+    "focusDistance": 10.145,
     "subjectPoint": [
      0.0483,
-     3.4465,
+     3.9253,
      4.5789
     ],
-    "clamped": true
+    "clamped": false
    },
    "micro": {
     "breath": true,
@@ -5020,7 +5020,7 @@
     "azimuth": 0,
     "position": [
      0.0476,
-     0.45,
+     0.6716,
      9.7604
     ],
     "quaternion": [
@@ -5034,13 +5034,13 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 10.066,
+    "focusDistance": 10.145,
     "subjectPoint": [
      0.0476,
-     3.4459,
+     3.9252,
      0.1508
     ],
-    "clamped": true
+    "clamped": false
    },
    "micro": {
     "breath": true,
@@ -5396,50 +5396,33 @@
    "chars": [
     {
      "id": "milo",
-     "mark": "pl",
-     "pose": "holdHands",
+     "mark": "c",
+     "pose": "stand",
      "face": "scared",
      "wrist": "4,015",
      "pos": [
-      -1.024,
+      0,
       0,
       0
      ],
-     "yaw": 90,
-     "holdAngle": -13.339,
-     "holdArm": "R"
-    },
-    {
-     "id": "june",
-     "mark": "pr",
-     "pose": "holdHands",
-     "face": "happy",
-     "wrist": "1",
-     "pos": [
-      1.024,
-      0,
-      0.363
-     ],
-     "yaw": 270,
-     "holdAngle": -51.684,
-     "holdArm": "L"
+     "yaw": 0
     }
    ],
    "ledger": null,
    "camera": {
     "framing": "MCU",
     "subject": "milo",
-    "azimuth": -50,
+    "azimuth": 15,
     "position": [
-     3.1324,
-     2.0544,
-     4.2142
+     1.4301,
+     2.1151,
+     5.8897
     ],
     "quaternion": [
-     0.069639,
-     0.34108,
-     -0.025347,
-     0.937109
+     0.073474,
+     0.130167,
+     -0.009673,
+     0.988719
     ],
     "pitchDeg": 8.5,
     "rollDeg": 0,
@@ -5448,9 +5431,9 @@
     "zoomTo": 1.22,
     "focusDistance": 5.834,
     "subjectPoint": [
-     -0.4193,
-     3.9252,
-     -0.0186
+     0,
+     3.9859,
+     0.5524
     ],
     "clamped": false
    },
@@ -5460,11 +5443,10 @@
     "headTurn": 1
    },
    "text": [
-    "sign:pier",
-    "wrist:june",
-    "wrist:milo"
+    "sign:pier"
    ],
-   "sfx": "pop"
+   "sfx": "pop",
+   "note": "Review fix: June's held arm crossed Milo's face"
   },
   {
    "id": "S069",
@@ -6015,7 +5997,7 @@
     "azimuth": 0,
     "position": [
      0.015,
-     0.45,
+     0.7325,
      10.2905
     ],
     "quaternion": [
@@ -6029,13 +6011,13 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 10.083,
+    "focusDistance": 10.145,
     "subjectPoint": [
      0.015,
-     3.5023,
+     3.9861,
      0.681
     ],
-    "clamped": true
+    "clamped": false
    },
    "micro": {
     "breath": true,
@@ -6476,7 +6458,7 @@
     "azimuth": 0,
     "position": [
      -0.5312,
-     0.6,
+     0.6925,
      10.1198
     ],
     "quaternion": [
@@ -6490,13 +6472,13 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 10.028,
+    "focusDistance": 10.145,
     "subjectPoint": [
      0.9721,
-     3.4655,
+     3.9461,
      0.6286
     ],
-    "clamped": true
+    "clamped": false
    },
    "micro": {
     "breath": true,
@@ -6636,8 +6618,8 @@
     "azimuth": 0,
     "position": [
      0,
-     9.5908,
-     3.4189
+     10.0703,
+     3.6632
     ],
     "quaternion": [
      -0.489346,
@@ -6653,8 +6635,8 @@
     "focusDistance": 7.964,
     "subjectPoint": [
      0,
-     3.109,
-     -1.2085
+     3.5885,
+     -0.9642
     ],
     "clamped": false
    },
@@ -7006,7 +6988,7 @@
     "azimuth": 0,
     "position": [
      -0.6855,
-     1.0301,
+     1.0304,
      7.7534
     ],
     "quaternion": [
@@ -7023,7 +7005,7 @@
     "focusDistance": 11.129,
     "subjectPoint": [
      -4.2909,
-     4.5993,
+     4.5995,
      -2.1524
     ],
     "clamped": false
@@ -7092,7 +7074,7 @@
     "azimuth": 0,
     "position": [
      -0.0142,
-     0.9535,
+     0.9993,
      9.7066
     ],
     "quaternion": [
@@ -7109,7 +7091,7 @@
     "focusDistance": 10.795,
     "subjectPoint": [
      -0.0142,
-     4.4156,
+     4.4613,
      -0.5186
     ],
     "clamped": false
@@ -7192,10 +7174,10 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 22.85,
+    "focusDistance": 22.858,
     "subjectPoint": [
      0.0013,
-     4.5353,
+     4.5801,
      1.041
     ],
     "clamped": true
@@ -7352,10 +7334,10 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 20.318,
+    "focusDistance": 20.395,
     "subjectPoint": [
      -0.0101,
-     3.4651,
+     3.946,
      -1.9583
     ],
     "clamped": true
@@ -7527,10 +7509,10 @@
     "vfovDeg": 48.46,
     "zoomFrom": 1.04,
     "zoomTo": 1.22,
-    "focusDistance": 46.147,
+    "focusDistance": 46.181,
     "subjectPoint": [
      0.0103,
-     3.5018,
+     3.9858,
      -3.0089
     ],
     "clamped": true

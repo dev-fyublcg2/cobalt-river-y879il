@@ -218,7 +218,7 @@ export function solveCamera(built: BuiltShot, shotChars: { id: string }[], frami
       P = new THREE.Vector3(...fp); Hh = 1.2; facing = 0;
     } else if (who === "pair") {
       const a = headInfo(built.rigs[0]), b = headInfo(built.rigs[1]);
-      P = a.p.clone().add(b.p).multiplyScalar(0.5); Hh = Math.max(a.h, b.h); facing = circularMeanDeg([a.yaw, b.yaw]);
+      P = a.p.clone().add(b.p).multiplyScalar(0.5); P.y = Math.max(a.p.y, b.p.y); Hh = Math.max(a.h, b.h); facing = circularMeanDeg([a.yaw, b.yaw]); // taller head on the face line: neither head is cropped
       if (Math.abs(Math.abs(a.yaw - b.yaw) - 180) < 1) facing = 0; // facing each other: shoot from the set front
     } else {
       const h = headInfo(rigOf(who));

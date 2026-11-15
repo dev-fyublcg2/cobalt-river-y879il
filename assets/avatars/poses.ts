@@ -29,7 +29,7 @@ export const POSES: Record<string, Pose> = {
   sit:        { armL: L(-24, 2), armR: L(-24, 2), legL: L(-90), legR: L(-90), head: { pitch: 0, yaw: 0 }, sit: true },
   sitSlump:   { armL: L(-14, 2), armR: L(-14, 2), legL: L(-90), legR: L(-90), head: { pitch: -16, yaw: 0 }, torso: { pitch: -5 }, sit: true },
   slump:      { armL: L(-4, 2), armR: L(-4, 2), legL: L(0), legR: L(0), head: { pitch: -15, yaw: 0 }, torso: { pitch: -4 } },
-  holdLedger: { armL: L(-50, 0), armR: L(-50, 0), legL: L(0), legR: L(0), head: { pitch: -14, yaw: 0 }, ledger: true },
+  holdLedger: { armL: L(-68, 0), armR: L(-68, 0), legL: L(0), legR: L(0), head: { pitch: -14, yaw: 0 }, ledger: true },
   wave:       { armL: L(0, 3), armR: L(-6, 150), legL: L(0), legR: L(0), head: { pitch: 2, yaw: 0 } },
   lieAwake:   { armL: L(0, 6), armR: L(0, 6), legL: L(0), legR: L(0), head: { pitch: 0, yaw: 0 }, lie: true },
 };

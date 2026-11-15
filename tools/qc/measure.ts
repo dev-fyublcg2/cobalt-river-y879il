@@ -80,14 +80,14 @@ if (vo.status === "ok" && fs.existsSync(p("out/captions.ass"))) {
 const [num, den] = v.r_frame_rate.split("/").map(Number);
 const m = {
   file, measuredAt: "tools/qc/measure.ts", voStatus: vo.status,
-  video: { width: v.width, height: v.height, fps: num / den, avgFps: v.avg_frame_rate, codec: v.codec_name, profile: v.profile, pixFmt: v.pix_fmt, frames: +v.nb_frames, faststart: moovFirst },
+  video: { width: v.width, height: v.height, fps: num / den, avgFps: v.avg_frame_rate, codec: v.codec_name, profile: v.profile, pixFmt: v.pix_fmt, colorRange: v.color_range, colorSpace: v.color_space, frames: +v.nb_frames, faststart: moovFirst },
   durationS: +(+probe.format.duration).toFixed(3),
   audio: a ? { codec: a.codec_name, rate: +a.sample_rate, channels: a.channels, integratedLufs: I, truePeakDbtp: TP } : null,
   cuts: { planned: cutTimes.length, detectedByScdet: detected, scdetEvents: scTimes.length },
   captionSync: sync,
   cutSound: { checked: cutPeaks.length, silentBelowMinus45dBFS: silentCuts.length, quietest: Math.min(...cutPeaks).toFixed(1) },
   checks: {
-    resolution: v.width === 1080 && v.height === 1920, fps60: num / den === 60, h264: v.codec_name === "h264", yuv420p: v.pix_fmt === "yuv420p", faststart: moovFirst,
+    resolution: v.width === 1080 && v.height === 1920, fps60: num / den === 60, h264: v.codec_name === "h264", yuv420p: v.pix_fmt === "yuv420p", limitedRange: v.color_range === "tv", faststart: moovFirst,
     duration84to92: +probe.format.duration >= 84 && +probe.format.duration <= 92,
     lufsMinus14: Math.abs(I - style.sound.masterLufs) <= style.sound.masterLufsTolerance, truePeak: TP <= style.sound.truePeakDbtp,
     everyCutHasSound: silentCuts.length === 0,

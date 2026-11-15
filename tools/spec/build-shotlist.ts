@@ -98,6 +98,7 @@ shots.forEach((s, i) => {
   if (!style.sound.sfxVocabulary.includes(s.sfx)) errors.push(`${s.id} sfx ${s.sfx} not in vocabulary`);
   if (s.chars.some((c) => !c.pose || !c.face)) errors.push(`${s.id} char missing pose/face`);
   if (!style.faces.expressions.every(Boolean) || s.chars.some((c) => !style.faces.expressions.includes(c.face))) errors.push(`${s.id} unknown face`);
+  if (![...s.camera.position, ...s.camera.quaternion].every(Number.isFinite)) errors.push(`${s.id} non-finite camera`);
   if (Math.abs(s.camera.rollDeg) > 0.01) errors.push(`${s.id} roll ${s.camera.rollDeg}`);
   if (i > 0) {
     const a = shots[i - 1].camera, b = s.camera;
