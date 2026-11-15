@@ -1,3 +1,23 @@
+## Polish pass (commit after 3dcc59c) — measured on out/preview-animated-tts-captioned.mp4
+
+Status: **still a PREVIEW, NOT PASSED.** No rubric score. No one has listened to it or watched it at 1x with sound. `approvedForMaster` is not set.
+
+Measured (ffprobe and ebur128 on the encoded file):
+- 1080x1920, 60/1 fps, 5181 frames, 86.35 s, H.264 High.
+- **yuv420p, color_range tv, bt709**: fixed (was yuvj420p).
+- Integrated loudness **−14.1 LUFS** (pass, ±0.5).
+- True peak **−1.7 dBTP** (pass, ≤ −1.0; was −0.8).
+- Not re-run this pass: `tools/qc/measure.ts` (caption sync, scdet cuts, cut sound) and the unit tests. Timing and VO are unchanged, but those checks are not re-confirmed.
+
+Frame checks (contact sheet of all 95 shots, then the fixed shots on the encoded file, `qc/polish-frames.png`):
+- S068: fixed. Solo Milo MCU, face clear.
+- S036/S084: ledger fully in frame, all lines readable, above the captions.
+- S021: lunch lady's head no longer cropped.
+- S089: pair framing intact.
+- **S029: REGRESSION.** The new "MS doctor 30" camera shows only a clinic wall. The doctor is not visible. Not fixed in this pass.
+
+Not done: 12 fps animation samples (the time budget was too short; still 8 fps cross-fades). VO polish chain (high-pass, de-ess, compression) is applied but nobody has listened to it. The voice is still the adult fallback, not the §11 child voice.
+
 # QC report — THE DAY COUNTER
 
 **Verdict: NOT PASSED. The rubric is NOT SCORED. No upload master exists.** The current film is `out/preview-animated-tts-captioned.mp4` (plus the uncaptioned `out/preview-animated-tts.mp4`, not committed). It is labelled "PREVIEW - OFFLINE TTS VO - NOT FOR UPLOAD" on frame and in the title metadata.
