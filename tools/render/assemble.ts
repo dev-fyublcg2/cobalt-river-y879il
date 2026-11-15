@@ -40,9 +40,12 @@ for (const s of sl.shots) {
     out = p("out/cache/clips", `anim-${s.id}-${a.dir.split("/").pop()}-${s.frames}.mp4`);
     if (!fs.existsSync(out)) {
       const ts: number[] = a.times;
+      // Remotion zero-pads the sample index once a shot has >= 10 samples: list the files, order by index
+      const files = fs.readdirSync(p(a.dir)).filter((f) => f.endsWith(".jpeg")).sort((x, y) => parseInt(x.slice(1)) - parseInt(y.slice(1)));
+      if (files.length !== ts.length) throw new Error(`${s.id}: ${files.length} samples on disk, ${ts.length} expected`);
       const fc = ["ffconcat version 1.0"];
-      ts.forEach((t, k) => fc.push(`file '${p(a.dir, `f${k}.jpeg`)}'`, `duration ${((k < ts.length - 1 ? ts[k + 1] : t + 1 / FPS) - t).toFixed(6)}`));
-      fc.push(`file '${p(a.dir, `f${ts.length - 1}.jpeg`)}'`);
+      ts.forEach((t, k) => fc.push(`file '${p(a.dir, files[k])}'`, `duration ${((k < ts.length - 1 ? ts[k + 1] : t + 1 / FPS) - t).toFixed(6)}`));
+      fc.push(`file '${p(a.dir, files[ts.length - 1])}'`);
       const fcPath = p("out/cache/clips", `anim-${s.id}.ffconcat`);
       fs.writeFileSync(fcPath, fc.join("\n") + "\n");
       ff(["-f", "concat", "-safe", "0", "-i", fcPath, "-vf", `framerate=fps=${FPS}:interp_start=0:interp_end=255:scene=100,tpad=stop_mode=clone:stop=${s.frames},${push}`, ...enc, out]);

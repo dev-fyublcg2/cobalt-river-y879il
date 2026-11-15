@@ -1,7 +1,7 @@
 {
- "file": "out/preview-novo-captioned.mp4",
+ "file": "out/preview-animated-tts-captioned.mp4",
  "measuredAt": "tools/qc/measure.ts",
- "voStatus": "missing",
+ "voStatus": "ok",
  "video": {
   "width": 1080,
   "height": 1920,
@@ -9,37 +9,287 @@
   "avgFps": "60/1",
   "codec": "h264",
   "profile": "High",
-  "pixFmt": "yuv420p",
-  "frames": 5263,
+  "pixFmt": "yuvj420p",
+  "frames": 5181,
   "faststart": true
  },
- "durationS": 87.717,
+ "durationS": 86.35,
  "audio": {
   "codec": "aac",
   "rate": 48000,
   "channels": 2,
-  "integratedLufs": -25.2,
-  "truePeakDbtp": -10.7
+  "integratedLufs": -14,
+  "truePeakDbtp": -0.8
  },
  "cuts": {
-  "planned": 94,
-  "detectedByScdet": 87,
-  "scdetEvents": 87
+  "planned": 95,
+  "detectedByScdet": 91,
+  "scdetEvents": 91
+ },
+ "captionSync": {
+  "words": 377,
+  "captionEvents": 377,
+  "matched": 377,
+  "maxLineOffsetMs": 0,
+  "captionErrorMs": {
+   "median": 2,
+   "p95": 5,
+   "max": 5
+  },
+  "within40ms": 377,
+  "over100ms": 0,
+  "lineOffsets": [
+   {
+    "line": "L01",
+    "manifestStart": 0,
+    "measuredStart": 0,
+    "offsetMs": 0
+   },
+   {
+    "line": "L02",
+    "manifestStart": 2.554,
+    "measuredStart": 2.554,
+    "offsetMs": 0
+   },
+   {
+    "line": "L03",
+    "manifestStart": 4.739,
+    "measuredStart": 4.739,
+    "offsetMs": 0
+   },
+   {
+    "line": "L04",
+    "manifestStart": 6.931,
+    "measuredStart": 6.931,
+    "offsetMs": 0
+   },
+   {
+    "line": "L05",
+    "manifestStart": 8.41,
+    "measuredStart": 8.41,
+    "offsetMs": 0
+   },
+   {
+    "line": "L06",
+    "manifestStart": 11.662,
+    "measuredStart": 11.662,
+    "offsetMs": 0
+   },
+   {
+    "line": "L07",
+    "manifestStart": 13.756,
+    "measuredStart": 13.756,
+    "offsetMs": 0
+   },
+   {
+    "line": "L08",
+    "manifestStart": 16.517,
+    "measuredStart": 16.517,
+    "offsetMs": 0
+   },
+   {
+    "line": "L09",
+    "manifestStart": 19.572,
+    "measuredStart": 19.572,
+    "offsetMs": 0
+   },
+   {
+    "line": "L10",
+    "manifestStart": 21.884,
+    "measuredStart": 21.884,
+    "offsetMs": 0
+   },
+   {
+    "line": "L11",
+    "manifestStart": 23.732,
+    "measuredStart": 23.732,
+    "offsetMs": 0
+   },
+   {
+    "line": "L12",
+    "manifestStart": 26.353,
+    "measuredStart": 26.353,
+    "offsetMs": 0
+   },
+   {
+    "line": "L13",
+    "manifestStart": 28.098,
+    "measuredStart": 28.098,
+    "offsetMs": 0
+   },
+   {
+    "line": "L14",
+    "manifestStart": 30.006,
+    "measuredStart": 30.006,
+    "offsetMs": 0
+   },
+   {
+    "line": "L15",
+    "manifestStart": 32.273,
+    "measuredStart": 32.273,
+    "offsetMs": 0
+   },
+   {
+    "line": "L16",
+    "manifestStart": 34.017,
+    "measuredStart": 34.017,
+    "offsetMs": 0
+   },
+   {
+    "line": "L17",
+    "manifestStart": 36.313,
+    "measuredStart": 36.313,
+    "offsetMs": 0
+   },
+   {
+    "line": "L18",
+    "manifestStart": 38.544,
+    "measuredStart": 38.544,
+    "offsetMs": 0
+   },
+   {
+    "line": "L19",
+    "manifestStart": 40.567,
+    "measuredStart": 40.567,
+    "offsetMs": 0
+   },
+   {
+    "line": "L20",
+    "manifestStart": 42.914,
+    "measuredStart": 42.914,
+    "offsetMs": 0
+   },
+   {
+    "line": "L21",
+    "manifestStart": 45.227,
+    "measuredStart": 45.227,
+    "offsetMs": 0
+   },
+   {
+    "line": "L22",
+    "manifestStart": 46.926,
+    "measuredStart": 46.926,
+    "offsetMs": 0
+   },
+   {
+    "line": "L23",
+    "manifestStart": 48.39,
+    "measuredStart": 48.39,
+    "offsetMs": 0
+   },
+   {
+    "line": "L24",
+    "manifestStart": 51.289,
+    "measuredStart": 51.289,
+    "offsetMs": 0
+   },
+   {
+    "line": "L25",
+    "manifestStart": 53.476,
+    "measuredStart": 53.476,
+    "offsetMs": 0
+   },
+   {
+    "line": "L26",
+    "manifestStart": 55.58,
+    "measuredStart": 55.58,
+    "offsetMs": 0
+   },
+   {
+    "line": "L27",
+    "manifestStart": 57.382,
+    "measuredStart": 57.382,
+    "offsetMs": 0
+   },
+   {
+    "line": "L28",
+    "manifestStart": 59.636,
+    "measuredStart": 59.636,
+    "offsetMs": 0
+   },
+   {
+    "line": "L29",
+    "manifestStart": 60.615,
+    "measuredStart": 60.615,
+    "offsetMs": 0
+   },
+   {
+    "line": "L30",
+    "manifestStart": 64.584,
+    "measuredStart": 64.584,
+    "offsetMs": 0
+   },
+   {
+    "line": "L31",
+    "manifestStart": 67.558,
+    "measuredStart": 67.558,
+    "offsetMs": 0
+   },
+   {
+    "line": "L32",
+    "manifestStart": 69.669,
+    "measuredStart": 69.669,
+    "offsetMs": 0
+   },
+   {
+    "line": "L33",
+    "manifestStart": 72.701,
+    "measuredStart": 72.701,
+    "offsetMs": 0
+   },
+   {
+    "line": "L34",
+    "manifestStart": 75.21,
+    "measuredStart": 75.21,
+    "offsetMs": 0
+   },
+   {
+    "line": "L35",
+    "manifestStart": 76.758,
+    "measuredStart": 76.758,
+    "offsetMs": 0
+   },
+   {
+    "line": "L36",
+    "manifestStart": 78.688,
+    "measuredStart": 78.688,
+    "offsetMs": 0
+   },
+   {
+    "line": "L37",
+    "manifestStart": 80.224,
+    "measuredStart": 80.224,
+    "offsetMs": 0
+   },
+   {
+    "line": "L38",
+    "manifestStart": 81.83,
+    "measuredStart": 81.83,
+    "offsetMs": 0
+   },
+   {
+    "line": "L39",
+    "manifestStart": 83.827,
+    "measuredStart": 83.827,
+    "offsetMs": 0
+   }
+  ]
  },
  "cutSound": {
-  "checked": 95,
+  "checked": 96,
   "silentBelowMinus45dBFS": 0,
-  "quietest": "-29.1"
+  "quietest": "-10.2"
  },
  "checks": {
   "resolution": true,
   "fps60": true,
   "h264": true,
-  "yuv420p": true,
+  "yuv420p": false,
   "faststart": true,
   "duration84to92": true,
-  "lufsMinus14": false,
-  "truePeak": true,
-  "everyCutHasSound": true
+  "lufsMinus14": true,
+  "truePeak": false,
+  "everyCutHasSound": true,
+  "captionSync40ms": true
  }
 }
