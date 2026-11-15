@@ -71,8 +71,13 @@ export function placeChars(set: SetBuild, chars: { id: string; mark: string; pos
     const yawA = Math.atan2(dir.x, dir.z) / DEG;
     // camera-side hand: armL sits on local +x; world +x of a character facing yaw is (cos yaw, 0, -sin yaw)
     const side = (yawDeg: number): "L" | "R" => (-Math.sin(yawDeg * DEG) >= 0 ? "L" : "R");
-    out[a] = { ...out[a], pos: mid.clone().addScaledVector(dir, -sep / 2).toArray() as Vec3, yaw: yawA, holdAngle: angA, holdArm: side(yawA) } as any;
-    out[b] = { ...out[b], pos: mid.clone().addScaledVector(dir, sep / 2).toArray() as Vec3, yaw: yawA + 180, holdAngle: angB, holdArm: side(yawA + 180) } as any;
+    // each linked hand sits off the body axis by its rig's lateral reach; shift B sideways so the two hands line up
+    const lat = (r: Rig) => handReach(r, angA).lateral;
+    const perp = new THREE.Vector3(-dir.z, 0, dir.x);
+    const pA = mid.clone().addScaledVector(dir, -sep / 2);
+    const pB = mid.clone().addScaledVector(dir, sep / 2).addScaledVector(perp, Math.sign(perp.z || 1) * (lat(ra) - lat(rb)));
+    out[a] = { ...out[a], pos: pA.toArray() as Vec3, yaw: yawA, holdAngle: angA, holdArm: side(yawA) } as any;
+    out[b] = { ...out[b], pos: pB.toArray() as Vec3, yaw: yawA + 180, holdAngle: angB, holdArm: side(yawA + 180) } as any;
   }
   return out;
 }

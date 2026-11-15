@@ -1,5 +1,7 @@
-// G5/G6 assembly: still + push-in per shot (ffmpeg), concat, cut to black, cut SFX, music bed + ducking, captions.
-// Writes out/final*.mp4 ONLY when vo-manifest status is "ok"; otherwise out/preview-novo*.mp4 (never silently ships without VO).
+// G5/G6 assembly: per-shot clips (animated 3D samples blended to 60 fps, or the 3D still) + 60 fps push-in, concat, cut to
+// black, cut SFX, music bed + ducking, VO mix + loudness master, captions.
+// "final*" names are written ONLY with real VO and vo.approvedForMaster === true (set by a person after review, never by tools);
+// everything else is a labelled preview (burned-in banner + title metadata) so it cannot be mistaken for the upload master.
 import fs from "node:fs";
 import { execFileSync, spawnSync } from "node:child_process";
 import { p } from "../env";
@@ -11,28 +13,43 @@ const script = JSON.parse(fs.readFileSync(p("spec/script.json"), "utf8"));
 const vo = JSON.parse(fs.readFileSync(p("spec/vo-manifest.json"), "utf8"));
 const index = JSON.parse(fs.readFileSync(p("out/cache/stills/index.json"), "utf8"));
 const hasVo = vo.status === "ok";
-// "final" names are reserved for narration whose quality has been approved by a human; fallback TTS stays a preview
-const approved = hasVo && vo.quality === "approved";
-const stem = approved ? "final" : hasVo ? "preview-tts" : "preview-novo";
-const LABEL = hasVo ? "PREVIEW - OFFLINE TTS VO - NOT FOR UPLOAD" : "PREVIEW - NO VO - NOT FOR UPLOAD";
+const approved = hasVo && vo.approvedForMaster === true;
+const animIndexPath = p("out/cache/anim/index.json");
+const animIndex = fs.existsSync(animIndexPath) ? JSON.parse(fs.readFileSync(animIndexPath, "utf8")) : null;
+const animated = !!animIndex && sl.shots.every((s: any) => animIndex[s.id] && fs.existsSync(p(animIndex[s.id].dir, "done")));
+if (!animated && !process.argv.includes("--allow-stills")) throw new Error("animated pass incomplete: run tools/render/render-anim.ts (or pass --allow-stills)");
+const stem = approved ? "final" : `preview-${animated ? "animated" : "stills"}-${hasVo ? "tts" : "novo"}`;
+const LABEL = approved ? "" : hasVo ? (vo.quality === "approved" ? "PREVIEW - NOT SIGNED OFF" : "PREVIEW - OFFLINE TTS VO - NOT FOR UPLOAD") : "PREVIEW - NO VO - NOT FOR UPLOAD";
 const ff = (args: string[]) => execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" });
 const FPS = sl.fps, W = sl.width, H = sl.height;
 fs.mkdirSync(p("out/cache/clips"), { recursive: true });
 
-// 1. per-shot clips: 2D push-in from the 3D still (zoom pushFrom->pushTo, cubic in-out), vignette per bible
-const [x1, y1, x2, y2] = style.camera.pushEase;
+// 1. per-shot clips. Push-in at 60 fps (zoom pushFrom->pushTo; smoothstep approximation of cubic-bezier(0.42,0,0.58,1),
+// max deviation < 0.02), vignette per bible. Animated: samples sit at their own times (last exactly on the shot end) and are
+// linearly blended to 60 fps inside the shot only, so every cut stays hard.
 const list: string[] = [];
 for (const s of sl.shots) {
-  const still = p(index[s.id]);
-  const out = p("out/cache/clips", `${s.id}-${index[s.id].split("/").pop().replace(".png", "")}-${s.frames}.mp4`);
-  if (!fs.existsSync(out)) {
-    const z0 = 1, z1 = s.camera.zoomTo / s.camera.zoomFrom;
-    // smoothstep approximation of cubic-bezier(0.42,0,0.58,1) (max deviation < 0.02)
-    const e = `(${'n'}/${Math.max(1, s.frames - 1)})`;
-    const z = `(${z0}+(${z1 - z0})*(${e}*${e}*(3-2*${e})))`;
-    ff(["-loop", "1", "-framerate", String(FPS), "-i", still, "-frames:v", String(s.frames),
-      "-vf", `scale=${W * 2}:${H * 2}:flags=lanczos,crop=w='trunc(${W * 2}/${z}/2)*2':h='trunc(${H * 2}/${z}/2)*2':x='(iw-ow)/2':y='(ih-oh)/2',scale=${W}:${H}:flags=bicubic,vignette=angle=0.55:mode=forward,format=yuv420p`,
-      "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", String(FPS), out]);
+  const z0 = 1, z1 = s.camera.zoomTo / s.camera.zoomFrom;
+  const e = `(n/${Math.max(1, s.frames - 1)})`;
+  const z = `(${z0}+(${z1 - z0})*(${e}*${e}*(3-2*${e})))`;
+  const push = `scale=${W * 2}:${H * 2}:flags=lanczos,crop=w='trunc(${W * 2}/${z}/2)*2':h='trunc(${H * 2}/${z}/2)*2':x='(iw-ow)/2':y='(ih-oh)/2',scale=${W}:${H}:flags=bicubic,vignette=angle=0.55:mode=forward,format=yuv420p`;
+  const enc = ["-frames:v", String(s.frames), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", String(FPS)];
+  let out: string;
+  if (animated) {
+    const a = animIndex[s.id];
+    out = p("out/cache/clips", `anim-${s.id}-${a.dir.split("/").pop()}-${s.frames}.mp4`);
+    if (!fs.existsSync(out)) {
+      const ts: number[] = a.times;
+      const fc = ["ffconcat version 1.0"];
+      ts.forEach((t, k) => fc.push(`file '${p(a.dir, `f${k}.jpeg`)}'`, `duration ${((k < ts.length - 1 ? ts[k + 1] : t + 1 / FPS) - t).toFixed(6)}`));
+      fc.push(`file '${p(a.dir, `f${ts.length - 1}.jpeg`)}'`);
+      const fcPath = p("out/cache/clips", `anim-${s.id}.ffconcat`);
+      fs.writeFileSync(fcPath, fc.join("\n") + "\n");
+      ff(["-f", "concat", "-safe", "0", "-i", fcPath, "-vf", `framerate=fps=${FPS}:interp_start=0:interp_end=255:scene=100,tpad=stop_mode=clone:stop=${s.frames},${push}`, ...enc, out]);
+    }
+  } else {
+    out = p("out/cache/clips", `${s.id}-${index[s.id].split("/").pop().replace(".png", "")}-${s.frames}.mp4`);
+    if (!fs.existsSync(out)) ff(["-loop", "1", "-framerate", String(FPS), "-i", p(index[s.id]), "-vf", push, ...enc, out]);
   }
   list.push(`file '${out}'`);
 }
@@ -54,16 +71,19 @@ const inputs = ["-i", p("audio/music/bed.wav"), ...cuts.flatMap((c) => ["-i", p(
 let graph = `[0]atrim=0:${sl.duration},volume='if(${vol},${duck},1)':eval=frame,afade=t=out:st=${(sl.blackStart - 0.05).toFixed(3)}:d=0.05[m];`;
 cuts.forEach((c, i) => { graph += `[${i + 1}]adelay=${Math.round(c.t * 1000)}:all=1[s${i}];`; });
 graph += `[m]${cuts.map((_, i) => `[s${i}]`).join("")}amix=inputs=${cuts.length + 1}:normalize=0:duration=first,pan=stereo|c0=c0|c1=c0[a]`;
-// VO stem would be mixed here at voPeakDbfs and the master loudness-normalised to -14 LUFS / -1 dBTP; without VO we do not
-// normalise (it would push the bed/SFX up to dialogue loudness) and the QC report records the measured levels honestly.
+// Without VO we do not loudness-normalise (it would push the bed/SFX up to dialogue loudness); QC records measured levels.
 const audio = p("out/cache/mix.wav");
 if (hasVo) {
-  // UNTESTED until narration exists: VO lines at -8 dBFS peak over bed+SFX, then 2-pass loudnorm to -14 LUFS / -1 dBTP
+  // VO lines peak-normalised to voPeakDbfs over bed+SFX, then 2-pass loudnorm to masterLufs / truePeakDbtp (linear gain)
   const base = cuts.length + 1;
   const voIn = vo.lines.flatMap((l: any) => ["-i", p(l.file)]);
   let g2 = graph.replace("[a]", "[bed]") + ";";
-  vo.lines.forEach((l: any, i: number) => { g2 += `[${base + i}]aresample=48000,pan=stereo|c0=c0|c1=c0,adelay=${Math.round(l.start * 1000)}:all=1[v${i}];`; });
-  g2 += `${vo.lines.map((_: any, i: number) => `[v${i}]`).join("")}amix=inputs=${vo.lines.length}:normalize=0[vo];[vo]alimiter=limit=${Math.pow(10, style.sound.voPeakDbfs / 20).toFixed(4)}[vol];[bed][vol]amix=inputs=2:normalize=0:duration=first[pre]`;
+  vo.lines.forEach((l: any, i: number) => {
+    const det = spawnSync("ffmpeg", ["-hide_banner", "-i", p(l.file), "-af", "volumedetect", "-f", "null", "-"], { encoding: "utf8" }).stderr;
+    const peak = +(det.match(/max_volume:\s*(-?[\d.]+) dB/)?.[1] ?? 0);
+    g2 += `[${base + i}]aresample=48000,volume=${(style.sound.voPeakDbfs - peak).toFixed(2)}dB,pan=stereo|c0=c0|c1=c0,adelay=${Math.round(l.start * 1000)}:all=1[v${i}];`;
+  });
+  g2 += `${vo.lines.map((_: any, i: number) => `[v${i}]`).join("")}amix=inputs=${vo.lines.length}:normalize=0[vol];[bed][vol]amix=inputs=2:normalize=0:duration=first[pre]`;
   const pre = p("out/cache/premaster.wav");
   ff([...inputs, ...voIn, "-filter_complex", g2, "-map", "[pre]", "-ar", "48000", pre]);
   // pass 1 measures (stats on stderr); pass 2 applies linear gain with the measured values
@@ -73,14 +93,13 @@ if (hasVo) {
   ff([...inputs, "-filter_complex", graph, "-map", "[a]", "-ar", "48000", audio]);
 }
 
-ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", ...(approved ? ["-c:v", "copy"] : ["-vf", `drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='${LABEL}':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"]), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-metadata", `title=${approved ? "The Day Counter" : `PREVIEW (${hasVo ? "offline TTS" : "no VO"}) - The Day Counter`}`, "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
+ff(["-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", ...(approved ? ["-c:v", "copy"] : ["-vf", `drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='${LABEL}':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"]), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", "-metadata", `title=${approved ? "The Day Counter" : `${LABEL} - The Day Counter`}`, "-t", String(sl.duration), p(`out/${stem}.mp4`)]);
 
 // 3. captions (ASS via libass, Anton from /assets/fonts): <=3 words/line, active word #FFD400 with 1.06 pop over 80 ms
 const C = style.captions;
 const words = (hasVo ? vo.lines.flatMap((l: any) => l.words) : script.lines.flatMap((l: any) => l.tokens)) as Word[];
 const ass = toAss(captionEvents(words, C.maxWordsPerLine, sl.blackStart), C, W, H);
 fs.writeFileSync(p("out/captions.ass"), ass);
-// previews carry a burned-in label so they can never be mistaken for the upload master
-const label = approved ? "" : `,drawtext=fontfile=${p("assets/fonts/Anton-Regular.ttf")}:text='${LABEL}':fontsize=34:fontcolor=white@0.85:box=1:boxcolor=black@0.55:boxborderw=10:x=(w-tw)/2:y=40`;
-ff(["-i", p(`out/${stem}.mp4`), "-vf", `ass=${p("out/captions.ass")}:fontsdir=${p("assets/fonts")}${label}`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", p(`out/${stem}-captioned.mp4`)]);
+// the preview banner is already burned into out/<stem>.mp4 and carries through
+ff(["-i", p(`out/${stem}.mp4`), "-vf", `ass=${p("out/captions.ass")}:fontsdir=${p("assets/fonts")}`, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", p(`out/${stem}-captioned.mp4`)]);
 console.log(`wrote out/${stem}.mp4 and out/${stem}-captioned.mp4 (VO: ${vo.status})`);

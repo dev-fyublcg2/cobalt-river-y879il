@@ -8,9 +8,9 @@
  "blackStart": 85.823,
  "blackFrames": 32,
  "stats": {
-  "shots": 94,
-  "cuts": 94,
-  "maxShotS": 1.6833,
+  "shots": 95,
+  "cuts": 95,
+  "maxShotS": 1.6333,
   "faceSubjectStrict": 43,
   "faceSubjectInclMS": 58,
   "sets": [
@@ -524,7 +524,7 @@
      "pos": [
       1.8046,
       0,
-      0
+      0.0825
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -539,7 +539,7 @@
     "position": [
      0.0166,
      0.8506,
-     10.4969
+     10.5381
     ],
     "quaternion": [
      0.074108,
@@ -556,7 +556,7 @@
     "subjectPoint": [
      0.0166,
      4.4197,
-     -0.0446
+     -0.0033
     ],
     "clamped": false
    },
@@ -614,7 +614,7 @@
      "pos": [
       1.8046,
       0,
-      0
+      0.0825
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -629,7 +629,7 @@
     "position": [
      -0.0067,
      6.4227,
-     10.0182
+     10.0594
     ],
     "quaternion": [
      -0.22596,
@@ -646,7 +646,7 @@
     "subjectPoint": [
      -0.0067,
      2.3653,
-     -0.0244
+     0.0169
     ],
     "clamped": false
    },
@@ -703,7 +703,7 @@
      "pos": [
       1.8046,
       0,
-      0
+      0.0825
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -1140,7 +1140,7 @@
      "pos": [
       1.8033,
       0,
-      0
+      -0.033
      ],
      "yaw": 270,
      "holdAngle": -49.575,
@@ -1155,7 +1155,7 @@
     "position": [
      -0.0062,
      0.8904,
-     10.2171
+     10.2006
     ],
     "quaternion": [
      0.074108,
@@ -1172,7 +1172,7 @@
     "subjectPoint": [
      -0.0062,
      4.3524,
-     -0.0081
+     -0.0246
     ],
     "clamped": false
    },
@@ -1316,7 +1316,7 @@
      "pos": [
       1.8973,
       0,
-      0
+      0.033
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -1331,7 +1331,7 @@
     "position": [
      0.0066,
      0.9379,
-     10.7057
+     10.7222
     ],
     "quaternion": [
      0.074108,
@@ -1348,7 +1348,7 @@
     "subjectPoint": [
      0.0066,
      4.5784,
-     -0.0465
+     -0.03
     ],
     "clamped": false
    },
@@ -2263,10 +2263,10 @@
     "text": "Not"
    },
    "t0": 24.694,
-   "t1": 26.376,
-   "dur": 1.6833,
+   "t1": 25.575,
+   "dur": 0.8833,
    "startFrame": 1482,
-   "frames": 101,
+   "frames": 53,
    "set": "kitchen",
    "mood": "golden",
    "chars": [
@@ -2324,6 +2324,78 @@
   {
    "id": "S028",
    "index": 27,
+   "beat": 4,
+   "line": "L11",
+   "anchor": {
+    "line": "L11",
+    "word": 7,
+    "text": "Four"
+   },
+   "t0": 25.575,
+   "t1": 26.376,
+   "dur": 0.8,
+   "startFrame": 1535,
+   "frames": 48,
+   "set": "kitchen",
+   "mood": "golden",
+   "chars": [
+    {
+     "id": "june",
+     "mark": "c",
+     "pose": "showWrist",
+     "face": "sad",
+     "wrist": "4",
+     "pos": [
+      0,
+      0,
+      4.4
+     ],
+     "yaw": 0
+    }
+   ],
+   "ledger": null,
+   "camera": {
+    "framing": "INS",
+    "subject": "june.wrist",
+    "azimuth": 15,
+    "position": [
+     1.3831,
+     5.6902,
+     6.1214
+    ],
+    "quaternion": [
+     -0.638074,
+     0.099902,
+     0.084004,
+     0.758831
+    ],
+    "pitchDeg": -80.119,
+    "rollDeg": 0,
+    "vfovDeg": 48.46,
+    "zoomFrom": 1.04,
+    "zoomTo": 1.22,
+    "focusDistance": 3.119,
+    "subjectPoint": [
+     1.1878,
+     2.6634,
+     5.3925
+    ],
+    "clamped": false
+   },
+   "micro": {
+    "breath": true,
+    "armSettle": true,
+    "headTurn": 0
+   },
+   "text": [
+    "wrist:june"
+   ],
+   "sfx": "thud",
+   "note": "Added after VO retime: 'Four days.' (S027 was 2.75 s)"
+  },
+  {
+   "id": "S029",
+   "index": 28,
    "beat": 5,
    "line": "L12",
    "anchor": {
@@ -2372,9 +2444,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     0.0557,
+     0.0553,
      0.6,
-     10.5351
+     10.5052
     ],
     "quaternion": [
      0.074108,
@@ -2389,16 +2461,16 @@
     "zoomTo": 1.22,
     "focusDistance": 11.014,
     "subjectPoint": [
-     0.0557,
-     3.7926,
-     -0.0064
+     0.0553,
+     3.792,
+     -0.0363
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:clinic",
@@ -2408,8 +2480,8 @@
    "sfx": "whoosh"
   },
   {
-   "id": "S029",
-   "index": 28,
+   "id": "S030",
+   "index": 29,
    "beat": 5,
    "line": "L12",
    "anchor": {
@@ -2471,7 +2543,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:clinic"
@@ -2479,8 +2551,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S030",
-   "index": 29,
+   "id": "S031",
+   "index": 30,
    "beat": 5,
    "line": "L13",
    "anchor": {
@@ -2529,9 +2601,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     -0.0044,
-     0.7967,
-     15.9862
+     -0.0002,
+     0.7975,
+     15.9981
     ],
     "quaternion": [
      0.074108,
@@ -2546,16 +2618,16 @@
     "zoomTo": 1.22,
     "focusDistance": 11.129,
     "subjectPoint": [
-     -0.0044,
-     4.3658,
-     5.4448
+     -0.0002,
+     4.3666,
+     5.4567
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:calendar",
@@ -2565,8 +2637,8 @@
    "sfx": "whoosh"
   },
   {
-   "id": "S031",
-   "index": 30,
+   "id": "S032",
+   "index": 31,
    "beat": 5,
    "line": "L13",
    "anchor": {
@@ -2628,14 +2700,14 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S032",
-   "index": 31,
+   "id": "S033",
+   "index": 32,
    "beat": 5,
    "line": "L13",
    "anchor": {
@@ -2697,7 +2769,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "wrist:mom"
@@ -2706,8 +2778,8 @@
    "note": "Parents almost empty: Mom's 9 (review fix: pair insert camera ended above the ceiling)"
   },
   {
-   "id": "S033",
-   "index": 32,
+   "id": "S034",
+   "index": 33,
    "beat": 5,
    "line": "L14",
    "anchor": {
@@ -2782,7 +2854,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:clerk",
@@ -2794,8 +2866,8 @@
    "sfx": "whoosh"
   },
   {
-   "id": "S034",
-   "index": 33,
+   "id": "S035",
+   "index": 34,
    "beat": 5,
    "line": "L14",
    "anchor": {
@@ -2857,7 +2929,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "ledger:left",
@@ -2866,8 +2938,8 @@
    "sfx": "paper"
   },
   {
-   "id": "S035",
-   "index": 34,
+   "id": "S036",
+   "index": 35,
    "beat": 5,
    "line": "L14",
    "anchor": {
@@ -2929,7 +3001,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "ledger:left",
@@ -2938,8 +3010,8 @@
    "sfx": "paper"
   },
   {
-   "id": "S036",
-   "index": 35,
+   "id": "S037",
+   "index": 36,
    "beat": 5,
    "line": "L15",
    "anchor": {
@@ -3001,7 +3073,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "ledger:left",
@@ -3010,8 +3082,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S037",
-   "index": 36,
+   "id": "S038",
+   "index": 37,
    "beat": 5,
    "line": "L15",
    "anchor": {
@@ -3059,7 +3131,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:poster"
@@ -3068,8 +3140,8 @@
    "note": "NO TAKE-BACKS poster"
   },
   {
-   "id": "S038",
-   "index": 37,
+   "id": "S039",
+   "index": 38,
    "beat": 5,
    "line": "L16",
    "anchor": {
@@ -3131,14 +3203,14 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S039",
-   "index": 38,
+   "id": "S040",
+   "index": 39,
    "beat": 5,
    "line": "L16",
    "anchor": {
@@ -3200,7 +3272,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "wrist:milo"
@@ -3208,8 +3280,8 @@
    "sfx": "tick"
   },
   {
-   "id": "S040",
-   "index": 39,
+   "id": "S041",
+   "index": 40,
    "beat": 5,
    "line": "L16",
    "anchor": {
@@ -3271,7 +3343,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:clerk",
@@ -3280,8 +3352,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S041",
-   "index": 40,
+   "id": "S042",
+   "index": 41,
    "beat": 6,
    "line": "L17",
    "anchor": {
@@ -3386,7 +3458,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:calendar",
@@ -3399,8 +3471,8 @@
    "note": "Dinner"
   },
   {
-   "id": "S042",
-   "index": 41,
+   "id": "S043",
+   "index": 42,
    "beat": 6,
    "line": "L17",
    "anchor": {
@@ -3440,7 +3512,7 @@
      "pos": [
       1.024,
       0,
-      4.4
+      4.763
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -3453,9 +3525,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     0.0476,
+     0.0483,
      0.6,
-     13.9789
+     14.1885
     ],
     "quaternion": [
      0.074108,
@@ -3470,16 +3542,16 @@
     "zoomTo": 1.22,
     "focusDistance": 10.022,
     "subjectPoint": [
-     0.0476,
-     3.4459,
-     4.3693
+     0.0483,
+     3.4465,
+     4.5789
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:calendar",
@@ -3490,8 +3562,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S043",
-   "index": 42,
+   "id": "S044",
+   "index": 43,
    "beat": 6,
    "line": "L17",
    "anchor": {
@@ -3531,7 +3603,7 @@
      "pos": [
       1.024,
       0,
-      4.4
+      4.763
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -3544,9 +3616,9 @@
     "subject": "milo",
     "azimuth": -55,
     "position": [
-     0.7878,
-     3.2126,
-     6.1216
+     0.788,
+     3.2125,
+     6.1057
     ],
     "quaternion": [
      0.070679,
@@ -3561,16 +3633,16 @@
     "zoomTo": 1.22,
     "focusDistance": 2.222,
     "subjectPoint": [
-     -0.4195,
-     3.9253,
-     4.3973
+     -0.4193,
+     3.9252,
+     4.3814
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:milk"
@@ -3578,8 +3650,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S044",
-   "index": 43,
+   "id": "S045",
+   "index": 44,
    "beat": 6,
    "line": "L18",
    "anchor": {
@@ -3641,7 +3713,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:calendar"
@@ -3650,8 +3722,8 @@
    "note": "Review fix: camera was inside Milo's head"
   },
   {
-   "id": "S045",
-   "index": 44,
+   "id": "S046",
+   "index": 45,
    "beat": 6,
    "line": "L18",
    "anchor": {
@@ -3713,7 +3785,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:calendar",
@@ -3724,8 +3796,8 @@
    "note": "Review fix: seated MS saw the table underside"
   },
   {
-   "id": "S046",
-   "index": 45,
+   "id": "S047",
+   "index": 46,
    "beat": 6,
    "line": "L19",
    "anchor": {
@@ -3762,9 +3834,9 @@
     "subject": "milo",
     "azimuth": 10,
     "position": [
-     -0.9934,
-     3.5268,
-     2.381
+     -0.9711,
+     3.5265,
+     2.3814
     ],
     "quaternion": [
      0.073826,
@@ -3779,23 +3851,23 @@
     "zoomTo": 1.22,
     "focusDistance": 3.646,
     "subjectPoint": [
-     -1.593,
-     4.696,
-     -1.02
+     -1.5708,
+     4.6957,
+     -1.0196
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S047",
-   "index": 46,
+   "id": "S048",
+   "index": 47,
    "beat": 6,
    "line": "L19",
    "anchor": {
@@ -3857,7 +3929,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:calendar",
@@ -3866,8 +3938,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S048",
-   "index": 47,
+   "id": "S049",
+   "index": 48,
    "beat": 6,
    "line": "L20",
    "anchor": {
@@ -3904,9 +3976,9 @@
     "subject": "mom",
     "azimuth": -55,
     "position": [
-     -1.6775,
-     3.5531,
-     4.2371
+     -1.6801,
+     3.555,
+     4.3006
     ],
     "quaternion": [
      0.070679,
@@ -3921,16 +3993,16 @@
     "zoomTo": 1.22,
     "focusDistance": 4,
     "subjectPoint": [
-     -3.8504,
-     4.8357,
-     1.1339
+     -3.853,
+     4.8377,
+     1.1974
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:milk",
@@ -3939,8 +4011,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S049",
-   "index": 48,
+   "id": "S050",
+   "index": 49,
    "beat": 6,
    "line": "L20",
    "anchor": {
@@ -3977,9 +4049,9 @@
     "subject": "dad",
     "azimuth": 50,
     "position": [
-     -0.0432,
-     2.7854,
-     5.8407
+     -0.0457,
+     2.7835,
+     5.7772
     ],
     "quaternion": [
      0.069639,
@@ -3994,23 +4066,23 @@
     "zoomTo": 1.22,
     "focusDistance": 6.399,
     "subjectPoint": [
-     3.853,
-     4.8377,
-     1.1974
+     3.8504,
+     4.8357,
+     1.1339
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S050",
-   "index": 49,
+   "id": "S051",
+   "index": 50,
    "beat": 6,
    "line": "L21",
    "anchor": {
@@ -4072,7 +4144,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:door",
@@ -4082,8 +4154,8 @@
    "note": "Night: cold mood"
   },
   {
-   "id": "S051",
-   "index": 50,
+   "id": "S052",
+   "index": 51,
    "beat": 6,
    "line": "L21",
    "anchor": {
@@ -4119,9 +4191,9 @@
     "subject": "milo",
     "azimuth": 0,
     "position": [
-     4.059,
-     2.1143,
-     -3.5779
+     4.0141,
+     2.1155,
+     -3.5761
     ],
     "quaternion": [
      0,
@@ -4136,24 +4208,24 @@
     "zoomTo": 1.22,
     "focusDistance": 5.834,
     "subjectPoint": [
-     4.059,
-     3.9852,
-     1.9476
+     4.0141,
+     3.9863,
+     1.9494
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [],
    "sfx": "pop",
    "note": "Mirror POV"
   },
   {
-   "id": "S052",
-   "index": 51,
+   "id": "S053",
+   "index": 52,
    "beat": 6,
    "line": "L22",
    "anchor": {
@@ -4189,9 +4261,9 @@
     "subject": "milo",
     "azimuth": -20,
     "position": [
-     5.1952,
-     2.8171,
-     -1.2958
+     5.2401,
+     2.8159,
+     -1.2976
     ],
     "quaternion": [
      0.012869,
@@ -4206,23 +4278,23 @@
     "zoomTo": 1.22,
     "focusDistance": 3.646,
     "subjectPoint": [
-     4.0141,
-     3.9863,
-     1.9494
+     4.059,
+     3.9852,
+     1.9476
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S053",
-   "index": 52,
+   "id": "S054",
+   "index": 53,
    "beat": 6,
    "line": "L22",
    "anchor": {
@@ -4284,14 +4356,14 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S054",
-   "index": 53,
+   "id": "S055",
+   "index": 54,
    "beat": 6,
    "line": "L22",
    "anchor": {
@@ -4327,9 +4399,9 @@
     "subject": "milo",
     "azimuth": 20,
     "position": [
-     2.8778,
-     2.8159,
-     -1.2976
+     2.833,
+     2.8171,
+     -1.2958
     ],
     "quaternion": [
      -0.012869,
@@ -4344,23 +4416,23 @@
     "zoomTo": 1.22,
     "focusDistance": 3.646,
     "subjectPoint": [
-     4.059,
-     3.9852,
-     1.9476
+     4.0141,
+     3.9863,
+     1.9494
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S055",
-   "index": 54,
+   "id": "S056",
+   "index": 55,
    "beat": 6,
    "line": "L23",
    "anchor": {
@@ -4425,9 +4497,9 @@
     "subject": "june",
     "azimuth": 0,
     "position": [
-     1.6024,
+     1.5795,
      0.6,
-     16.106
+     16.1064
     ],
     "quaternion": [
      0.074108,
@@ -4442,16 +4514,16 @@
     "zoomTo": 1.22,
     "focusDistance": 17.238,
     "subjectPoint": [
-     1.6024,
-     3.8572,
-     -0.8216
+     1.5795,
+     3.8568,
+     -0.8212
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:calendar",
@@ -4463,8 +4535,8 @@
    "note": "Next morning"
   },
   {
-   "id": "S056",
-   "index": 55,
+   "id": "S057",
+   "index": 56,
    "beat": 6,
    "line": "L23",
    "anchor": {
@@ -4526,7 +4598,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "wrist:june"
@@ -4534,8 +4606,8 @@
    "sfx": "thud"
   },
   {
-   "id": "S057",
-   "index": 56,
+   "id": "S058",
+   "index": 57,
    "beat": 6,
    "line": "L23",
    "anchor": {
@@ -4597,7 +4669,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:calendar"
@@ -4605,8 +4677,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S058",
-   "index": 57,
+   "id": "S059",
+   "index": 58,
    "beat": 7,
    "line": "L24",
    "anchor": {
@@ -4668,7 +4740,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "wrist:june"
@@ -4676,8 +4748,8 @@
    "sfx": "tick"
   },
   {
-   "id": "S059",
-   "index": 58,
+   "id": "S060",
+   "index": 59,
    "beat": 7,
    "line": "L24",
    "anchor": {
@@ -4752,7 +4824,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:boat",
@@ -4765,8 +4837,8 @@
    "note": "Walking out to the end of the pier at sunrise"
   },
   {
-   "id": "S060",
-   "index": 59,
+   "id": "S061",
+   "index": 60,
    "beat": 7,
    "line": "L25",
    "anchor": {
@@ -4828,7 +4900,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:pier"
@@ -4836,8 +4908,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S061",
-   "index": 60,
+   "id": "S062",
+   "index": 61,
    "beat": 7,
    "line": "L25",
    "anchor": {
@@ -4885,7 +4957,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:pier"
@@ -4893,8 +4965,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S062",
-   "index": 61,
+   "id": "S063",
+   "index": 62,
    "beat": 7,
    "line": "L26",
    "anchor": {
@@ -4934,7 +5006,7 @@
      "pos": [
       1.024,
       0,
-      0
+      0.363
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -4949,7 +5021,7 @@
     "position": [
      0.0476,
      0.45,
-     9.5789
+     9.7604
     ],
     "quaternion": [
      0.074108,
@@ -4966,14 +5038,14 @@
     "subjectPoint": [
      0.0476,
      3.4459,
-     -0.0307
+     0.1508
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:nodiving",
@@ -4984,8 +5056,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S063",
-   "index": 62,
+   "id": "S064",
+   "index": 63,
    "beat": 7,
    "line": "L26",
    "anchor": {
@@ -5025,7 +5097,7 @@
      "pos": [
       1.024,
       0,
-      0
+      0.363
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -5040,7 +5112,7 @@
     "position": [
      -0.1341,
      5.171,
-     8.6197
+     8.8012
     ],
     "quaternion": [
      -0.22596,
@@ -5057,14 +5129,14 @@
     "subjectPoint": [
      -0.1341,
      1.6816,
-     -0.0169
+     0.1646
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:nodiving",
@@ -5075,8 +5147,8 @@
    "sfx": "thud"
   },
   {
-   "id": "S064",
-   "index": 63,
+   "id": "S065",
+   "index": 64,
    "beat": 7,
    "line": "L27",
    "anchor": {
@@ -5116,7 +5188,7 @@
      "pos": [
       1.024,
       0,
-      0
+      0.363
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -5129,9 +5201,9 @@
     "subject": "milo",
     "azimuth": -55,
     "position": [
-     0.7878,
-     3.2126,
-     1.7216
+     0.788,
+     3.2125,
+     1.7057
     ],
     "quaternion": [
      0.070679,
@@ -5146,16 +5218,16 @@
     "zoomTo": 1.22,
     "focusDistance": 2.222,
     "subjectPoint": [
-     -0.4195,
-     3.9253,
-     -0.0027
+     -0.4193,
+     3.9252,
+     -0.0186
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:pier"
@@ -5163,8 +5235,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S065",
-   "index": 64,
+   "id": "S066",
+   "index": 65,
    "beat": 7,
    "line": "L27",
    "anchor": {
@@ -5226,15 +5298,15 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [],
    "sfx": "pop",
    "note": "Review fix: held arm blocked the face"
   },
   {
-   "id": "S066",
-   "index": 65,
+   "id": "S067",
+   "index": 66,
    "beat": 7,
    "line": "L28",
    "anchor": {
@@ -5296,7 +5368,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:pier"
@@ -5305,8 +5377,8 @@
    "note": "Review fix: held arm blocked the face"
   },
   {
-   "id": "S067",
-   "index": 66,
+   "id": "S068",
+   "index": 67,
    "beat": 7,
    "line": "L29",
    "anchor": {
@@ -5346,7 +5418,7 @@
      "pos": [
       1.024,
       0,
-      0
+      0.363
      ],
      "yaw": 270,
      "holdAngle": -51.684,
@@ -5359,9 +5431,9 @@
     "subject": "milo",
     "azimuth": -50,
     "position": [
-     3.1322,
-     2.0545,
-     4.2301
+     3.1324,
+     2.0544,
+     4.2142
     ],
     "quaternion": [
      0.069639,
@@ -5376,16 +5448,16 @@
     "zoomTo": 1.22,
     "focusDistance": 5.834,
     "subjectPoint": [
-     -0.4195,
-     3.9253,
-     -0.0027
+     -0.4193,
+     3.9252,
+     -0.0186
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:pier",
@@ -5395,8 +5467,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S068",
-   "index": 67,
+   "id": "S069",
+   "index": 68,
    "beat": 7,
    "line": "L29",
    "anchor": {
@@ -5458,7 +5530,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "wrist:milo"
@@ -5466,8 +5538,8 @@
    "sfx": "tick"
   },
   {
-   "id": "S069",
-   "index": 68,
+   "id": "S070",
+   "index": 69,
    "beat": 7,
    "line": "L29",
    "anchor": {
@@ -5529,7 +5601,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "wrist:milo"
@@ -5537,8 +5609,8 @@
    "sfx": "tick"
   },
   {
-   "id": "S070",
-   "index": 69,
+   "id": "S071",
+   "index": 70,
    "beat": 7,
    "line": "L29",
    "anchor": {
@@ -5600,7 +5672,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "wrist:milo"
@@ -5608,8 +5680,8 @@
    "sfx": "tick"
   },
   {
-   "id": "S071",
-   "index": 70,
+   "id": "S072",
+   "index": 71,
    "beat": 7,
    "line": "L29",
    "anchor": {
@@ -5671,7 +5743,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "wrist:milo"
@@ -5679,8 +5751,8 @@
    "sfx": "tick"
   },
   {
-   "id": "S072",
-   "index": 71,
+   "id": "S073",
+   "index": 72,
    "beat": 7,
    "line": "L29",
    "anchor": {
@@ -5742,7 +5814,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "wrist:milo"
@@ -5750,8 +5822,8 @@
    "sfx": "thud"
   },
   {
-   "id": "S073",
-   "index": 72,
+   "id": "S074",
+   "index": 73,
    "beat": 7,
    "line": "L30",
    "anchor": {
@@ -5813,7 +5885,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "wrist:june"
@@ -5821,8 +5893,8 @@
    "sfx": "bell"
   },
   {
-   "id": "S074",
-   "index": 73,
+   "id": "S075",
+   "index": 74,
    "beat": 7,
    "line": "L30",
    "anchor": {
@@ -5884,7 +5956,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:pier"
@@ -5892,8 +5964,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S075",
-   "index": 74,
+   "id": "S076",
+   "index": 75,
    "beat": 7,
    "line": "L30",
    "anchor": {
@@ -5942,9 +6014,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     0.0144,
+     0.015,
      0.45,
-     10.2824
+     10.2905
     ],
     "quaternion": [
      0.074108,
@@ -5959,16 +6031,16 @@
     "zoomTo": 1.22,
     "focusDistance": 10.083,
     "subjectPoint": [
-     0.0144,
-     3.5018,
-     0.6728
+     0.015,
+     3.5023,
+     0.681
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:nodiving",
@@ -5978,8 +6050,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S076",
-   "index": 75,
+   "id": "S077",
+   "index": 76,
    "beat": 7,
    "line": "L31",
    "anchor": {
@@ -6054,7 +6126,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:bakery",
@@ -6066,8 +6138,8 @@
    "note": "Walking her home, backs to camera"
   },
   {
-   "id": "S077",
-   "index": 76,
+   "id": "S078",
+   "index": 77,
    "beat": 7,
    "line": "L31",
    "anchor": {
@@ -6130,7 +6202,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:clock",
@@ -6141,8 +6213,8 @@
    "note": "Alone"
   },
   {
-   "id": "S078",
-   "index": 77,
+   "id": "S079",
+   "index": 78,
    "beat": 8,
    "line": "L32",
    "anchor": {
@@ -6179,9 +6251,9 @@
     "subject": "milo",
     "azimuth": 10,
     "position": [
-     6.2402,
-     1.7416,
-     1.5464
+     6.2241,
+     1.7427,
+     1.5857
     ],
     "quaternion": [
      0.05677,
@@ -6196,16 +6268,16 @@
     "zoomTo": 1.22,
     "focusDistance": 10.145,
     "subjectPoint": [
-     -3.2234,
-     4.9952,
-     -0.1223
+     -3.2395,
+     4.9963,
+     -0.083
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "wrist:milo"
@@ -6213,8 +6285,8 @@
    "sfx": "bell"
   },
   {
-   "id": "S079",
-   "index": 78,
+   "id": "S080",
+   "index": 79,
    "beat": 8,
    "line": "L32",
    "anchor": {
@@ -6276,14 +6348,14 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S080",
-   "index": 79,
+   "id": "S081",
+   "index": 80,
    "beat": 8,
    "line": "L32",
    "anchor": {
@@ -6345,7 +6417,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "wrist:milo"
@@ -6353,8 +6425,8 @@
    "sfx": "tick"
   },
   {
-   "id": "S081",
-   "index": 80,
+   "id": "S082",
+   "index": 81,
    "beat": 8,
    "line": "L32",
    "anchor": {
@@ -6403,9 +6475,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     -0.5462,
+     -0.5312,
      0.6,
-     10.1155
+     10.1198
     ],
     "quaternion": [
      0.07388,
@@ -6420,16 +6492,16 @@
     "zoomTo": 1.22,
     "focusDistance": 10.028,
     "subjectPoint": [
-     0.957,
-     3.4652,
-     0.6242
+     0.9721,
+     3.4655,
+     0.6286
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:clock",
@@ -6439,8 +6511,8 @@
    "sfx": "bell"
   },
   {
-   "id": "S082",
-   "index": 81,
+   "id": "S083",
+   "index": 82,
    "beat": 8,
    "line": "L33",
    "anchor": {
@@ -6515,7 +6587,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "ledger:left",
@@ -6526,8 +6598,8 @@
    "sfx": "paper"
   },
   {
-   "id": "S083",
-   "index": 82,
+   "id": "S084",
+   "index": 83,
    "beat": 8,
    "line": "L33",
    "anchor": {
@@ -6589,7 +6661,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "ledger:left",
@@ -6598,8 +6670,8 @@
    "sfx": "paper"
   },
   {
-   "id": "S084",
-   "index": 83,
+   "id": "S085",
+   "index": 84,
    "beat": 8,
    "line": "L34",
    "anchor": {
@@ -6661,7 +6733,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "ledger:left",
@@ -6670,8 +6742,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S085",
-   "index": 84,
+   "id": "S086",
+   "index": 85,
    "beat": 8,
    "line": "L34",
    "anchor": {
@@ -6733,7 +6805,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:clerk",
@@ -6743,8 +6815,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S086",
-   "index": 85,
+   "id": "S087",
+   "index": 86,
    "beat": 8,
    "line": "L35",
    "anchor": {
@@ -6806,14 +6878,14 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [],
    "sfx": "pop"
   },
   {
-   "id": "S087",
-   "index": 86,
+   "id": "S088",
+   "index": 87,
    "beat": 8,
    "line": "L35",
    "anchor": {
@@ -6875,7 +6947,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:clerk"
@@ -6883,8 +6955,8 @@
    "sfx": "bell"
   },
   {
-   "id": "S088",
-   "index": 87,
+   "id": "S089",
+   "index": 88,
    "beat": 8,
    "line": "L36",
    "anchor": {
@@ -6933,9 +7005,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     -0.6898,
-     1.0312,
-     7.7614
+     -0.6855,
+     1.0301,
+     7.7534
     ],
     "quaternion": [
      0.072983,
@@ -6950,16 +7022,16 @@
     "zoomTo": 1.22,
     "focusDistance": 11.129,
     "subjectPoint": [
-     -4.2952,
-     4.6003,
-     -2.1443
+     -4.2909,
+     4.5993,
+     -2.1524
     ],
     "clamped": false
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:office",
@@ -6969,8 +7041,8 @@
    "note": "Callback gag 1: together every day"
   },
   {
-   "id": "S089",
-   "index": 88,
+   "id": "S090",
+   "index": 89,
    "beat": 8,
    "line": "L37",
    "anchor": {
@@ -7045,7 +7117,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:bakery",
@@ -7055,8 +7127,8 @@
    "note": "Callback gag 2: one more date"
   },
   {
-   "id": "S090",
-   "index": 89,
+   "id": "S091",
+   "index": 90,
    "beat": 8,
    "line": "L38",
    "anchor": {
@@ -7105,9 +7177,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     -0.0016,
+     0.0013,
      0.45,
-     23.5138
+     23.523
     ],
     "quaternion": [
      0.074108,
@@ -7122,16 +7194,16 @@
     "zoomTo": 1.22,
     "focusDistance": 22.85,
     "subjectPoint": [
-     -0.0016,
-     4.5346,
-     1.0318
+     0.0013,
+     4.5353,
+     1.041
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:cafeteria",
@@ -7144,8 +7216,8 @@
    "note": "Callback gag 3: jogging together"
   },
   {
-   "id": "S091",
-   "index": 90,
+   "id": "S092",
+   "index": 91,
    "beat": 8,
    "line": "L38",
    "anchor": {
@@ -7207,7 +7279,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:school"
@@ -7215,8 +7287,8 @@
    "sfx": "pop"
   },
   {
-   "id": "S092",
-   "index": 91,
+   "id": "S093",
+   "index": 92,
    "beat": 9,
    "line": "L39",
    "anchor": {
@@ -7291,7 +7363,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 1
+    "headTurn": -1
    },
    "text": [
     "sign:boat",
@@ -7303,8 +7375,8 @@
    "sfx": "whoosh"
   },
   {
-   "id": "S093",
-   "index": 92,
+   "id": "S094",
+   "index": 93,
    "beat": 9,
    "line": "L39",
    "anchor": {
@@ -7379,7 +7451,7 @@
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": -1
+    "headTurn": 0
    },
    "text": [
     "sign:nodiving",
@@ -7390,8 +7462,8 @@
    "note": "Same number on both wrists"
   },
   {
-   "id": "S094",
-   "index": 93,
+   "id": "S095",
+   "index": 94,
    "beat": 9,
    "line": "L39",
    "anchor": {
@@ -7440,9 +7512,9 @@
     "subject": "pair",
     "azimuth": 0,
     "position": [
-     0.0009,
+     0.0103,
      0.45,
-     -49.054
+     -49.0548
     ],
     "quaternion": [
      0,
@@ -7457,16 +7529,16 @@
     "zoomTo": 1.22,
     "focusDistance": 46.147,
     "subjectPoint": [
-     0.0009,
-     3.5023,
-     -3.0081
+     0.0103,
+     3.5018,
+     -3.0089
     ],
     "clamped": true
    },
    "micro": {
     "breath": true,
     "armSettle": true,
-    "headTurn": 0
+    "headTurn": 1
    },
    "text": [
     "sign:boat",

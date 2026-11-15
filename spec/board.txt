@@ -35,6 +35,7 @@ L10:5  | kitchen           | CU june 10         | june@c:armsUp:laugh | pop
 L11:0  | kitchen           | MCU june -15       | june@c:showWrist:neutral | pop
 L11:3  | kitchen           | INS june.wrist 0   | june@c:showWrist:neutral:4 | thud | note=Close-up of '4'
 L11:4  | kitchen           | CU milo 15         | milo@c:stand:worried | pop
+L11:7  | kitchen           | INS june.wrist 15  | june@c:showWrist:sad:4 | thud | note=Added after VO retime: 'Four days.' (S027 was 2.75 s)
 # BEAT 5 ESCALATION
 L12:0  | clinic            | MS pair 0          | doctor@pl:stand:worried june@pr:showWrist:neutral:4 | whoosh
 L12:6  | clinic            | MCU doctor 10      | doctor@c:shrug:deadpan | pop

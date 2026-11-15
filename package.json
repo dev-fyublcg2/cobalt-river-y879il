@@ -11,8 +11,9 @@
     "faces": "tsx tools/faces/build-faces.ts",
     "audio": "tsx tools/audio/build-audio.ts",
     "stills": "tsx tools/render/render-stills.ts",
+    "anim": "tsx tools/render/render-anim.ts",
     "assemble": "tsx tools/render/assemble.ts",
-    "make": "pnpm g2 && pnpm g3 && pnpm faces && pnpm audio && pnpm stills && pnpm assemble"
+    "make": "pnpm g2 && pnpm g3 && pnpm faces && pnpm audio && pnpm stills && pnpm anim && pnpm assemble"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",

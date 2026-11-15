@@ -2,7 +2,7 @@
 // Deterministic: time = frame / fps; no clocks, no randomness, no network.
 import React, { useMemo, useState, useEffect } from "react";
 import * as THREE from "three";
-import { AbsoluteFill, useCurrentFrame, useDelayRender, staticFile } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useDelayRender, useVideoConfig, staticFile } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
 import { useThree } from "@react-three/fiber";
 import shotlist from "../../spec/shotlist.json";
@@ -58,16 +58,18 @@ const Stage: React.FC<{ shot: ShotT; faces: Record<string, THREE.Texture>; zoom:
   return <primitive object={built.scene} />;
 };
 
-export const Shot: React.FC<{ shotId: string; still?: boolean }> = ({ shotId, still }) => {
+export const Shot: React.FC<{ shotId: string; still?: boolean; anim?: boolean }> = ({ shotId, still, anim }) => {
   const frame = useCurrentFrame();
   const assets = useAssets();
   const shot = (shotlist.shots as unknown as ShotT[]).find((s) => s.id === shotId)!;
-  const t = frame / shotlist.fps;
-  const zoom = still ? shot.camera.zoomFrom : shot.camera.zoomFrom + (shot.camera.zoomTo - shot.camera.zoomFrom) * ease(t / shot.dur);
+  const { width, height, fps } = useVideoConfig();
+  const t = Math.min(shot.dur, frame / fps); // time comes from the frame only
+  // stills and the animated pass keep the lens at zoomFrom; the push-in is applied at 60 fps in assembly
+  const zoom = still || anim ? shot.camera.zoomFrom : shot.camera.zoomFrom + (shot.camera.zoomTo - shot.camera.zoomFrom) * ease(Math.min(1, t / shot.dur));
   return (
     <AbsoluteFill style={{ background: "#111111" }}>
       {assets ? (
-        <ThreeCanvas width={shotlist.width} height={shotlist.height} dpr={1} gl={{ antialias: true, preserveDrawingBuffer: true }} shadows camera={makeCamera(shot.camera, zoom) as any}>
+        <ThreeCanvas width={width} height={height} dpr={1} gl={{ antialias: true, preserveDrawingBuffer: true }} shadows camera={makeCamera(shot.camera, zoom) as any}>
           <Stage shot={shot} faces={assets.faces} zoom={zoom} t={t} />
         </ThreeCanvas>
       ) : null}
