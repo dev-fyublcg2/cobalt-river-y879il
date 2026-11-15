@@ -1,0 +1,2246 @@
+{
+ "status": "ok",
+ "source": "piper-tts 1.8.0, en_US-libritts_r-medium (CC BY 4.0) speaker 550, length_scale 0.833 (speed 1.2), rubberband +4 st formant-preserved",
+ "quality": "fallback-offline-tts",
+ "totalWords": 377,
+ "speechEnd": 86.008,
+ "wps": 4.383,
+ "lines": [
+  {
+   "line": "L01",
+   "alignment": "aligned",
+   "file": "audio/vo/L01.wav",
+   "start": 0,
+   "duration": 2.334,
+   "words": [
+    {
+     "text": "In",
+     "start": 0.07,
+     "end": 0.151
+    },
+    {
+     "text": "this",
+     "start": 0.174,
+     "end": 0.302
+    },
+    {
+     "text": "town,",
+     "start": 0.348,
+     "end": 0.522
+    },
+    {
+     "text": "everybody",
+     "start": 0.627,
+     "end": 1.103
+    },
+    {
+     "text": "is",
+     "start": 1.138,
+     "end": 1.196
+    },
+    {
+     "text": "born",
+     "start": 1.254,
+     "end": 1.393
+    },
+    {
+     "text": "with",
+     "start": 1.416,
+     "end": 1.509
+    },
+    {
+     "text": "a",
+     "start": 1.533,
+     "end": 1.567
+    },
+    {
+     "text": "number",
+     "start": 1.614,
+     "end": 1.776
+    },
+    {
+     "text": "on",
+     "start": 1.8,
+     "end": 1.869
+    },
+    {
+     "text": "their",
+     "start": 1.892,
+     "end": 1.962
+    },
+    {
+     "text": "wrist.",
+     "start": 1.997,
+     "end": 2.276
+    }
+   ]
+  },
+  {
+   "line": "L02",
+   "alignment": "aligned",
+   "file": "audio/vo/L02.wav",
+   "start": 2.554,
+   "duration": 2.065,
+   "words": [
+    {
+     "text": "It's",
+     "start": 2.624,
+     "end": 2.705
+    },
+    {
+     "text": "how",
+     "start": 2.728,
+     "end": 2.821
+    },
+    {
+     "text": "many",
+     "start": 2.844,
+     "end": 2.972
+    },
+    {
+     "text": "days",
+     "start": 3.007,
+     "end": 3.146
+    },
+    {
+     "text": "you",
+     "start": 3.169,
+     "end": 3.239
+    },
+    {
+     "text": "have",
+     "start": 3.262,
+     "end": 3.343
+    },
+    {
+     "text": "left.",
+     "start": 3.378,
+     "end": 3.634
+    },
+    {
+     "text": "Everyone",
+     "start": 3.841,
+     "end": 4.108
+    },
+    {
+     "text": "can",
+     "start": 4.155,
+     "end": 4.248
+    },
+    {
+     "text": "see",
+     "start": 4.306,
+     "end": 4.445
+    },
+    {
+     "text": "it.",
+     "start": 4.468,
+     "end": 4.573
+    }
+   ]
+  },
+  {
+   "line": "L03",
+   "alignment": "aligned",
+   "file": "audio/vo/L03.wav",
+   "start": 4.739,
+   "duration": 1.972,
+   "words": [
+    {
+     "text": "And",
+     "start": 4.774,
+     "end": 4.855
+    },
+    {
+     "text": "you",
+     "start": 4.878,
+     "end": 4.948
+    },
+    {
+     "text": "can",
+     "start": 4.983,
+     "end": 5.052
+    },
+    {
+     "text": "give",
+     "start": 5.076,
+     "end": 5.18
+    },
+    {
+     "text": "them",
+     "start": 5.203,
+     "end": 5.296
+    },
+    {
+     "text": "away.",
+     "start": 5.319,
+     "end": 5.563
+    },
+    {
+     "text": "Hold",
+     "start": 5.771,
+     "end": 5.934
+    },
+    {
+     "text": "hands,",
+     "start": 5.98,
+     "end": 6.143
+    },
+    {
+     "text": "say",
+     "start": 6.189,
+     "end": 6.317
+    },
+    {
+     "text": "\"take",
+     "start": 6.352,
+     "end": 6.491
+    },
+    {
+     "text": "them\".",
+     "start": 6.549,
+     "end": 6.653
+    }
+   ]
+  },
+  {
+   "line": "L04",
+   "alignment": "aligned",
+   "file": "audio/vo/L04.wav",
+   "start": 6.931,
+   "duration": 1.358,
+   "words": [
+    {
+     "text": "People",
+     "start": 6.977,
+     "end": 7.163
+    },
+    {
+     "text": "mostly",
+     "start": 7.198,
+     "end": 7.43
+    },
+    {
+     "text": "use",
+     "start": 7.453,
+     "end": 7.581
+    },
+    {
+     "text": "it",
+     "start": 7.604,
+     "end": 7.651
+    },
+    {
+     "text": "for",
+     "start": 7.674,
+     "end": 7.767
+    },
+    {
+     "text": "dumb",
+     "start": 7.79,
+     "end": 7.906
+    },
+    {
+     "text": "stuff.",
+     "start": 7.964,
+     "end": 8.231
+    }
+   ]
+  },
+  {
+   "line": "L05",
+   "alignment": "aligned",
+   "file": "audio/vo/L05.wav",
+   "start": 8.41,
+   "duration": 3.132,
+   "words": [
+    {
+     "text": "Uncle",
+     "start": 8.48,
+     "end": 8.654
+    },
+    {
+     "text": "gave",
+     "start": 8.677,
+     "end": 8.805
+    },
+    {
+     "text": "his",
+     "start": 8.828,
+     "end": 8.898
+    },
+    {
+     "text": "boss",
+     "start": 8.944,
+     "end": 9.13
+    },
+    {
+     "text": "a",
+     "start": 9.153,
+     "end": 9.188
+    },
+    {
+     "text": "month",
+     "start": 9.234,
+     "end": 9.35
+    },
+    {
+     "text": "for",
+     "start": 9.374,
+     "end": 9.467
+    },
+    {
+     "text": "promotion.",
+     "start": 9.501,
+     "end": 9.873
+    },
+    {
+     "text": "Now",
+     "start": 10.081,
+     "end": 10.197
+    },
+    {
+     "text": "he's",
+     "start": 10.22,
+     "end": 10.336
+    },
+    {
+     "text": "boss.",
+     "start": 10.382,
+     "end": 10.673
+    },
+    {
+     "text": "Seventy-one.",
+     "start": 10.962,
+     "end": 11.472
+    }
+   ]
+  },
+  {
+   "line": "L06",
+   "alignment": "aligned",
+   "file": "audio/vo/L06.wav",
+   "start": 11.662,
+   "duration": 1.974,
+   "words": [
+    {
+     "text": "Cousin",
+     "start": 11.708,
+     "end": 11.929
+    },
+    {
+     "text": "gave",
+     "start": 11.952,
+     "end": 12.08
+    },
+    {
+     "text": "her",
+     "start": 12.103,
+     "end": 12.208
+    },
+    {
+     "text": "ex",
+     "start": 12.231,
+     "end": 12.359
+    },
+    {
+     "text": "one",
+     "start": 12.382,
+     "end": 12.475
+    },
+    {
+     "text": "day",
+     "start": 12.498,
+     "end": 12.602
+    },
+    {
+     "text": "to",
+     "start": 12.649,
+     "end": 12.695
+    },
+    {
+     "text": "watch",
+     "start": 12.73,
+     "end": 12.869
+    },
+    {
+     "text": "him",
+     "start": 12.893,
+     "end": 12.986
+    },
+    {
+     "text": "check",
+     "start": 13.009,
+     "end": 13.148
+    },
+    {
+     "text": "his",
+     "start": 13.171,
+     "end": 13.253
+    },
+    {
+     "text": "wrist.",
+     "start": 13.299,
+     "end": 13.578
+    }
+   ]
+  },
+  {
+   "line": "L07",
+   "alignment": "aligned",
+   "file": "audio/vo/L07.wav",
+   "start": 13.756,
+   "duration": 2.541,
+   "words": [
+    {
+     "text": "Coach",
+     "start": 13.802,
+     "end": 13.977
+    },
+    {
+     "text": "gave",
+     "start": 14,
+     "end": 14.128
+    },
+    {
+     "text": "a",
+     "start": 14.151,
+     "end": 14.174
+    },
+    {
+     "text": "stranger",
+     "start": 14.22,
+     "end": 14.522
+    },
+    {
+     "text": "a",
+     "start": 14.58,
+     "end": 14.627
+    },
+    {
+     "text": "year",
+     "start": 14.673,
+     "end": 14.766
+    },
+    {
+     "text": "for",
+     "start": 14.789,
+     "end": 14.882
+    },
+    {
+     "text": "parking.",
+     "start": 14.917,
+     "end": 15.23
+    },
+    {
+     "text": "Now",
+     "start": 15.427,
+     "end": 15.543
+    },
+    {
+     "text": "he",
+     "start": 15.566,
+     "end": 15.647
+    },
+    {
+     "text": "runs",
+     "start": 15.682,
+     "end": 15.833
+    },
+    {
+     "text": "everywhere.",
+     "start": 15.856,
+     "end": 16.204
+    }
+   ]
+  },
+  {
+   "line": "L08",
+   "alignment": "aligned",
+   "file": "audio/vo/L08.wav",
+   "start": 16.517,
+   "duration": 2.935,
+   "words": [
+    {
+     "text": "Me?",
+     "start": 16.575,
+     "end": 16.761
+    },
+    {
+     "text": "I've",
+     "start": 16.98,
+     "end": 17.085
+    },
+    {
+     "text": "got",
+     "start": 17.108,
+     "end": 17.236
+    },
+    {
+     "text": "4,015.",
+     "start": 17.259,
+     "end": 18.083
+    },
+    {
+     "text": "Biggest",
+     "start": 18.256,
+     "end": 18.453
+    },
+    {
+     "text": "number",
+     "start": 18.488,
+     "end": 18.651
+    },
+    {
+     "text": "in",
+     "start": 18.674,
+     "end": 18.72
+    },
+    {
+     "text": "my",
+     "start": 18.744,
+     "end": 18.813
+    },
+    {
+     "text": "whole",
+     "start": 18.836,
+     "end": 18.964
+    },
+    {
+     "text": "class.",
+     "start": 19.011,
+     "end": 19.347
+    }
+   ]
+  },
+  {
+   "line": "L09",
+   "alignment": "aligned",
+   "file": "audio/vo/L09.wav",
+   "start": 19.572,
+   "duration": 2.192,
+   "words": [
+    {
+     "text": "I",
+     "start": 19.618,
+     "end": 19.7
+    },
+    {
+     "text": "show",
+     "start": 19.746,
+     "end": 19.862
+    },
+    {
+     "text": "everyone.",
+     "start": 19.897,
+     "end": 20.245
+    },
+    {
+     "text": "I",
+     "start": 20.441,
+     "end": 20.523
+    },
+    {
+     "text": "show",
+     "start": 20.569,
+     "end": 20.674
+    },
+    {
+     "text": "the",
+     "start": 20.709,
+     "end": 20.755
+    },
+    {
+     "text": "lunch",
+     "start": 20.79,
+     "end": 20.964
+    },
+    {
+     "text": "lady.",
+     "start": 20.999,
+     "end": 21.196
+    },
+    {
+     "text": "Twice.",
+     "start": 21.392,
+     "end": 21.671
+    }
+   ]
+  },
+  {
+   "line": "L10",
+   "alignment": "aligned",
+   "file": "audio/vo/L10.wav",
+   "start": 21.884,
+   "duration": 1.729,
+   "words": [
+    {
+     "text": "Then",
+     "start": 21.907,
+     "end": 22
+    },
+    {
+     "text": "there's",
+     "start": 22.023,
+     "end": 22.139
+    },
+    {
+     "text": "my",
+     "start": 22.174,
+     "end": 22.244
+    },
+    {
+     "text": "little",
+     "start": 22.267,
+     "end": 22.406
+    },
+    {
+     "text": "sister,",
+     "start": 22.453,
+     "end": 22.65
+    },
+    {
+     "text": "June.",
+     "start": 22.697,
+     "end": 22.882
+    },
+    {
+     "text": "She's",
+     "start": 23.067,
+     "end": 23.253
+    },
+    {
+     "text": "four.",
+     "start": 23.288,
+     "end": 23.531
+    }
+   ]
+  },
+  {
+   "line": "L11",
+   "alignment": "aligned",
+   "file": "audio/vo/L11.wav",
+   "start": 23.732,
+   "duration": 2.401,
+   "words": [
+    {
+     "text": "Her",
+     "start": 23.778,
+     "end": 23.883
+    },
+    {
+     "text": "wrist",
+     "start": 23.918,
+     "end": 24.045
+    },
+    {
+     "text": "says",
+     "start": 24.069,
+     "end": 24.196
+    },
+    {
+     "text": "4.",
+     "start": 24.231,
+     "end": 24.463
+    },
+    {
+     "text": "Not",
+     "start": 24.694,
+     "end": 24.834
+    },
+    {
+     "text": "four",
+     "start": 24.869,
+     "end": 25.043
+    },
+    {
+     "text": "years.",
+     "start": 25.089,
+     "end": 25.368
+    },
+    {
+     "text": "Four",
+     "start": 25.575,
+     "end": 25.726
+    },
+    {
+     "text": "days.",
+     "start": 25.75,
+     "end": 26.028
+    }
+   ]
+  },
+  {
+   "line": "L12",
+   "alignment": "aligned",
+   "file": "audio/vo/L12.wav",
+   "start": 26.353,
+   "duration": 1.625,
+   "words": [
+    {
+     "text": "The",
+     "start": 26.376,
+     "end": 26.446
+    },
+    {
+     "text": "doctor",
+     "start": 26.469,
+     "end": 26.701
+    },
+    {
+     "text": "looks",
+     "start": 26.736,
+     "end": 26.887
+    },
+    {
+     "text": "at",
+     "start": 26.91,
+     "end": 26.957
+    },
+    {
+     "text": "her",
+     "start": 26.98,
+     "end": 27.05
+    },
+    {
+     "text": "wrist",
+     "start": 27.084,
+     "end": 27.247
+    },
+    {
+     "text": "and",
+     "start": 27.27,
+     "end": 27.34
+    },
+    {
+     "text": "just",
+     "start": 27.363,
+     "end": 27.514
+    },
+    {
+     "text": "shrugs.",
+     "start": 27.537,
+     "end": 27.862
+    }
+   ]
+  },
+  {
+   "line": "L13",
+   "alignment": "aligned",
+   "file": "audio/vo/L13.wav",
+   "start": 28.098,
+   "duration": 1.788,
+   "words": [
+    {
+     "text": "Mom",
+     "start": 28.156,
+     "end": 28.295
+    },
+    {
+     "text": "and",
+     "start": 28.319,
+     "end": 28.388
+    },
+    {
+     "text": "Dad",
+     "start": 28.411,
+     "end": 28.562
+    },
+    {
+     "text": "want",
+     "start": 28.586,
+     "end": 28.702
+    },
+    {
+     "text": "to",
+     "start": 28.737,
+     "end": 28.783
+    },
+    {
+     "text": "give,",
+     "start": 28.829,
+     "end": 28.957
+    },
+    {
+     "text": "but",
+     "start": 29.027,
+     "end": 29.143
+    },
+    {
+     "text": "they're",
+     "start": 29.166,
+     "end": 29.282
+    },
+    {
+     "text": "almost",
+     "start": 29.317,
+     "end": 29.538
+    },
+    {
+     "text": "empty.",
+     "start": 29.561,
+     "end": 29.793
+    }
+   ]
+  },
+  {
+   "line": "L14",
+   "alignment": "aligned",
+   "file": "audio/vo/L14.wav",
+   "start": 30.006,
+   "duration": 2.147,
+   "words": [
+    {
+     "text": "So",
+     "start": 30.052,
+     "end": 30.169
+    },
+    {
+     "text": "I",
+     "start": 30.192,
+     "end": 30.238
+    },
+    {
+     "text": "go",
+     "start": 30.261,
+     "end": 30.354
+    },
+    {
+     "text": "to",
+     "start": 30.378,
+     "end": 30.424
+    },
+    {
+     "text": "the",
+     "start": 30.459,
+     "end": 30.505
+    },
+    {
+     "text": "town",
+     "start": 30.54,
+     "end": 30.714
+    },
+    {
+     "text": "clerk.",
+     "start": 30.761,
+     "end": 31.004
+    },
+    {
+     "text": "She",
+     "start": 31.177,
+     "end": 31.293
+    },
+    {
+     "text": "reads",
+     "start": 31.317,
+     "end": 31.479
+    },
+    {
+     "text": "the",
+     "start": 31.514,
+     "end": 31.56
+    },
+    {
+     "text": "rule",
+     "start": 31.584,
+     "end": 31.711
+    },
+    {
+     "text": "out",
+     "start": 31.735,
+     "end": 31.827
+    },
+    {
+     "text": "loud.",
+     "start": 31.851,
+     "end": 32.083
+    }
+   ]
+  },
+  {
+   "line": "L15",
+   "alignment": "aligned",
+   "file": "audio/vo/L15.wav",
+   "start": 32.273,
+   "duration": 1.624,
+   "words": [
+    {
+     "text": "\"You",
+     "start": 32.319,
+     "end": 32.401
+    },
+    {
+     "text": "can",
+     "start": 32.447,
+     "end": 32.54
+    },
+    {
+     "text": "give.",
+     "start": 32.563,
+     "end": 32.795
+    },
+    {
+     "text": "You",
+     "start": 33.003,
+     "end": 33.084
+    },
+    {
+     "text": "can",
+     "start": 33.131,
+     "end": 33.201
+    },
+    {
+     "text": "never",
+     "start": 33.224,
+     "end": 33.363
+    },
+    {
+     "text": "take",
+     "start": 33.41,
+     "end": 33.549
+    },
+    {
+     "text": "back.\"",
+     "start": 33.595,
+     "end": 33.839
+    }
+   ]
+  },
+  {
+   "line": "L16",
+   "alignment": "aligned",
+   "file": "audio/vo/L16.wav",
+   "start": 34.017,
+   "duration": 2.076,
+   "words": [
+    {
+     "text": "She",
+     "start": 34.063,
+     "end": 34.18
+    },
+    {
+     "text": "looks",
+     "start": 34.214,
+     "end": 34.342
+    },
+    {
+     "text": "at",
+     "start": 34.365,
+     "end": 34.412
+    },
+    {
+     "text": "my",
+     "start": 34.435,
+     "end": 34.516
+    },
+    {
+     "text": "number.",
+     "start": 34.539,
+     "end": 34.748
+    },
+    {
+     "text": "Then",
+     "start": 34.945,
+     "end": 35.037
+    },
+    {
+     "text": "at",
+     "start": 35.084,
+     "end": 35.13
+    },
+    {
+     "text": "me.",
+     "start": 35.154,
+     "end": 35.246
+    },
+    {
+     "text": "For",
+     "start": 35.431,
+     "end": 35.559
+    },
+    {
+     "text": "a",
+     "start": 35.593,
+     "end": 35.779
+    },
+    {
+     "text": "long",
+     "start": 35.814,
+     "end": 35.912
+    },
+    {
+     "text": "time.",
+     "start": 35.912,
+     "end": 36.035
+    }
+   ]
+  },
+  {
+   "line": "L17",
+   "alignment": "aligned",
+   "file": "audio/vo/L17.wav",
+   "start": 36.313,
+   "duration": 2.112,
+   "words": [
+    {
+     "text": "At",
+     "start": 36.383,
+     "end": 36.476
+    },
+    {
+     "text": "dinner,",
+     "start": 36.51,
+     "end": 36.696
+    },
+    {
+     "text": "I",
+     "start": 36.801,
+     "end": 36.882
+    },
+    {
+     "text": "grab",
+     "start": 36.905,
+     "end": 37.091
+    },
+    {
+     "text": "June's",
+     "start": 37.114,
+     "end": 37.311
+    },
+    {
+     "text": "hands",
+     "start": 37.346,
+     "end": 37.509
+    },
+    {
+     "text": "and",
+     "start": 37.532,
+     "end": 37.602
+    },
+    {
+     "text": "say",
+     "start": 37.648,
+     "end": 37.764
+    },
+    {
+     "text": "it.",
+     "start": 37.811,
+     "end": 37.915
+    },
+    {
+     "text": "Take",
+     "start": 38.076,
+     "end": 38.227
+    },
+    {
+     "text": "them.",
+     "start": 38.285,
+     "end": 38.378
+    }
+   ]
+  },
+  {
+   "line": "L18",
+   "alignment": "aligned",
+   "file": "audio/vo/L18.wav",
+   "start": 38.544,
+   "duration": 1.903,
+   "words": [
+    {
+     "text": "She",
+     "start": 38.59,
+     "end": 38.718
+    },
+    {
+     "text": "says,",
+     "start": 38.753,
+     "end": 38.892
+    },
+    {
+     "text": "\"Take",
+     "start": 38.939,
+     "end": 39.078
+    },
+    {
+     "text": "what?\"",
+     "start": 39.124,
+     "end": 39.31
+    },
+    {
+     "text": "and",
+     "start": 39.483,
+     "end": 39.576
+    },
+    {
+     "text": "steals",
+     "start": 39.622,
+     "end": 39.843
+    },
+    {
+     "text": "my",
+     "start": 39.878,
+     "end": 39.959
+    },
+    {
+     "text": "potato.",
+     "start": 40.006,
+     "end": 40.342
+    }
+   ]
+  },
+  {
+   "line": "L19",
+   "alignment": "aligned",
+   "file": "audio/vo/L19.wav",
+   "start": 40.567,
+   "duration": 2.227,
+   "words": [
+    {
+     "text": "She's",
+     "start": 40.613,
+     "end": 40.799
+    },
+    {
+     "text": "four.",
+     "start": 40.834,
+     "end": 41.078
+    },
+    {
+     "text": "She",
+     "start": 41.262,
+     "end": 41.355
+    },
+    {
+     "text": "doesn't",
+     "start": 41.39,
+     "end": 41.564
+    },
+    {
+     "text": "get",
+     "start": 41.587,
+     "end": 41.704
+    },
+    {
+     "text": "it.",
+     "start": 41.75,
+     "end": 41.831
+    },
+    {
+     "text": "She",
+     "start": 42.004,
+     "end": 42.132
+    },
+    {
+     "text": "thinks",
+     "start": 42.167,
+     "end": 42.329
+    },
+    {
+     "text": "it's",
+     "start": 42.352,
+     "end": 42.434
+    },
+    {
+     "text": "a",
+     "start": 42.457,
+     "end": 42.48
+    },
+    {
+     "text": "game.",
+     "start": 42.503,
+     "end": 42.736
+    }
+   ]
+  },
+  {
+   "line": "L20",
+   "alignment": "aligned",
+   "file": "audio/vo/L20.wav",
+   "start": 42.914,
+   "duration": 2.193,
+   "words": [
+    {
+     "text": "Mom",
+     "start": 42.972,
+     "end": 43.146
+    },
+    {
+     "text": "cries",
+     "start": 43.193,
+     "end": 43.436
+    },
+    {
+     "text": "into",
+     "start": 43.46,
+     "end": 43.587
+    },
+    {
+     "text": "the",
+     "start": 43.611,
+     "end": 43.657
+    },
+    {
+     "text": "gravy.",
+     "start": 43.692,
+     "end": 43.971
+    },
+    {
+     "text": "Dad",
+     "start": 44.155,
+     "end": 44.329
+    },
+    {
+     "text": "stares",
+     "start": 44.376,
+     "end": 44.619
+    },
+    {
+     "text": "at",
+     "start": 44.643,
+     "end": 44.689
+    },
+    {
+     "text": "his",
+     "start": 44.712,
+     "end": 44.794
+    },
+    {
+     "text": "plate.",
+     "start": 44.84,
+     "end": 45.061
+    }
+   ]
+  },
+  {
+   "line": "L21",
+   "alignment": "aligned",
+   "file": "audio/vo/L21.wav",
+   "start": 45.227,
+   "duration": 1.579,
+   "words": [
+    {
+     "text": "That",
+     "start": 45.273,
+     "end": 45.413
+    },
+    {
+     "text": "night",
+     "start": 45.448,
+     "end": 45.587
+    },
+    {
+     "text": "I",
+     "start": 45.633,
+     "end": 45.703
+    },
+    {
+     "text": "practise",
+     "start": 45.738,
+     "end": 46.04
+    },
+    {
+     "text": "the",
+     "start": 46.075,
+     "end": 46.133
+    },
+    {
+     "text": "words",
+     "start": 46.167,
+     "end": 46.342
+    },
+    {
+     "text": "in",
+     "start": 46.365,
+     "end": 46.492
+    },
+    {
+     "text": "the",
+     "start": 46.516,
+     "end": 46.579
+    },
+    {
+     "text": "mirror.",
+     "start": 46.579,
+     "end": 46.736
+    }
+   ]
+  },
+  {
+   "line": "L22",
+   "alignment": "aligned",
+   "file": "audio/vo/L22.wav",
+   "start": 46.926,
+   "duration": 1.344,
+   "words": [
+    {
+     "text": "Take",
+     "start": 46.972,
+     "end": 47.123
+    },
+    {
+     "text": "them.",
+     "start": 47.181,
+     "end": 47.274
+    },
+    {
+     "text": "Take",
+     "start": 47.447,
+     "end": 47.598
+    },
+    {
+     "text": "them.",
+     "start": 47.656,
+     "end": 47.749
+    },
+    {
+     "text": "Take",
+     "start": 47.922,
+     "end": 48.073
+    },
+    {
+     "text": "them.",
+     "start": 48.131,
+     "end": 48.224
+    }
+   ]
+  },
+  {
+   "line": "L23",
+   "alignment": "aligned",
+   "file": "audio/vo/L23.wav",
+   "start": 48.39,
+   "duration": 2.679,
+   "words": [
+    {
+     "text": "Next",
+     "start": 48.448,
+     "end": 48.634
+    },
+    {
+     "text": "morning,",
+     "start": 48.657,
+     "end": 48.854
+    },
+    {
+     "text": "her",
+     "start": 48.901,
+     "end": 49.005
+    },
+    {
+     "text": "wrist",
+     "start": 49.04,
+     "end": 49.168
+    },
+    {
+     "text": "says",
+     "start": 49.191,
+     "end": 49.354
+    },
+    {
+     "text": "2.",
+     "start": 49.412,
+     "end": 49.574
+    },
+    {
+     "text": "It",
+     "start": 49.817,
+     "end": 49.886
+    },
+    {
+     "text": "didn't",
+     "start": 49.921,
+     "end": 50.084
+    },
+    {
+     "text": "work.",
+     "start": 50.107,
+     "end": 50.316
+    },
+    {
+     "text": "Nothing",
+     "start": 50.512,
+     "end": 50.744
+    },
+    {
+     "text": "did.",
+     "start": 50.779,
+     "end": 50.988
+    }
+   ]
+  },
+  {
+   "line": "L24",
+   "alignment": "aligned",
+   "file": "audio/vo/L24.wav",
+   "start": 51.289,
+   "duration": 2.067,
+   "words": [
+    {
+     "text": "On",
+     "start": 51.347,
+     "end": 51.44
+    },
+    {
+     "text": "her",
+     "start": 51.475,
+     "end": 51.544
+    },
+    {
+     "text": "last",
+     "start": 51.568,
+     "end": 51.753
+    },
+    {
+     "text": "day,",
+     "start": 51.777,
+     "end": 51.928
+    },
+    {
+     "text": "I",
+     "start": 52.032,
+     "end": 52.113
+    },
+    {
+     "text": "take",
+     "start": 52.16,
+     "end": 52.276
+    },
+    {
+     "text": "her",
+     "start": 52.299,
+     "end": 52.369
+    },
+    {
+     "text": "to",
+     "start": 52.415,
+     "end": 52.462
+    },
+    {
+     "text": "the",
+     "start": 52.496,
+     "end": 52.543
+    },
+    {
+     "text": "dock",
+     "start": 52.566,
+     "end": 52.717
+    },
+    {
+     "text": "at",
+     "start": 52.74,
+     "end": 52.798
+    },
+    {
+     "text": "sunrise.",
+     "start": 52.833,
+     "end": 53.251
+    }
+   ]
+  },
+  {
+   "line": "L25",
+   "alignment": "aligned",
+   "file": "audio/vo/L25.wav",
+   "start": 53.476,
+   "duration": 1.984,
+   "words": [
+    {
+     "text": "Her",
+     "start": 53.511,
+     "end": 53.627
+    },
+    {
+     "text": "favourite",
+     "start": 53.662,
+     "end": 53.882
+    },
+    {
+     "text": "place.",
+     "start": 53.929,
+     "end": 54.265
+    },
+    {
+     "text": "The",
+     "start": 54.473,
+     "end": 54.531
+    },
+    {
+     "text": "ducks",
+     "start": 54.554,
+     "end": 54.74
+    },
+    {
+     "text": "are",
+     "start": 54.763,
+     "end": 54.833
+    },
+    {
+     "text": "already",
+     "start": 54.856,
+     "end": 55.077
+    },
+    {
+     "text": "awake.",
+     "start": 55.112,
+     "end": 55.402
+    }
+   ]
+  },
+  {
+   "line": "L26",
+   "alignment": "aligned",
+   "file": "audio/vo/L26.wav",
+   "start": 55.58,
+   "duration": 1.682,
+   "words": [
+    {
+     "text": "I",
+     "start": 55.603,
+     "end": 55.65
+    },
+    {
+     "text": "hold",
+     "start": 55.673,
+     "end": 55.812
+    },
+    {
+     "text": "both",
+     "start": 55.835,
+     "end": 55.952
+    },
+    {
+     "text": "her",
+     "start": 55.975,
+     "end": 56.044
+    },
+    {
+     "text": "hands.",
+     "start": 56.068,
+     "end": 56.381
+    },
+    {
+     "text": "I",
+     "start": 56.624,
+     "end": 56.67
+    },
+    {
+     "text": "don't",
+     "start": 56.693,
+     "end": 56.833
+    },
+    {
+     "text": "let",
+     "start": 56.856,
+     "end": 56.949
+    },
+    {
+     "text": "go.",
+     "start": 56.984,
+     "end": 57.158
+    }
+   ]
+  },
+  {
+   "line": "L27",
+   "alignment": "aligned",
+   "file": "audio/vo/L27.wav",
+   "start": 57.382,
+   "duration": 2.134,
+   "words": [
+    {
+     "text": "I",
+     "start": 57.428,
+     "end": 57.51
+    },
+    {
+     "text": "say",
+     "start": 57.568,
+     "end": 57.672
+    },
+    {
+     "text": "it",
+     "start": 57.695,
+     "end": 57.742
+    },
+    {
+     "text": "slow,",
+     "start": 57.8,
+     "end": 57.962
+    },
+    {
+     "text": "like",
+     "start": 58.009,
+     "end": 58.125
+    },
+    {
+     "text": "a",
+     "start": 58.148,
+     "end": 58.183
+    },
+    {
+     "text": "teacher.",
+     "start": 58.23,
+     "end": 58.485
+    },
+    {
+     "text": "\"June.",
+     "start": 58.727,
+     "end": 58.971
+    },
+    {
+     "text": "Take",
+     "start": 59.167,
+     "end": 59.318
+    },
+    {
+     "text": "them.\"",
+     "start": 59.376,
+     "end": 59.469
+    }
+   ]
+  },
+  {
+   "line": "L28",
+   "alignment": "aligned",
+   "file": "audio/vo/L28.wav",
+   "start": 59.636,
+   "duration": 0.859,
+   "words": [
+    {
+     "text": "And",
+     "start": 59.671,
+     "end": 59.764
+    },
+    {
+     "text": "she",
+     "start": 59.81,
+     "end": 59.88
+    },
+    {
+     "text": "says,",
+     "start": 59.903,
+     "end": 60.031
+    },
+    {
+     "text": "\"Okay.\"",
+     "start": 60.089,
+     "end": 60.391
+    }
+   ]
+  },
+  {
+   "line": "L29",
+   "alignment": "aligned",
+   "file": "audio/vo/L29.wav",
+   "start": 60.615,
+   "duration": 3.849,
+   "words": [
+    {
+     "text": "My",
+     "start": 60.673,
+     "end": 60.754
+    },
+    {
+     "text": "wrist",
+     "start": 60.789,
+     "end": 60.917
+    },
+    {
+     "text": "goes",
+     "start": 60.94,
+     "end": 61.079
+    },
+    {
+     "text": "4,015.",
+     "start": 61.103,
+     "end": 61.927
+    },
+    {
+     "text": "3,000.",
+     "start": 62.1,
+     "end": 62.622
+    },
+    {
+     "text": "900.",
+     "start": 62.818,
+     "end": 63.399
+    },
+    {
+     "text": "12.",
+     "start": 63.583,
+     "end": 63.862
+    },
+    {
+     "text": "0.",
+     "start": 64.093,
+     "end": 64.383
+    }
+   ]
+  },
+  {
+   "line": "L30",
+   "alignment": "aligned",
+   "file": "audio/vo/L30.wav",
+   "start": 64.584,
+   "duration": 2.854,
+   "words": [
+    {
+     "text": "Hers",
+     "start": 64.63,
+     "end": 64.793
+    },
+    {
+     "text": "climbs",
+     "start": 64.816,
+     "end": 65.048
+    },
+    {
+     "text": "past",
+     "start": 65.083,
+     "end": 65.281
+    },
+    {
+     "text": "4,000.",
+     "start": 65.304,
+     "end": 65.815
+    },
+    {
+     "text": "She",
+     "start": 65.999,
+     "end": 66.115
+    },
+    {
+     "text": "laughs.",
+     "start": 66.162,
+     "end": 66.475
+    },
+    {
+     "text": "She",
+     "start": 66.718,
+     "end": 66.822
+    },
+    {
+     "text": "has",
+     "start": 66.857,
+     "end": 66.95
+    },
+    {
+     "text": "no",
+     "start": 66.973,
+     "end": 67.066
+    },
+    {
+     "text": "idea.",
+     "start": 67.101,
+     "end": 67.345
+    }
+   ]
+  },
+  {
+   "line": "L31",
+   "alignment": "aligned",
+   "file": "audio/vo/L31.wav",
+   "start": 67.558,
+   "duration": 1.891,
+   "words": [
+    {
+     "text": "I",
+     "start": 67.604,
+     "end": 67.662
+    },
+    {
+     "text": "walk",
+     "start": 67.697,
+     "end": 67.837
+    },
+    {
+     "text": "her",
+     "start": 67.86,
+     "end": 67.93
+    },
+    {
+     "text": "home.",
+     "start": 67.953,
+     "end": 68.173
+    },
+    {
+     "text": "Then",
+     "start": 68.358,
+     "end": 68.52
+    },
+    {
+     "text": "I",
+     "start": 68.578,
+     "end": 68.648
+    },
+    {
+     "text": "go",
+     "start": 68.683,
+     "end": 68.787
+    },
+    {
+     "text": "to",
+     "start": 68.811,
+     "end": 68.857
+    },
+    {
+     "text": "my",
+     "start": 68.88,
+     "end": 68.962
+    },
+    {
+     "text": "room",
+     "start": 68.985,
+     "end": 69.101
+    },
+    {
+     "text": "alone.",
+     "start": 69.124,
+     "end": 69.391
+    }
+   ]
+  },
+  {
+   "line": "L32",
+   "alignment": "aligned",
+   "file": "audio/vo/L32.wav",
+   "start": 69.669,
+   "duration": 2.912,
+   "words": [
+    {
+     "text": "Then",
+     "start": 69.692,
+     "end": 69.785
+    },
+    {
+     "text": "I",
+     "start": 69.808,
+     "end": 69.855
+    },
+    {
+     "text": "wake",
+     "start": 69.878,
+     "end": 70.017
+    },
+    {
+     "text": "up.",
+     "start": 70.052,
+     "end": 70.203
+    },
+    {
+     "text": "My",
+     "start": 70.388,
+     "end": 70.48
+    },
+    {
+     "text": "wrist",
+     "start": 70.515,
+     "end": 70.655
+    },
+    {
+     "text": "says",
+     "start": 70.678,
+     "end": 70.794
+    },
+    {
+     "text": "4,016.",
+     "start": 70.817,
+     "end": 71.63
+    },
+    {
+     "text": "Same",
+     "start": 71.838,
+     "end": 71.988
+    },
+    {
+     "text": "as",
+     "start": 72.023,
+     "end": 72.093
+    },
+    {
+     "text": "June's.",
+     "start": 72.128,
+     "end": 72.476
+    }
+   ]
+  },
+  {
+   "line": "L33",
+   "alignment": "aligned",
+   "file": "audio/vo/L33.wav",
+   "start": 72.701,
+   "duration": 2.389,
+   "words": [
+    {
+     "text": "The",
+     "start": 72.724,
+     "end": 72.771
+    },
+    {
+     "text": "clerk",
+     "start": 72.794,
+     "end": 72.956
+    },
+    {
+     "text": "opens",
+     "start": 73.003,
+     "end": 73.223
+    },
+    {
+     "text": "the",
+     "start": 73.258,
+     "end": 73.305
+    },
+    {
+     "text": "big",
+     "start": 73.34,
+     "end": 73.456
+    },
+    {
+     "text": "ledger.",
+     "start": 73.49,
+     "end": 73.734
+    },
+    {
+     "text": "Page",
+     "start": 73.954,
+     "end": 74.139
+    },
+    {
+     "text": "one.",
+     "start": 74.174,
+     "end": 74.348
+    },
+    {
+     "text": "Tiny",
+     "start": 74.544,
+     "end": 74.742
+    },
+    {
+     "text": "print.",
+     "start": 74.788,
+     "end": 75.032
+    }
+   ]
+  },
+  {
+   "line": "L34",
+   "alignment": "aligned",
+   "file": "audio/vo/L34.wav",
+   "start": 75.21,
+   "duration": 1.428,
+   "words": [
+    {
+     "text": "\"Days",
+     "start": 75.233,
+     "end": 75.419
+    },
+    {
+     "text": "given",
+     "start": 75.442,
+     "end": 75.605
+    },
+    {
+     "text": "away",
+     "start": 75.628,
+     "end": 75.767
+    },
+    {
+     "text": "are",
+     "start": 75.79,
+     "end": 75.86
+    },
+    {
+     "text": "days",
+     "start": 75.895,
+     "end": 76.023
+    },
+    {
+     "text": "spent",
+     "start": 76.046,
+     "end": 76.208
+    },
+    {
+     "text": "together.\"",
+     "start": 76.243,
+     "end": 76.545
+    }
+   ]
+  },
+  {
+   "line": "L35",
+   "alignment": "aligned",
+   "file": "audio/vo/L35.wav",
+   "start": 76.758,
+   "duration": 1.81,
+   "words": [
+    {
+     "text": "\"You",
+     "start": 76.781,
+     "end": 76.851
+    },
+    {
+     "text": "don't",
+     "start": 76.886,
+     "end": 77.025
+    },
+    {
+     "text": "lose",
+     "start": 77.048,
+     "end": 77.176
+    },
+    {
+     "text": "the",
+     "start": 77.222,
+     "end": 77.269
+    },
+    {
+     "text": "day.",
+     "start": 77.292,
+     "end": 77.478
+    },
+    {
+     "text": "You",
+     "start": 77.697,
+     "end": 77.79
+    },
+    {
+     "text": "only",
+     "start": 77.836,
+     "end": 77.976
+    },
+    {
+     "text": "lose",
+     "start": 77.999,
+     "end": 78.127
+    },
+    {
+     "text": "it",
+     "start": 78.15,
+     "end": 78.196
+    },
+    {
+     "text": "alone.\"",
+     "start": 78.243,
+     "end": 78.51
+    }
+   ]
+  },
+  {
+   "line": "L36",
+   "alignment": "aligned",
+   "file": "audio/vo/L36.wav",
+   "start": 78.688,
+   "duration": 1.416,
+   "words": [
+    {
+     "text": "That's",
+     "start": 78.734,
+     "end": 78.874
+    },
+    {
+     "text": "why",
+     "start": 78.897,
+     "end": 79.013
+    },
+    {
+     "text": "Uncle",
+     "start": 79.048,
+     "end": 79.187
+    },
+    {
+     "text": "never",
+     "start": 79.222,
+     "end": 79.361
+    },
+    {
+     "text": "leaves",
+     "start": 79.396,
+     "end": 79.547
+    },
+    {
+     "text": "the",
+     "start": 79.582,
+     "end": 79.599
+    },
+    {
+     "text": "office.",
+     "start": 79.599,
+     "end": 79.652
+    }
+   ]
+  },
+  {
+   "line": "L37",
+   "alignment": "aligned",
+   "file": "audio/vo/L37.wav",
+   "start": 80.224,
+   "duration": 1.486,
+   "words": [
+    {
+     "text": "Why",
+     "start": 80.247,
+     "end": 80.34
+    },
+    {
+     "text": "my",
+     "start": 80.375,
+     "end": 80.445
+    },
+    {
+     "text": "cousin",
+     "start": 80.491,
+     "end": 80.665
+    },
+    {
+     "text": "got",
+     "start": 80.688,
+     "end": 80.804
+    },
+    {
+     "text": "one",
+     "start": 80.839,
+     "end": 80.932
+    },
+    {
+     "text": "more",
+     "start": 80.955,
+     "end": 81.072
+    },
+    {
+     "text": "terrible",
+     "start": 81.118,
+     "end": 81.373
+    },
+    {
+     "text": "date.",
+     "start": 81.408,
+     "end": 81.664
+    }
+   ]
+  },
+  {
+   "line": "L38",
+   "alignment": "aligned",
+   "file": "audio/vo/L38.wav",
+   "start": 81.83,
+   "duration": 1.776,
+   "words": [
+    {
+     "text": "Why",
+     "start": 81.853,
+     "end": 81.981
+    },
+    {
+     "text": "Coach",
+     "start": 82.039,
+     "end": 82.248
+    },
+    {
+     "text": "jogs",
+     "start": 82.283,
+     "end": 82.561
+    },
+    {
+     "text": "with",
+     "start": 82.585,
+     "end": 82.678
+    },
+    {
+     "text": "a",
+     "start": 82.701,
+     "end": 82.724
+    },
+    {
+     "text": "stranger",
+     "start": 82.759,
+     "end": 83.061
+    },
+    {
+     "text": "every",
+     "start": 83.119,
+     "end": 83.258
+    },
+    {
+     "text": "morning.",
+     "start": 83.293,
+     "end": 83.548
+    }
+   ]
+  },
+  {
+   "line": "L39",
+   "alignment": "aligned",
+   "file": "audio/vo/L39.wav",
+   "start": 83.827,
+   "duration": 2.181,
+   "words": [
+    {
+     "text": "Everybody",
+     "start": 83.897,
+     "end": 84.187
+    },
+    {
+     "text": "gets",
+     "start": 84.21,
+     "end": 84.326
+    },
+    {
+     "text": "a",
+     "start": 84.349,
+     "end": 84.373
+    },
+    {
+     "text": "number.",
+     "start": 84.396,
+     "end": 84.605
+    },
+    {
+     "text": "I",
+     "start": 84.824,
+     "end": 84.871
+    },
+    {
+     "text": "just",
+     "start": 84.905,
+     "end": 85.045
+    },
+    {
+     "text": "made",
+     "start": 85.068,
+     "end": 85.196
+    },
+    {
+     "text": "sure",
+     "start": 85.242,
+     "end": 85.347
+    },
+    {
+     "text": "we",
+     "start": 85.37,
+     "end": 85.44
+    },
+    {
+     "text": "had",
+     "start": 85.463,
+     "end": 85.532
+    },
+    {
+     "text": "the",
+     "start": 85.567,
+     "end": 85.614
+    },
+    {
+     "text": "same",
+     "start": 85.66,
+     "end": 85.799
+    },
+    {
+     "text": "one.",
+     "start": 85.823,
+     "end": 85.95
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+# THE DAY COUNTER — board (S4 Shot Director source). tools/spec/build-shotlist.ts compiles this into /spec/shotlist.json.
+# One row per shot:  at | set[/mood] | FRAMING subject[.part] azimuth | chars | sfx [| options]
+#   at       line:word  -> the shot starts on that VO word (cuts land on word starts)
+#   chars    id@mark[/yawOverride]:pose:face[:wrist]   (space separated; first char(s) are the camera subject for 'pair')
+#   options  ledger=rules|page1  note=...
+# Framings (head px at zoom 1.0): ECU 1050, CU 640, MCU 400, MS 230, WS 110, EWS 48, INS = insert on a text plane / hands.
+# BEAT 1 HOOK
+L01:0  | street            | WS t1 10           | t1@c:checkWrist:surprised t2@ll:checkWrist:neutral t3@rr:checkWrist:deadpan t4@b1:checkWrist:worried kid1@b2:checkWrist:happy | whoosh | note=Establishing: the whole street checks wrists
+L01:3  | street            | MCU t2 -20         | t2@c:checkWrist:surprised t3@b1:checkWrist:neutral | pop
+L01:7  | street            | INS t3.wrist 0     | t3@c:showWrist:neutral | tick
+# BEAT 2 RULE
+L02:0  | street            | INS milo.wrist 12  | milo@c:showWrist:deadpan | tick | note=Close-up of a wrist number
+L02:7  | street            | MCU t1 0           | t1@c:checkWrist:smug t2@l:point:surprised t4@r:point:happy | pop | note=S005 fix: checkWrist keeps the arm below the face
+L03:0  | street            | MS pair 0          | t1@pl:holdHands:happy t4@pr:holdHands:surprised | pop
+L03:6  | street            | INS pair.hands 0   | t1@pl:holdHands:happy t4@pr:holdHands:surprised | pop
+L03:8  | street            | ECU t1 -55         | t1@pl:holdHands:determined t4@pr:holdHands:happy | pop
+# BEAT 3 GAGS
+L04:0  | townSquare        | WS t3 0            | t3@c:checkWrist:deadpan t1@l:showWrist:smug t2@b1:checkWrist:happy t4@b2:point:laugh | whoosh
+L04:4  | townSquare        | MCU t4 10          | t4@c:shrug:smug | pop
+L05:0  | townSquare        | MS pair 0          | uncle@pl:holdHands:happy boss@pr:holdHands:smug | pop | note=Gag 1: a month for a promotion
+L05:8  | townSquare        | CU uncleOld 15     | uncleOld@office:stand:deadpan | pop | note=Gag 1 punch: same suit, grey hair
+L06:0  | street            | MS pair 0          | cousin@pl:holdHands:smug ex@pr:holdHands:confused | whoosh | note=Gag 2
+L06:6  | street            | MCU ex -15         | ex@c:checkWrist:surprised cousin@b1:stand:smug | pop
+L07:0  | schoolyard        | MS pair 0          | coach@pl:holdHands:happy stranger@pr:holdHands:smug | whoosh | note=Gag 3, by the PARKING sign
+L07:8  | schoolyard        | WS coach 25        | coach@c:run:determined | pop
+# BEAT 4 STAKE
+L08:0  | schoolyard        | CU milo 12         | milo@c:stand:smug kid1@b1:stand:neutral | whoosh
+L08:3  | schoolyard        | INS milo.wrist -10 | milo@c:showWrist:smug | tick
+L08:4  | schoolyard        | MCU milo 0         | milo@c:armsUp:laugh kid1@l:stand:surprised kid2@r:stand:surprised | pop
+L09:0  | schoolyard        | MCU milo 20        | milo@c:showWrist:smug kid1@rr:stand:deadpan kid2@ll:stand:deadpan | pop
+L09:3  | schoolyard        | MS pair 0          | milo@pl:showWrist:smug lunchLady@pr:stand:deadpan | pop
+L09:8  | schoolyard        | CU lunchLady 10    | lunchLady@c:stand:deadpan | pop
+L10:0  | kitchen           | WS june 0          | june@c:stand:happy mom@b1:stand:happy | whoosh
+L10:5  | kitchen           | CU june 10         | june@c:armsUp:laugh | pop
+L11:0  | kitchen           | MCU june -15       | june@c:showWrist:neutral | pop
+L11:3  | kitchen           | INS june.wrist 0   | june@c:showWrist:neutral:4 | thud | note=Close-up of '4'
+L11:4  | kitchen           | CU milo 15         | milo@c:stand:worried | pop
+L11:7  | kitchen           | INS june.wrist 15  | june@c:showWrist:sad:4 | thud | note=Added after VO retime: 'Four days.' (S027 was 2.75 s)
+# BEAT 5 ESCALATION
+L12:0  | clinic            | MS doctor 30       | doctor@pl:stand:worried june@pr:showWrist:neutral:4 | whoosh | note=Review fix: pair MS cropped the doctor's head
+L12:6  | clinic            | MCU doctor 10      | doctor@c:shrug:deadpan | pop
+L13:0  | kitchen           | MS pair 0          | mom@l:slump:sad dad@r:slump:sad | whoosh
+L13:3  | kitchen           | CU mom 15          | mom@c:stand:sad | pop
+L13:7  | kitchen           | INS mom.wrist 0    | mom@c:showWrist:sad | tick | note=Parents almost empty: Mom's 9 (review fix: pair insert camera ended above the ceiling)
+L14:0  | clerkOffice       | WS clerk 0         | clerk@desk:stand:neutral milo@front:stand:determined | whoosh
+L14:7  | clerkOffice       | MCU clerk 12       | clerk@desk:holdLedger:deadpan | paper | ledger=rules
+L14:10 | clerkOffice       | INS clerk.ledger 0 | clerk@desk:holdLedger:deadpan | paper | ledger=rules
+L15:0  | clerkOffice       | CU clerk -10       | clerk@desk:holdLedger:deadpan | pop | ledger=rules
+L15:3  | clerkOffice       | MS focus.poster 0  |  | thud | note=NO TAKE-BACKS poster
+L16:0  | clerkOffice       | MCU clerk 0        | clerk@desk:slump:worried | pop
+L16:3  | clerkOffice       | INS milo.wrist 15  | milo@c:showWrist:worried | tick
+L16:5  | clerkOffice       | CU milo -12        | milo@c:stand:worried | pop
+# BEAT 6 ATTEMPT
+L17:0  | kitchen           | WS milo 0          | milo@seatBL:sit:determined june@seatBR:sit:happy mom@seatL:sit:sad dad@seatR:sit:sad | whoosh | note=Dinner
+L17:3  | kitchen           | MS pair 0          | milo@pl:holdHands:determined june@pr:holdHands:confused | pop
+L17:6  | kitchen           | ECU milo -55       | milo@pl:holdHands:determined june@pr:holdHands:confused | pop
+L18:0  | kitchen           | CU june 10         | june@c:stand:confused | pop | note=Review fix: camera was inside Milo's head
+L18:4  | kitchen           | MCU june -20       | june@c:point:smug | pop | note=Review fix: seated MS saw the table underside
+L19:0  | kitchen           | CU milo 10         | milo@seatBL:sit:sad | pop
+L19:6  | kitchen           | MCU june -10       | june@c:armsUp:laugh | pop
+L20:0  | kitchen           | CU mom -55         | mom@seatL:sitSlump:crying | pop
+L20:5  | kitchen           | MCU dad 50         | dad@seatR:sitSlump:deadpan | pop
+L21:0  | bedroom/dawn      | WS milo 150        | milo@mirror:stand:determined | whoosh | note=Night: cold mood
+L21:4  | bedroom/dawn      | MCU milo 0         | milo@mirror:stand:determined | pop | note=Mirror POV
+L22:0  | bedroom/dawn      | CU milo -20        | milo@mirror:stand:determined | pop
+L22:2  | bedroom/dawn      | ECU milo 0         | milo@mirror:stand:angry | pop
+L22:4  | bedroom/dawn      | CU milo 20         | milo@mirror:stand:sad | pop
+L23:0  | kitchen           | WS june 0          | june@seatBR:sitSlump:sad mom@seatL:sitSlump:sad dad@seatR:sitSlump:sad | whoosh | note=Next morning
+L23:5  | kitchen           | INS june.wrist 0   | june@c:showWrist:sad:2 | thud
+L23:6  | kitchen           | CU milo 12         | milo@c:stand:scared | pop
+# BEAT 7 CLIMAX (cold dawn)
+L24:0  | dock/dawn         | INS june.wrist -10 | june@c:showWrist:neutral:1 | tick
+L24:4  | dock/dawn         | EWS milo 0         | milo@pierL/180:walk:determined june@pierR/180:walk:neutral | whoosh | note=Walking out to the end of the pier at sunrise
+L25:0  | dock/dawn         | CU june 15         | june@c:stand:happy:1 | pop
+L25:3  | dock/dawn         | MS focus.ducks 20  |  | pop
+L26:0  | dock/dawn         | MS pair 0          | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
+L26:5  | dock/dawn         | INS pair.hands 0   | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | thud
+L27:0  | dock/dawn         | ECU milo -55       | milo@pl:holdHands:determined june@pr:holdHands:happy:1 | pop
+L27:7  | dock/dawn         | CU milo 0          | milo@c:stand:determined | pop | note=Review fix: held arm blocked the face
+L28:0  | dock/dawn         | CU june 10         | june@c:stand:happy:1 | bell | note=Review fix: held arm blocked the face
+L29:0  | dock/dawn         | MCU milo 15       | milo@c:stand:scared | pop | note=Review fix: June's held arm crossed Milo's face
+L29:3  | dock/dawn         | INS milo.wrist 0   | milo@c:showWrist:scared:4,015 | tick
+L29:4  | dock/dawn         | INS milo.wrist 14  | milo@c:showWrist:scared:3,000 | tick
+L29:5  | dock/dawn         | INS milo.wrist -14 | milo@c:showWrist:scared:900 | tick
+L29:6  | dock/dawn         | INS milo.wrist 8   | milo@c:showWrist:scared:12 | tick
+L29:7  | dock/dawn         | INS milo.wrist -6  | milo@c:showWrist:scared:0 | thud
+L30:0  | dock/dawn         | INS june.wrist 0   | june@c:showWrist:happy:4,016 | bell
+L30:4  | dock/dawn         | CU june 10         | june@c:armsUp:laugh:4,016 | pop
+L30:6  | dock/dawn         | MS pair 0          | milo@l:stand:deadpan:0 june@r:stand:laugh:4,016 | pop
+L31:0  | street/dawn       | WS milo 180        | milo@c/180:walk:sad:0 june@l/180:walk:happy:4,016 | whoosh | note=Walking her home, backs to camera
+L31:4  | bedroom/dawn      | WS milo -60        | milo@bedEdge:sit:sad:0 | whoosh | note=Alone
+# BEAT 8 TWIST (golden again)
+L32:0  | bedroom           | MS milo 10         | milo@bedEdge:sit:surprised:4,016 | bell
+L32:4  | bedroom           | CU milo -15        | milo@c:checkWrist:surprised:4,016 | pop
+L32:7  | bedroom           | INS milo.wrist 0   | milo@c:showWrist:surprised:4,016 | tick
+L32:8  | bedroom           | MS pair 0          | milo@c:showWrist:happy:4,016 june@r:showWrist:happy:4,016 | bell
+L33:0  | clerkOffice       | MS clerk 0         | clerk@desk:holdLedger:neutral milo@frontL:stand:confused:4,016 | paper | ledger=page1
+L33:6  | clerkOffice       | INS clerk.ledger 0 | clerk@desk:holdLedger:neutral | paper | ledger=page1
+L34:0  | clerkOffice       | CU clerk 10        | clerk@desk:holdLedger:deadpan | pop | ledger=page1
+L34:4  | clerkOffice       | MCU milo -15       | milo@c:stand:surprised:4,016 | pop
+L35:0  | clerkOffice       | MCU clerk -10      | clerk@desk:stand:happy | pop
+L35:5  | clerkOffice       | CU milo 15         | milo@c:stand:happy:4,016 | bell
+L36:0  | townSquare        | MS pair 0          | uncleOld@office:stand:happy boss@office2:stand:happy | whoosh | note=Callback gag 1: together every day
+L37:0  | street            | MS pair 0          | cousin@cafe:stand:deadpan ex@cafe2:stand:deadpan | whoosh | note=Callback gag 2: one more date
+L38:0  | schoolyard        | WS pair 0          | coach@l:run:happy stranger@r:run:happy | whoosh | note=Callback gag 3: jogging together
+L38:5  | schoolyard        | MCU stranger 15    | stranger@c:run:happy | pop
+# BEAT 9 CALLBACK + BUTTON (final 3 shots exempt from the 2.2 s cap)
+L39:0  | dock              | WS pair 0          | milo@pierL:showWrist:happy:4,016 june@pierR:showWrist:happy:4,016 | whoosh
+L39:4  | dock              | INS pair.wrists 0  | milo@pierL:showWrist:happy:4,016 june@pierR:showWrist:happy:4,016 | tick | note=Same number on both wrists
+L39:8  | dock              | EWS pair 0         | milo@pierL/180:stand:happy:4,016 june@pierR/180:stand:happy:4,016 | bell | note=Hard cut to black on the last word
+END    L39:12 | black 0.4 room tone
